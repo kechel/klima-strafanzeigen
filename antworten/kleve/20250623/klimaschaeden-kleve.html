@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimaschäden im Kreis Kleve</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+                
+                @top-center {
+                    content: "Klimaschäden im Kreis Kleve";
+                    font-size: 10pt;
+                    font-weight: bold;
+                    padding-bottom: 5pt;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @top-right {
+                    content: "23. Juni 2025";
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @bottom-center {
+                    content: "Seite " counter(page) " von " counter(pages);
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11pt;
+                line-height: 1.4;
+                color: #000;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            color: #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            page-break-after: avoid;
+        }
+        
+        .header h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+        
+        .header .subtitle {
+            font-size: 12pt;
+            color: #000;
+            margin: 5px 0;
+        }
+        
+        .header .date {
+            font-size: 10pt;
+            color: #000;
+            margin-top: 15px;
+        }
+        
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            page-break-after: avoid;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0 0 12px 0;
+            text-align: justify;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        .key-figure {
+            font-weight: bold;
+            color: #000;
+        }
+        
+        ul, ol {
+            margin: 10px 0 15px 20px;
+            page-break-inside: avoid;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+        
+        .calculation {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        .event-box {
+            border: 1px solid #666;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: white;
+            page-break-inside: avoid;
+        }
+        
+        .data-reference {
+            font-style: italic;
+            color: #000;
+        }
+        
+        .footnote {
+            font-size: 9pt;
+            color: #000;
+            margin-top: 30px;
+            padding-top: 15px;
+        }
+        
+        .print-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 12pt;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .print-button:hover {
+            background-color: #333;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="print-button no-print" onclick="window.print()">Drucken</button>
+    
+    <div class="header">
+        <h1>Klimaschäden im Kreis Kleve</h1>
+        <div class="subtitle">Dokumentierte Extremwetterereignisse und Anpassungsbedarf</div>
+        <div class="date">Erstellt am 23. Juni 2025</div>
+    </div>
+
+    <div class="section">
+        <p><span class="highlight">Der Kreis Kleve zeigt eine besorgniserregende Zunahme klimabedingter Schadensereignisse</span>. Die Niederrhein-Region ist besonders durch Rheinhochwasser und Starkregen gefährdet, wobei die wissenschaftliche Messstation Kleve-Bimmen einen <span class="key-figure">Temperaturanstieg des Rheins um 1,5°C seit 1974</span> dokumentiert. Versicherungsdaten zeigen deutschlandweit Rekordschäden von <span class="key-figure">12,6 Milliarden Euro</span> durch Naturgefahren im Jahr 2021, während der Kreis Kleve spezifische Verwundbarkeiten durch seine geografische Lage in der Rheinniederung aufweist.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Schwere Hochwasserereignisse prägen die Region</h2>
+        
+        <div class="event-box">
+            <h4>Weihnachtshochwasser 2023/2024</h4>
+            <p>Das durch Sturmtief Zoltan ausgelöste Rheinhochwasser verwandelte Teile von Kleve-Düffelward in eine "Insel", sodass das THW einen Fährbetrieb einrichten musste. Die Feuerwehr Kleve registrierte über die Feiertage <strong>11 Einsätze durch Wasserschäden</strong>, während das städtische Hochwasserschutzkonzept aktiviert wurde.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Jahrhunderthochwasser 1995 - Das Referenzereignis</h4>
+            <p>Der Rheinpegel in Emmerich erreichte <strong>9,56 Meter</strong> - mehr als das Doppelte des Normalwerts von 3,65 Metern. <span class="key-figure">Erstmals in der Geschichte des Kreises wurde Katastrophenalarm ausgelöst</span>. Schenkenschanz musste vollständig evakuiert werden, <strong>5.000 Menschen</strong> waren bedroht, und bei einem möglichen Deichbruch drohte eine bis zu vier Meter hohe Flutwelle. Die Orte Düffelward, Bimmen, Keeken und Kranenburg waren besonders betroffen.</p>
+        </div>
+        
+        <p>Die historische Entwicklung zeigt eine deutliche Intensivierung der Hochwasserereignisse. Während frühere Jahrhunderte seltene Extremereignisse verzeichneten, werden seit den 1990er Jahren regelmäßig kritische Wasserstände erreicht, die umfangreiche Schutzmaßnahmen erfordern.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Extreme Niederschläge und Sturmschäden nehmen zu</h2>
+        
+        <div class="calculation">
+            <h4>Starkregen-Rekord Weeze 2015:</h4>
+            <ul>
+                <li><strong>127 mm Niederschlag</strong> in kurzer Zeit am 30. August 2015</li>
+                <li>Stärkstes registriertes Niederschlagsereignis in NRW</li>
+                <li>Überflutungen in Uedem, Kalkar und Bedburg-Hau</li>
+                <li>Dokumentiert durch LANUV NRW als Extremereignis</li>
+            </ul>
+        </div>
+
+        <div class="event-box">
+            <h4>Windhose Goch 14. Juli 2010</h4>
+            <p>Der um 18:30 Uhr auftretende Tornado verursachte schwere Schäden an der Gustav-Adolf-Schule und am Bahnhofsvorplatz, führte zu Stromausfällen und beeinträchtigte auch Bedburg-Hau, Kleve-Warbeyen und Emmerich. Das Ereignis demonstrierte die Gefahr durch lokale Extremwetterereignisse.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Sturmschäden der letzten Jahre</h4>
+            <p><strong>Sturmtief "Zeynep" am 18. Februar 2022:</strong> Orkanartige Winde bis 100 km/h über den gesamten Kreis. Umgestürzte Bäume, abgedeckte Dächer und zahlreiche Feuerwehreinsätze prägten das Schadensbild.</p>
+            <p><strong>Sturmtief "Ela" am 9. Juni 2014:</strong> Hatte bereits landesweit Rekordschäden von <span class="key-figure">650 Millionen Euro</span> verursacht und auch den Kreis Kleve getroffen.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Dürre bedroht die Landwirtschaft systematisch</h2>
+        
+        <p>Die <strong>Dürrejahre 2018, 2019 und 2022</strong> verursachten erhebliche landwirtschaftliche Schäden im Kreis Kleve. Die Auswirkungen waren dramatisch und systematisch:</p>
+
+        <div class="calculation">
+            <h4>Dokumentierte Dürreschäden:</h4>
+            <ul>
+                <li>Ernteverluste von <strong>10-30%</strong> unter dem Durchschnitt</li>
+                <li>Akute Futterknappheit in der Tierhaltung</li>
+                <li>Liquiditätsprobleme für landwirtschaftliche Betriebe</li>
+                <li>Notmaßnahme: Futternutzung auf Brachflächen erlaubt</li>
+            </ul>
+        </div>
+        
+        <p>Das Ministerium für Umwelt, Landwirtschaft, Natur- und Verbraucherschutz NRW musste als Notmaßnahme die Futternutzung auf Brachflächen erlauben. Diese außergewöhnliche Maßnahme verdeutlicht das Ausmaß der Dürreproblematik in der Region.</p>
+    </div>
+
+    <div class="section">
+        <h2>4. Versicherungslücken verschärfen die Schadenssituation</h2>
+        
+        <p>Wissenschaftliche Daten der LANUV-Messstation Kleve-Bimmen belegen eindeutig klimawandelbedingte Veränderungen. <span class="highlight">Seit 1998 werden erstmals regelmäßig Rheinwassertemperaturen über 25°C gemessen</span> - ein kritischer Wert für das Ökosystem.</p>
+
+        <div class="calculation">
+            <h4>Versicherungsstatistik und Schadensdaten:</h4>
+            <ul>
+                <li>Nur <strong>46%</strong> der Hausbesitzer haben Elementarschutz</li>
+                <li>Hochwasserschäden an Privatgebäuden: <strong>5.000-50.000 Euro</strong> typisch</li>
+                <li>Region in Hochwasser-Gefährdungsklassen <strong>2-3</strong> eingestuft</li>
+                <li>Deutschlandweit: <strong>233 Milliarden Euro</strong> Naturkatastrophenschäden 1973-2022</li>
+            </ul>
+        </div>
+        
+        <p>Der Gesamtverband der Deutschen Versicherungswirtschaft verzeichnete zwischen 1973 und 2022 Naturkatastrophenschäden von 233 Milliarden Euro deutschlandweit. Die defizitäre Elementarschutz-Abdeckung von nur 46% verstärkt die Vulnerabilität der Region erheblich.</p>
+    </div>
+
+    <div class="section">
+        <h2>5. Zukunftsprognosen fordern dringenden Handlungsbedarf</h2>
+        
+        <p>Die Bezirksregierung Düsseldorf hat Rhein und Niers als Risikogewässer identifiziert und Hochwassergefahren- sowie Hochwasserrisikokarten erstellt. <span class="highlight">LANUV-Projektionen bis 2100 sehen eine Verdopplung bis Verdreifachung der Rheinhochwasserschäden als möglich</span>.</p>
+
+        <div class="calculation">
+            <h4>Klimaprojektionen für den Kreis Kleve:</h4>
+            <ul>
+                <li>Häufigere urbane Überflutungen durch Starkregen erwartet</li>
+                <li>Rheinhochwasserschäden: <strong>Verdopplung bis Verdreifachung</strong> bis 2100</li>
+                <li>Temperaturanstieg Rhein: <strong>+1,5°C seit 1974</strong> dokumentiert</li>
+                <li>Kritische Gewässertemperaturen über 25°C werden häufiger</li>
+            </ul>
+        </div>
+        
+        <p>Die kontinuierliche Deichsanierung seit Mitte der 1990er Jahre muss beschleunigt werden. Das integrierte Klimaschutzkonzept des Kreises Kleve von 2021 und erweiterte Pegelnetze mit Warnsystemen bilden erste Anpassungsmaßnahmen, reichen aber angesichts der wissenschaftlich belegten Klimaveränderungen nicht aus.</p>
+    </div>
+
+    <div class="section">
+        <h2>6. Konkrete Anpassungsbedarfe</h2>
+        
+        <p>Der Kreis Kleve steht vor konkreten Herausforderungen, die systematische Lösungsansätze erfordern:</p>
+
+        <div class="event-box">
+            <h4>Kritische Handlungsfelder:</h4>
+            <ul>
+                <li><strong>Deichsanierung zwischen Xanten und Kleve:</strong> Ausstehende Modernisierung kritischer Abschnitte</li>
+                <li><strong>Elementarschutz-Abdeckung:</strong> Erhöhung von 46% auf mindestens 80% erforderlich</li>
+                <li><strong>Urbane Entwässerung:</strong> Vorbereitung auf häufigere Starkregen-Ereignisse</li>
+                <li><strong>Landwirtschaftliche Anpassung:</strong> Dürreresistente Anbaumethoden und Bewässerungssysteme</li>
+                <li><strong>Frühwarnsysteme:</strong> Ausbau der Pegelmessnetze und Kommunikationswege</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Fazit: Systematische Klimaanpassung erforderlich</h2>
+        
+        <p><span class="highlight">Der Kreis Kleve zeigt eine dokumentierte Vulnerabilität gegenüber verschiedenen Klimaextremen</span>. Die Ereignisse belegen eine Zunahme der Intensität und Häufigkeit extremer Wetterereignisse, was den dringenden Ausbau von Anpassungsmaßnahmen und Klimaresilienz erforderlich macht.</p>
+        
+        <p><strong>Die wissenschaftlichen Belege sind eindeutig:</strong> Ein Temperaturanstieg des Rheins um 1,5°C seit 1974, erstmals regelmäßige Gewässertemperaturen über 25°C seit 1998 und die Dokumentation von Rekord-Niederschlagsereignissen zeigen den bereits eingetretenen Klimawandel in der Region.</p>
+        
+        <p><strong>Besonders kritisch</strong> sind die defizitäre Elementarschutz-Abdeckung von nur 46%, ausstehende Deichsanierungen zwischen Xanten und Kleve sowie die unzureichende Vorbereitung auf häufigere Starkregen-Ereignisse in urbanen Gebieten. Diese Defizite müssen systematisch angegangen werden, um die Klimaresilienz des Kreises Kleve zu stärken.</p>
+    </div>
+
+    <div class="footnote">
+        <p><strong>Quellen und Datengrundlagen:</strong> Berechnungen und Analysen basieren auf Daten des LANUV NRW, Feuerwehr Kleve, THW-Einsatzberichten, Gesamtverband der Deutschen Versicherungswirtschaft, Kreis Kleve Hochwasserschutzkonzept, lokalen Medienberichten und wissenschaftlichen Klimastudien. Alle Schadenssummen in Euro (2025). Temperaturdaten der Messstation Kleve-Bimmen.</p>
+    </div>
+</body>
+</html>
