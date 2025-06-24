@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimaschäden in Würzburg und Umgebung</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+                
+                @top-center {
+                    content: "Klimaschäden in Würzburg und Umgebung";
+                    font-size: 10pt;
+                    font-weight: bold;
+                    padding-bottom: 5pt;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @top-right {
+                    content: "24. Juni 2025";
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @bottom-center {
+                    content: "Seite " counter(page) " von " counter(pages);
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11pt;
+                line-height: 1.4;
+                color: #000;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            color: #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            page-break-after: avoid;
+        }
+        
+        .header h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+        
+        .header .subtitle {
+            font-size: 12pt;
+            color: #000;
+            margin: 5px 0;
+        }
+        
+        .header .date {
+            font-size: 10pt;
+            color: #000;
+            margin-top: 15px;
+        }
+        
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            page-break-after: avoid;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0 0 12px 0;
+            text-align: justify;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        .key-figure {
+            font-weight: bold;
+            color: #000;
+        }
+        
+        ul, ol {
+            margin: 10px 0 15px 20px;
+            page-break-inside: avoid;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+        
+        .calculation {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        .event-box {
+            border: 1px solid #666;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: white;
+            page-break-inside: avoid;
+        }
+        
+        .data-reference {
+            font-style: italic;
+            color: #000;
+        }
+        
+        .footnote {
+            font-size: 9pt;
+            color: #000;
+            margin-top: 30px;
+            padding-top: 15px;
+        }
+        
+        .print-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 12pt;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .print-button:hover {
+            background-color: #333;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="print-button no-print" onclick="window.print()">Drucken</button>
+    
+    <div class="header">
+        <h1>Klimaschäden in Würzburg und Umgebung</h1>
+        <div class="subtitle">Millionenschwere Unwetter prägen Region Unterfranken</div>
+        <div class="date">Erstellt am 24. Juni 2025</div>
+    </div>
+
+    <div class="section">
+        <p><span class="highlight">Die Region Würzburg verzeichnet strukturell 1.300 wetterbedingte Feuerwehreinsätze pro Jahr</span> in Unterfranken, wobei extreme Wetterereignisse in den letzten Jahren deutlich zugenommen haben. <span class="key-figure">Bayern führt 2023 bundesweit mit über 2 Milliarden Euro Versicherungsschäden</span> durch Naturkatastrophen, wobei Würzburg und Umgebung durch wiederkehrende Starkregen-Hochwasser besonders betroffen sind. Die Schadensereignisse konzentrieren sich vor allem auf die Gemeinden Reichenberg und Heidingsfeld sowie südöstliche Landkreisgebiete um Ochsenfurt.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Schwere Schadensereignisse der letzten Jahre</h2>
+        
+        <div class="event-box">
+            <h4>Reichenberg Flutkatastrophe - 3. August 2024</h4>
+            <p><strong>Das verheerendste Einzelereignis:</strong> Eine massive Flutwelle setzte den Ortskern bis zu <strong>1,2 Meter hoch unter Wasser</strong>. Etwa 80 Einsatzkräfte waren bis 5:00 Uhr morgens im Dauereinsatz. Keller liefen "teilweise bis unter die Decke" voll, während Baumstämme und Treibgut massive Verschmutzungen verursachten. Dies war bereits das <span class="key-figure">dritte Hochwasserereignis in Reichenberg innerhalb von acht Jahren</span> - nach schweren Überschwemmungen 2016 und 2021.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Extremer Starkregen - 22. Juni 2023</h4>
+            <p>Über <strong>50 Liter pro Quadratmeter</strong> in kurzer Zeit über Würzburg. Besonders betroffen waren die Altstadt, Zellerau und Grombühl, wo Straßen zu reißenden Bächen wurden und der Verkehr teilweise zum Erliegen kam. Geschäfte mussten schließen, während Hunderte Keller vollliefen.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Erster Todesfall - 31. Mai 2024</h4>
+            <p><strong>Besonders alarmierend:</strong> Erstmals kam es zum Todesfall durch Klimaschäden in der Region, als ein Mann in Hausen bei Würzburg im überfluteten Keller einen Stromschlag erlitt. Das Unwetter Ende Mai/Anfang Juni 2024 führte zu <strong>über 100 Notfalleinsätzen</strong> allein im Landkreis Würzburg.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Wirtschaftliche Schäden erreichen Rekordniveau</h2>
+        
+        <div class="calculation">
+            <h4>Versicherungsschäden Bayern 2023:</h4>
+            <ul>
+                <li><strong>Über 2 Milliarden Euro</strong> Naturgefahrenschäden - höchster Wert bundesweit</li>
+                <li>Kfz-Schäden 2024: <strong>281 Millionen Euro</strong> in Bayern</li>
+                <li>Durchschnittlicher Hagelschaden: <strong>4.100 Euro</strong></li>
+                <li>Nur <strong>54% der Gebäude</strong> gegen Elementarschäden versichert</li>
+            </ul>
+        </div>
+
+        <div class="event-box">
+            <h4>Landwirtschaftliche Schäden Juni 2024</h4>
+            <p><strong>85 Betriebe in Unterfranken</strong> mit etwa 300 Hektar Fläche vom Hochwasser betroffen. Bayernweit entstanden Schäden auf <strong>55.000 Hektar</strong> bei über 3.000 Betrieben. Die Erntequalität litt unter extremer Witterung, während der Rapsanbau einen <span class="key-figure">Flächenrückgang um 25%</span> verzeichnete.</p>
+        </div>
+
+        <div class="calculation">
+            <h4>Durchschnittliche Schadenssummen:</h4>
+            <ul>
+                <li>Überflutungsschäden: <strong>10.123 Euro</strong> pro Ereignis</li>
+                <li>Betriebsunterbrechungsschäden: <strong>über 3,1 Millionen Euro</strong> durchschnittlich</li>
+                <li>Versicherungslücke bei Elementarschäden: <strong>46% unversichert</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Staatliche Investitionen und Schutzmaßnahmen</h2>
+        
+        <div class="calculation">
+            <h4>Bayerisches Aktionsprogramm 2020plus:</h4>
+            <ul>
+                <li><strong>3,4 Milliarden Euro</strong> Gesamtvolumen für Hochwasserschutz</li>
+                <li>Bereits <strong>536.000 zusätzliche Einwohner</strong> geschützt</li>
+                <li>Würzburg-spezifisch: <strong>38 Millionen Euro</strong> für Heidingsfeld und Reichenberg</li>
+                <li>Städtischer Beitrag: <strong>14 Millionen Euro</strong></li>
+            </ul>
+        </div>
+
+        <div class="event-box">
+            <h4>Bestehender Hochwasserschutz Würzburg Altstadt</h4>
+            <p>Kostete bereits <strong>über 20 Millionen Euro</strong> und schützt vor Jahrhunderthochwasser bis zu einem Pegelstand von <strong>805 Zentimetern</strong>. Ohne diese Maßnahmen wären bei Extremhochwasser <span class="key-figure">25 Hektar Altstadtfläche</span> überflutet - das Wasser würde bis zum Rathaus, möglicherweise sogar bis zum Dom reichen.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Aktuelle Soforthilfen nach Juni-2024-Unwetter</h4>
+            <p>Haushalte können <strong>bis zu 5.000 Euro</strong> für Hausrat- und <strong>bis zu 10.000 Euro</strong> für Ölschäden erhalten. Die Behörden entsandten <strong>116 Einsatzkräfte mit 38 Tonnen Sandsäcken</strong> nach Burgau.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Klimaanpassungsstrategie und Zukunftsperspektiven</h2>
+        
+        <p>Würzburg entwickelt proaktiv eine <strong>Klimaanpassungsstrategie bis Ende 2024</strong>, die umfassende Maßnahmen gegen Extremwetter vorsieht. <span class="highlight">Starkregen-Gefahrenkarten wurden 2024 veröffentlicht</span> und zeigen Fließwege sowie Überflutungsbereiche auf.</p>
+
+        <div class="calculation">
+            <h4>Klimaziele und erreichte Fortschritte:</h4>
+            <ul>
+                <li>Klimaneutralität Stadt: <strong>bis 2040</strong></li>
+                <li>Stadtverwaltung klimaneutral: <strong>bis 2028</strong></li>
+                <li><strong>95% der Straßenbeleuchtung</strong> auf LED umgestellt</li>
+                <li>Energieverbrauch reduziert um <strong>13%</strong> (2019-2022)</li>
+            </ul>
+        </div>
+
+        <div class="event-box">
+            <h4>Alarmierender Zukunftsausblick</h4>
+            <p><strong>Studien der Universität Würzburg:</strong> Erwartung einer <span class="key-figure">Verdopplung der Hitzetage bis Ende des Jahrhunderts</span>. Derzeit gibt es durchschnittlich 14 Hitzetage pro Jahr in Unterfranken. Klimaforscher prognostizieren weitere Intensivierung von Extremwetterereignissen.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Präventive Maßnahmen und Warnsysteme</h2>
+        
+        <div class="event-box">
+            <h4>Etablierte Schutzmaßnahmen</h4>
+            <ul>
+                <li><strong>Hitzeaktionsplan</strong> mit Trinkbrunnen und kühlen Orten</li>
+                <li><strong>Arbeitskreis "Hitze und Gesundheit"</strong> wurde etabliert</li>
+                <li>Starkregen-Gefahrenkarten zeigen Fließwege und Überflutungsbereiche</li>
+                <li>Erweiterte Hochwasserschutzkonzepte für Reichenberg</li>
+            </ul>
+        </div>
+
+        <div class="calculation">
+            <h4>Jährliche Einsatzstatistik Unterfranken:</h4>
+            <ul>
+                <li><strong>1.300 wetterbedingte Feuerwehreinsätze</strong> pro Jahr</li>
+                <li>Strukturelle Belastung durch wiederkehrende Extremwetter</li>
+                <li>Schwerpunkt: Starkregen-Hochwasser in Reichenberg und Heidingsfeld</li>
+                <li>Regionale Unterstützung: Würzburg entsendet Hilfe in Nachbarkreise</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Fazit: Würzburg kämpft proaktiv gegen Klimafolgen</h2>
+        
+        <p><span class="highlight">Die Schadensbilanz zeigt eindeutig: Würzburg und Umgebung sind vom Klimawandel massiv betroffen</span>. Mit strukturell 1.300 Unwettereinsätzen jährlich und Millionenschäden durch Einzelereignisse steht die Region vor enormen Herausforderungen.</p>
+        
+        <p><strong>Besonders kritische Entwicklungen:</strong> Die Häufung schwerer Ereignisse in Reichenberg (drei Hochwasser in acht Jahren), der erste Todesfall 2024 und die prognostizierte Verdopplung der Hitzetage unterstreichen die Dringlichkeit systematischer Klimaanpassung.</p>
+        
+        <p><strong>Positive Entwicklungen:</strong> 38 Millionen Euro für Hochwasserschutz, umfassende Klimaanpassungsstrategien und innovative Warnsysteme zeigen, dass Würzburg den Kampf gegen Klimafolgen ernst nimmt und strukturiert angeht. Die proaktive Herangehensweise mit Starkregen-Gefahrenkarten, Hitzeaktionsplänen und ambitionierten Klimazielen (Klimaneutralität bis 2040) bietet Hoffnung für eine resiliente Zukunft der Region.</p>
+        
+        <p><strong>Handlungsbedarf bleibt bestehen:</strong> Die Versicherungslücke von 46% unversicherten Gebäuden und die erwartete Intensivierung von Extremwetterereignissen erfordern weitere intensive Anstrengungen in der Klimaanpassung und im präventiven Schutz der Bevölkerung.</p>
+    </div>
+
+    <div class="footnote">
+        <p><strong>Quellen und Datengrundlagen:</strong> Berechnungen und Analysen basieren auf Daten der Feuerwehr Unterfranken, Landkreis Würzburg, Stadt Würzburg Klimadashboard, Gesamtverband der Deutschen Versicherungswirtschaft, Bayerisches Staatsministerium für Umwelt und Verbraucherschutz, lokalen Medienberichten (Main-Post, inFranken, Radio Gong), wissenschaftlichen Klimastudien der Universität Würzburg und aktuellen Versicherungsstatistiken. Alle Schadenssummen in Euro (2025). Temperatur- und Niederschlagsdaten der regionalen Wetterstationen.</p>
+    </div>
+</body>
+</html>

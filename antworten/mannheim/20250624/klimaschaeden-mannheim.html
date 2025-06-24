@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimaschäden in Mannheim und Umgebung</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+                
+                @top-center {
+                    content: "Klimaschäden in Mannheim und Umgebung";
+                    font-size: 10pt;
+                    font-weight: bold;
+                    padding-bottom: 5pt;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @top-right {
+                    content: "24. Juni 2025";
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @bottom-center {
+                    content: "Seite " counter(page) " von " counter(pages);
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11pt;
+                line-height: 1.4;
+                color: #000;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            color: #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            page-break-after: avoid;
+        }
+        
+        .header h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+        
+        .header .subtitle {
+            font-size: 12pt;
+            color: #000;
+            margin: 5px 0;
+        }
+        
+        .header .date {
+            font-size: 10pt;
+            color: #000;
+            margin-top: 15px;
+        }
+        
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            page-break-after: avoid;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0 0 12px 0;
+            text-align: justify;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        .key-figure {
+            font-weight: bold;
+            color: #000;
+        }
+        
+        ul, ol {
+            margin: 10px 0 15px 20px;
+            page-break-inside: avoid;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+        
+        .calculation {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        .event-box {
+            border: 1px solid #666;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: white;
+            page-break-inside: avoid;
+        }
+        
+        .data-reference {
+            font-style: italic;
+            color: #000;
+        }
+        
+        .footnote {
+            font-size: 9pt;
+            color: #000;
+            margin-top: 30px;
+            padding-top: 15px;
+        }
+        
+        .print-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 12pt;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .print-button:hover {
+            background-color: #333;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="print-button no-print" onclick="window.print()">Drucken</button>
+    
+    <div class="header">
+        <h1>Klimaschäden in Mannheim und Umgebung</h1>
+        <div class="subtitle">Dokumentierte Extremwetterereignisse und Klimafolgenanpassung</div>
+        <div class="date">Erstellt am 24. Juni 2025</div>
+    </div>
+
+    <div class="section">
+        <p><span class="highlight">Die Metropolregion Rhein-Neckar ist durch ihre Lage am Zusammenfluss von Rhein und Neckar besonders klimaverwundbar</span>. Mannheim verzeichnet eine zunehmende Häufigkeit und Intensität von Extremwetterereignissen, die bereits heute spürbare wirtschaftliche und gesellschaftliche Auswirkungen haben. Die Stadt hat mit ihrem <span class="key-figure">Klimaanpassungskonzept von 2019</span> strategische Grundlagen geschaffen, doch die dokumentierten Schadensereignisse zeigen den dringenden Handlungsbedarf auf.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Hochwasserereignisse an Rhein und Neckar nehmen zu</h2>
+        
+        <div class="event-box">
+            <h4>10-jähriges Hochwasser Juni 2024</h4>
+            <p>Das bisher schwerste dokumentierte Hochwasserereignis der letzten Jahre erreichte in der Nacht vom 3. auf 4. Juni 2024 seinen Höhepunkt. Der <strong>Rheinpegel stieg auf 8,10 Meter</strong> und der <strong>Neckarpegel auf 8,60 Meter</strong>. Umfangreiche Sperrungen von Uferbereichen, Radwegen und Zufahrten waren notwendig. Besonders betroffen waren das Neckarvorland, Waldpark-Zufahrten und das Stephanienufer.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Häufige Hochwasserwarnungen 2021-2023</h4>
+            <p><strong>Februar 2021:</strong> Neckar-Pegelstand 7,15 Meter durch Schneeschmelze und Niederschläge. <strong>Juli 2021:</strong> Hochwasserwarnung bei 7,10 Meter Neckarpegel. <strong>Dezember 2023:</strong> Erneute Sperrungen bei prognostizierten 7,50 Metern an beiden Flüssen. Diese Häufung zeigt eine neue Qualität der Hochwassergefährdung.</p>
+        </div>
+        
+        <p>Die regelmäßigen Hochwasserereignisse erfordern mittlerweile systematische Sperrungen von Neckarradwegen, Zufahrten zum Collini-Center, Waldpark-Zugängen und dem Stephanienufer. Das Hochwasserschutzkonzept der Stadt wird zunehmend aktiviert, was die wachsende Belastung der städtischen Infrastruktur verdeutlicht.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Starkregenrisiko wird systematisch kartiert</h2>
+        
+        <div class="calculation">
+            <h4>Starkregengefahrenkarten seit 2022:</h4>
+            <ul>
+                <li>Erste Karten für <strong>Feudenheim, Neckarau und Casterfeld</strong> veröffentlicht</li>
+                <li>Drei Szenarien: 30-jähriges, 100-jähriges und Extremereignis</li>
+                <li>Sukzessive Erweiterung auf alle Stadtteile geplant</li>
+                <li>Öffentliche Informationsveranstaltungen seit November 2022</li>
+            </ul>
+        </div>
+
+        <div class="event-box">
+            <h4>Konkrete Starkregenproblematik</h4>
+            <p>Bei seltenen Starkregenereignissen kann das Mannheimer Kanalnetz das Niederschlagswasser nicht mehr ableiten. Die Folgen: <strong>Überflutete Keller durch Rückstau</strong>, überschwemmte Straßen und Unterführungen sowie Schäden an Grundstücken und Gebäuden. Die Stadt empfiehlt dringend Rückstauklappen und Elementarschadenversicherungen.</p>
+        </div>
+        
+        <p>Die Stadtentwässerung Mannheim warnt besonders vor verstopften Gullys als häufigste Ursache für Überflutungen. Hausbesitzer müssen selbst technische Maßnahmen gegen Rückstau treffen, da bei fehlenden oder defekten Rückstauklappen fäkalienhaltiges Abwasser Kellerräume überfluten kann.</p>
+    </div>
+
+    <div class="section">
+        <h2>3. Hitzeschutz wird zur städtischen Priorität</h2>
+        
+        <div class="calculation">
+            <h4>Klimadaten und Hitzeentwicklung Mannheim:</h4>
+            <ul>
+                <li>Durchschnittstemperatur: <strong>10,9°C</strong> (675 mm Jahresniederschlag)</li>
+                <li>Zunahme der Sommertage und heißen Tage dokumentiert</li>
+                <li>Rückgang der Frost- und Eistage</li>
+                <li>Erwartete Zunahme von Tropennächten und Starkregen</li>
+            </ul>
+        </div>
+
+        <div class="event-box">
+            <h4>Mannheimer Hitzeaktionsplan in Entwicklung</h4>
+            <p>Die Stadt entwickelt aktuell einen Hitzeaktionsplan als Teil des Klimaanpassungskonzepts. <strong>Bundesweit verursachten die Hitzewellen 2022 etwa 4.500 Hitzetote</strong>, während in Europa mindestens 15.000 Menschen starben. Mannheim ist besonders durch längere Hitzeperioden mit nächtlicher Aufheizung betroffen.</p>
+        </div>
+        
+        <p>Die vergangenen Jahre haben deutlich gemacht, dass Sommer wärmer und Hitzeperioden länger werden. Die nächtliche Abkühlung bleibt zunehmend aus, was besonders für vulnerable Bevölkerungsgruppen gesundheitliche Risiken birgt. Die Stadtklimaanalyse 2020 dokumentiert bereits messbare Veränderungen der lokalen Temperaturverhältnisse.</p>
+    </div>
+
+    <div class="section">
+        <h2>4. Sturmereignisse fordern Einsatzkräfte heraus</h2>
+        
+        <div class="event-box">
+            <h4>Orkan Sabine - Februar 2020</h4>
+            <p>Das Orkantief erreichte Mannheim mit Böen bis <strong>120 km/h</strong> und führte zu <strong>40 unwetterbedingten Feuerwehreinsätzen</strong>. Rund 60 Kräfte waren im Einsatz, 200 weitere in häuslicher Bereitschaft. <strong>Luisenpark und Herzogenriedpark mussten geschlossen werden</strong>. Glücklicherweise gab es keine Verletzten, der Sturm verlief glimpflicher als prognostiziert.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Folgeschäden und Waldgefährdung</h4>
+            <p>Nach Sturmereignissen warnt die Stadt regelmäßig vor Waldspaziergängen. <strong>Umgestürzte Bäume und abgebrochene Äste</strong> machen Wege unpassierbar und bergen Gefahren für Besucher. Aufräumarbeiten können sich über Tage hinziehen. Besonders problematisch: Durch Dürrejahre geschwächte Bäume fallen Orkanböen leichter zum Opfer.</p>
+        </div>
+        
+        <p>Die Sturmserie 2020-2022 mit Sabine, Victoria, Ylenia und Zeynep hat gezeigt, dass Mannheim regelmäßig von Orkantiefs betroffen ist. Diese können städtische Infrastruktur beschädigen und erfordern verstärkte Vorsorgemaßnahmen, besonders bei Bäumen und lose befestigten Gegenständen.</p>
+    </div>
+
+    <div class="section">
+        <h2>5. Dürreauswirkungen in der Region</h2>
+        
+        <p>Mannheim war Teil der <strong>bundesweiten Dürrejahre 2018, 2019 und 2022</strong>, die als die schwersten seit mindestens 250 Jahren gelten. Die extremen Dürreereignisse führten zu:</p>
+
+        <div class="calculation">
+            <h4>Dokumentierte Dürrefolgen:</h4>
+            <ul>
+                <li>Geschwächte Baumbestände in Stadtparks und Wäldern</li>
+                <li>Erhöhte Waldbrandgefahr in der Metropolregion</li>
+                <li>Beeinträchtigung der Rheinschifffahrt durch niedrige Wasserstände</li>
+                <li>Verstärkte Hitzebelastung durch ausgetrocknete städtische Grünflächen</li>
+            </ul>
+        </div>
+        
+        <p>Die langanhaltende Dürre bis 2022 schwächte Bäume nachhaltig und machte sie anfälliger für Sturmschäden. Erst das sehr nasse Jahr 2023 beendete die fünfjährige Dürreperiode in Deutschland.</p>
+    </div>
+
+    <div class="section">
+        <h2>6. Klimaanpassungsmaßnahmen der Stadt</h2>
+        
+        <div class="event-box">
+            <h4>Strategische Klimaanpassung seit 2019</h4>
+            <p>Das <strong>Konzept "Anpassung an den Klimawandel in Mannheim"</strong> identifiziert 71 Maßnahmen in relevanten Handlungsfeldern. Kernprojekte sind der Hitzeaktionsplan, die Fortschreibung der Stadtklimaanalyse 2020 und das Starkregenrisikomanagement der Stadtentwässerung.</p>
+        </div>
+
+        <div class="calculation">
+            <h4>Laufende Anpassungsprojekte:</h4>
+            <ul>
+                <li><strong>Starkregengefahrenkarten:</strong> Sukzessive Erstellung für alle Stadtteile</li>
+                <li><strong>Hitzeaktionsplan:</strong> In Zusammenarbeit mit Gesundheitsamt</li>
+                <li><strong>Hochwasserschutz:</strong> Überschwemmungsgebiete ausgewiesen</li>
+                <li><strong>Frühwarnsysteme:</strong> Pegelüberwachung und Bürgerinformation</li>
+            </ul>
+        </div>
+        
+        <p>Die Stadt beteiligt sich an europäischen Projekten wie LoKlim zur Klimawandelanpassung und arbeitet an der systematischen Verbesserung der Klimaresilienz. Das Starkregenrisikomanagement und die Eigenvorsorge-Beratung sind zentrale Bausteine der Anpassungsstrategie.</p>
+    </div>
+
+    <div class="section">
+        <h2>7. Fazit: Klimawandel bereits in Mannheim angekommen</h2>
+        
+        <p><span class="highlight">Die dokumentierten Klimaschäden belegen eindeutig: Der Klimawandel ist bereits heute in Mannheim messbar und spürbar</span>. Die Häufung von Extremwetterereignissen wie dem 10-jährigen Hochwasser 2024, regelmäßigen Hochwasserwarnungen und Sturmereignissen zeigt eine neue Qualität der Klimarisiken.</p>
+        
+        <p><strong>Besonders kritisch</strong> ist die Kombination verschiedener Risiken: Hochwasser an zwei Flüssen, Starkregenüberflutungen im urbanen Raum, längere Hitzeperioden und häufigere Sturmereignisse belasten die städtische Infrastruktur und die Bevölkerung zunehmend.</p>
+        
+        <p><strong>Die Stadt Mannheim hat strategisch reagiert</strong> mit dem Klimaanpassungskonzept 2019, Starkregengefahrenkarten seit 2022 und dem in Entwicklung befindlichen Hitzeaktionsplan. Diese systematische Herangehensweise muss jedoch intensiviert und beschleunigt werden, um der wachsenden Klimaverwundbarkeit angemessen zu begegnen.</p>
+        
+        <p><strong>Zentrale Handlungsfelder</strong> sind der Ausbau der Starkregenvorsorge, die Verbesserung des Hochwasserschutzes, systematische Hitzeschutzmaßnahmen und die Stärkung der Eigenvorsorge der Bürgerinnen und Bürger. Die Klimaresilienz Mannheims hängt entscheidend von der konsequenten Umsetzung dieser Anpassungsmaßnahmen ab.</p>
+    </div>
+
+    <div class="footnote">
+        <p><strong>Quellen und Datengrundlagen:</strong> Berechnungen und Analysen basieren auf Daten der Stadt Mannheim, Stadtklimaanalyse 2020, Starkregengefahrenkarten, Hochwasserarchiv Rheinneckarblog, Deutschen Wetterdienst, Feuerwehr Mannheim, lokalen Medienberichten und wissenschaftlichen Klimastudien. Alle Schadenssummen in Euro (2025). Pegeldaten Rhein/Neckar-Messstationen Mannheim.</p>
+    </div>
+</body>
+</html>

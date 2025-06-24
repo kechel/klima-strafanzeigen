@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimaschäden im Kreis Landau in der Pfalz</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+                
+                @top-center {
+                    content: "Klimaschäden im Kreis Landau in der Pfalz";
+                    font-size: 10pt;
+                    font-weight: bold;
+                    padding-bottom: 5pt;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @top-right {
+                    content: "23. Juni 2025";
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @bottom-center {
+                    content: "Seite " counter(page) " von " counter(pages);
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11pt;
+                line-height: 1.4;
+                color: #000;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            color: #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            page-break-after: avoid;
+        }
+        
+        .header h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+        
+        .header .subtitle {
+            font-size: 12pt;
+            color: #000;
+            margin: 5px 0;
+        }
+        
+        .header .date {
+            font-size: 10pt;
+            color: #000;
+            margin-top: 15px;
+        }
+        
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            page-break-after: avoid;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0 0 12px 0;
+            text-align: justify;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        .key-figure {
+            font-weight: bold;
+            color: #000;
+        }
+        
+        ul, ol {
+            margin: 10px 0 15px 20px;
+            page-break-inside: avoid;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+        
+        .calculation {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        .event-box {
+            border: 1px solid #666;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: white;
+            page-break-inside: avoid;
+        }
+        
+        .data-reference {
+            font-style: italic;
+            color: #000;
+        }
+        
+        .footnote {
+            font-size: 9pt;
+            color: #000;
+            margin-top: 30px;
+            padding-top: 15px;
+        }
+        
+        .print-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 12pt;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .print-button:hover {
+            background-color: #333;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="print-button no-print" onclick="window.print()">Drucken</button>
+    
+    <div class="header">
+        <h1>Klimaschäden im Kreis Landau in der Pfalz</h1>
+        <div class="subtitle">Dokumentierte Extremwetterereignisse und wirtschaftliche Auswirkungen</div>
+        <div class="date">Erstellt am 23. Juni 2025</div>
+    </div>
+
+    <div class="section">
+        <p><span class="highlight">Das Jahr 2018 stellt einen Wendepunkt in der Klimaschadensbilanz des Kreises Landau dar</span>. Zwei statistisch seltene Starkregenereignisse trafen das Stadtgebiet schwer und führten zu grundlegenden Änderungen im kommunalen Hochwasserschutz. Die Region mit rund <span class="key-figure">2.000 Hektar Rebfläche</span> zeigt dabei sowohl hohe Vulnerabilität als auch bemerkenswerte Anpassungsfähigkeit an klimabedingte Herausforderungen.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Katastrophale Starkregenereignisse 2018</h2>
+        
+        <div class="event-box">
+            <h4>Sintflut vom 11. Juni 2018</h4>
+            <p>Das erste verheerende Starkregenereignis übertraf statistische 100-jährige Ereignisse und <strong>überforderte die Entwässerungsanlagen binnen Minuten vollständig</strong>. Die Fußgängerzone der Innenstadt stand unter Wasser, über <span class="key-figure">100 Keller und Tiefgaragen wurden überflutet</span>. Das Vinzentius-Krankenhaus musste Straßensperrungen verhängen, während die Reiterstraße komplett überschwemmt war.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Zweites Extremereignis am 21. Juli 2018</h4>
+            <p>Nur sechs Wochen nach dem ersten Ereignis traf erneut ein als "Sintflut" bezeichneter Starkregen die Stadt. Die Stadtwerke EWL verzeichneten <strong>über 100 Schadensmeldungen zu Kanalproblemen</strong>. Feuerwehr und THW befanden sich über Wochen im Dauereinsatz. Diese doppelte Belastung führte zu einer grundlegenden Neuausrichtung des städtischen Hochwasserschutzes.</p>
+        </div>
+        
+        <div class="calculation">
+            <h4>Direkte Investitionen in Hochwasserschutz nach 2018:</h4>
+            <ul>
+                <li><strong>77.000 Euro</strong> für umfassendes Hochwasserschutzkonzept (90% staatlich gefördert)</li>
+                <li>13-Bereiche umfassende Risikoanalyse für Landau</li>
+                <li><strong>440.000 Euro</strong> in Godramstein für Hochwasserschutzmaßnahmen</li>
+                <li>Rückhaltebecken und zugehörige Infrastruktur</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Landwirtschaftliche Dürre-Auswirkungen</h2>
+        
+        <p>Als eine der größten weinproduzierenden Gemeinden Deutschlands ist Landau besonders von klimabedingten Schäden in der Landwirtschaft betroffen. Die dokumentierten <strong>Dürrejahre 2018, 2019-2020, 2022 und 2025</strong> haben erhebliche Auswirkungen auf die lokale Weinwirtschaft.</p>
+
+        <div class="calculation">
+            <h4>Bemerkenswerte Resilienz der Pfalz-Region:</h4>
+            <ul>
+                <li><strong>Rheinland-Pfalz und Saarland:</strong> Einzige Bundesländer ohne Bundeshilfen wegen Dürreschäden</li>
+                <li><strong>"Europaweit einzigartiges Bewässerungsnetzwerk"</strong> der Vorderpfalz</li>
+                <li>Abdeckung von <strong>13.500 Hektar</strong> landwirtschaftlicher Fläche</li>
+                <li>Erfolgreiche Anpassungsmaßnahmen zeigen Wirkung</li>
+            </ul>
+        </div>
+
+        <div class="event-box">
+            <h4>Massive Forstschäden durch Dürre</h4>
+            <p>Der Forstbereich zeigt dramatische Auswirkungen: Über <span class="key-figure">1 Million Fichten mussten 2020 notgeschlagen werden</span>, nachdem bereits in den beiden Vorjahren 3,5 Millionen Bäume aufgrund von Dürreschäden und Borkenkäferbefall gefällt werden mussten. Die wirtschaftlichen Verluste erreichten <strong>"niedrige zweistellige Millionenbeträge"</strong>.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Infrastrukturschäden und Hitzewellen</h2>
+        
+        <div class="event-box">
+            <h4>Geothermiekraftwerk Landau - Bodenhebungen 2013</h4>
+            <p>Beim Geothermiekraftwerk Landau wurden 2013 <strong>Bodenhebungen von 3,5 cm</strong> dokumentiert, mit maximalen Verschiebungsraten von 16 cm pro Jahr während des Sommers 2013. Diese Deformationen betrafen etwa einen Quadratkilometer und belasteten die technische Infrastruktur erheblich.</p>
+        </div>
+
+        <div class="calculation">
+            <h4>Regionale Hitzebelastung in Rheinland-Pfalz:</h4>
+            <ul>
+                <li><strong>Temperaturanstieg seit 1881: +1,7°C</strong></li>
+                <li>2020: Wärmstes Jahr seit Aufzeichnungsbeginn</li>
+                <li>Deutliche Zunahme der Sommertage (über 25°C) und heißen Tage (über 30°C)</li>
+                <li><strong>19.300 hitzebedingte Todesfälle</strong> zwischen 2018-2020 deutschlandweit</li>
+                <li>Moseltal, Rheinhessen und Vorderpfalz besonders betroffen</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Ahrtal-Katastrophe 2021 und regionale Solidarität</h2>
+        
+        <p>Obwohl das Ahrtal-Hochwasser Landau nicht direkt traf, verdeutlicht es die Dimension klimabedingter Schäden in der Region. <span class="highlight">Rheinland-Pfalz erhielt einen 15 Milliarden Euro Wiederaufbaufonds</span> bei Gesamtschäden von über 33,4 Milliarden Euro.</p>
+
+        <div class="event-box">
+            <h4>Landaus Katastrophenhilfe</h4>
+            <p>Landau leistete erhebliche Katastrophenhilfe mit <strong>über 300 Einsatzkräften im 24-Stunden-Rotationssystem</strong>. Diese Solidarität zeigt die regionale Vernetzung bei Klimakatastrophen und die Notwendigkeit überregionaler Hilfssysteme.</p>
+        </div>
+
+        <div class="event-box">
+            <h4>Überschwemmungen Mai 2024 Südwestpfalz</h4>
+            <p>Die Überschwemmungen in der Südwestpfalz zeigten erneut die anhaltende Bedrohung durch Starkregen. Während Landau selbst weniger betroffen war, verdeutlichten die Ereignisse die regionale Vulnerabilität gegenüber Extremwetterereignissen.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Wirtschaftliche Schadensbilanz</h2>
+        
+        <div class="calculation">
+            <h4>Klimaschäden und Anpassungskosten:</h4>
+            <ul>
+                <li><strong>2024 deutschlandweit: 5,7 Milliarden Euro</strong> klimabedingte Schäden</li>
+                <li>Davon <strong>2,6 Milliarden Euro</strong> durch Starkregen und Überschwemmungen</li>
+                <li>Warnung vor <strong>Verdopplung der Versicherungsprämien</strong> binnen zehn Jahren</li>
+                <li>Lokale Investitionen Landau: <strong>über 500.000 Euro</strong> in Hochwasserschutz</li>
+            </ul>
+        </div>
+
+        <p>Die Versicherungswirtschaft warnt vor einer möglichen Verdopplung der Prämien ohne verstärkte Anpassungsmaßnahmen. Diese Entwicklung macht präventive Investitionen in den Klimaschutz wirtschaftlich noch dringlicher.</p>
+    </div>
+
+    <div class="section">
+        <h2>6. Innovative Anpassungsstrategien im Weinbau</h2>
+        
+        <div class="event-box">
+            <h4>Erfolgreiche Weinwirtschafts-Anpassung</h4>
+            <ul>
+                <li><strong>Ausbau der Tröpfchenbewässerung</strong> in den Weinbergen</li>
+                <li>Verstärkte Nutzung <strong>pilzwiderstandsfähiger Rebsorten (PIWI-Sorten)</strong></li>
+                <li>Expansion des ökologischen Weinbaus</li>
+                <li>Verbesserte Bodenwasserspeicherung durch Zwischenfruchtanbau</li>
+                <li>Präzise Bewässerungstechnologien</li>
+            </ul>
+        </div>
+
+        <div class="calculation">
+            <h4>Kommunale Klimaanpassung seit 2019:</h4>
+            <ul>
+                <li><strong>Klimaanpassungskonzept</strong> entwickelt</li>
+                <li><strong>Klimanotstand</strong> ausgerufen</li>
+                <li>Ziel: <strong>90% Emissionsreduktion bis 2050</strong></li>
+                <li>Integriertes Katastrophenmanagement mit Kreis Südliche Weinstraße</li>
+                <li>Kontinuierliche Modernisierung der Notfallausrüstung</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Fazit: Klimaresilienz durch proaktive Anpassung</h2>
+        
+        <p><span class="highlight">Der Kreis Landau zeigt ein deutliches Muster klimabedingter Schäden: Während extreme Niederschlagsereignisse akute Katastrophenschäden verursachen, führen Hitze und Dürre zu anhaltenden wirtschaftlichen Belastungen</span>.</p>
+        
+        <p><strong>Bemerkenswerte Anpassungsfähigkeit:</strong> Die Region hat trotz erheblicher Klimabelastungen ihre wirtschaftliche Basis erhalten können. Die Kombination aus bewährter Bewässerungsinfrastruktur, innovativen landwirtschaftlichen Praktiken und proaktiven kommunalen Maßnahmen zeigt, dass gezielte Klimaanpassung wirksam sein kann.</p>
+        
+        <div class="event-box">
+            <h4>Kritische Erfolgsfaktoren der Landauer Klimaanpassung:</h4>
+            <ul>
+                <li><strong>Europaweit einzigartiges Bewässerungsnetzwerk</strong> als Resilienzfaktor</li>
+                <li>Schnelle Reaktion auf die Starkregenereignisse 2018 mit systematischen Schutzmaßnahmen</li>
+                <li>Innovative Weinbau-Anpassung mit zukunftsfähigen Technologien</li>
+                <li>Überregionale Kooperation bei Katastrophenhilfe</li>
+                <li>Proaktive kommunale Klimapolitik seit 2019</li>
+            </ul>
+        </div>
+        
+        <p><strong>Herausforderungen bleiben bestehen:</strong> Die Klimabelastungen werden weiterhin zunehmen. Die Erfolge in Landau zeigen jedoch, dass mit gezielten Investitionen, regionaler Kooperation und innovativen Anpassungsstrategien eine wirksame Klimaresilienz aufgebaut werden kann.</p>
+    </div>
+
+    <div class="footnote">
+        <p><strong>Quellen und Datengrundlagen:</strong> Berechnungen und Analysen basieren auf Daten der Stadtwerke EWL Landau, Feuerwehr Landau, THW-Einsatzberichten, Rheinpfalz-Berichterstattung, LANUV Rheinland-Pfalz, Deutschen Wetterdienst, Gesamtverband der Deutschen Versicherungswirtschaft, lokalen Weinbaubetrieben, kommunalen Klimaschutzkonzepten und wissenschaftlichen Klimastudien. Alle Schadenssummen in Euro (Stand 2025).</p>
+    </div>
+</body>
+</html>
