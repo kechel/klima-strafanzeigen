@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stromgestehungskosten (LCOE) Deutschland 2024</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+                
+                @top-center {
+                    content: "Stromgestehungskosten (LCOE) Deutschland 2024";
+                    font-size: 10pt;
+                    font-weight: bold;
+                    padding-bottom: 5pt;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @top-right {
+                    content: "30. Juni 2025";
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                @bottom-center {
+                    content: "Seite " counter(page) " von " counter(pages);
+                    font-size: 9pt;
+                    color: #000;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11pt;
+                line-height: 1.4;
+                color: #000;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            color: #000;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            page-break-after: avoid;
+        }
+        
+        .header h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+        
+        .header .subtitle {
+            font-size: 12pt;
+            color: #000;
+            margin: 5px 0;
+        }
+        
+        .header .date {
+            font-size: 10pt;
+            color: #000;
+            margin-top: 15px;
+        }
+        
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            page-break-after: avoid;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0 0 12px 0;
+            text-align: justify;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            padding: 2px 4px;
+            font-weight: bold;
+        }
+        
+        .key-figure {
+            font-weight: bold;
+            color: #000;
+        }
+        
+        ul, ol {
+            margin: 10px 0 15px 20px;
+            page-break-inside: avoid;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+        
+        .calculation {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        
+        .legal-reference {
+            font-style: italic;
+            color: #000;
+        }
+        
+        .footnote {
+            font-size: 9pt;
+            color: #000;
+            margin-top: 30px;
+            padding-top: 15px;
+        }
+        
+        .print-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 12pt;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .print-button:hover {
+            background-color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .category-header {
+            font-weight: bold;
+            background-color: #e8e8e8;
+        }
+        
+        .cost-column {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .percentage-column {
+            text-align: center;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">🖨️ Drucken</button>
+    
+    <div class="header">
+        <h1>Stromgestehungskosten (LCOE) Deutschland 2024</h1>
+        <div class="subtitle">Vollkostenvergleich aller Energieträger ohne Förderung</div>
+        <div class="date">Erstellt am 30. Juni 2025</div>
+    </div>
+
+    <div class="section">
+        <p><span class="highlight">Erneuerbare Energien sind ohne jede Förderung bereits die günstigsten Stromquellen in Deutschland</span>. Solar- und Windkraft kosten nur <span class="key-figure">4,1-9,2 Cent/kWh</span>, während fossile Kraftwerke mindestens 10,9 Cent/kWh benötigen. Gleichzeitig behalten erneuerbare Energien 45-65% der Wertschöpfung in Deutschland, während fossile Energien 75-85% ins Ausland abfließen lassen.</p>
+        
+        <p><em>Alle Kosten beinhalten: Investition, Betrieb, Wartung, Rückbau über gesamte Anlagenlebensdauer</em></p>
+    </div>
+
+    <div class="section">
+        <h2>Vollkostenvergleich aller Energieträger</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Energieträger</th>
+                    <th>Stromgestehungskosten</th>
+                    <th>💰 Bleibt in DE</th>
+                    <th>🌍 Geht ins Ausland</th>
+                    <th>Volkswirtschaft</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category-header">
+                    <td colspan="5"><strong>SOLAR</strong></td>
+                </tr>
+                <tr>
+                    <td>PV Freifläche (>1 MW)</td>
+                    <td class="cost-column">4,1 - 6,9 Cent/kWh</td>
+                    <td class="percentage-column">~45%</td>
+                    <td class="percentage-column">~55%</td>
+                    <td>Module aus China, Installation lokal</td>
+                </tr>
+                <tr>
+                    <td>PV Dach groß (>30 kW)</td>
+                    <td class="cost-column">5,7 - 12,0 Cent/kWh</td>
+                    <td class="percentage-column">~50%</td>
+                    <td class="percentage-column">~50%</td>
+                    <td>Mehr lokale Wertschöpfung</td>
+                </tr>
+                <tr>
+                    <td>PV Dach klein (≤30 kW)</td>
+                    <td class="cost-column">6,3 - 14,4 Cent/kWh</td>
+                    <td class="percentage-column">~55%</td>
+                    <td class="percentage-column">~45%</td>
+                    <td>Handwerk/Installation lokal</td>
+                </tr>
+                <tr>
+                    <td>Agri-PV</td>
+                    <td class="cost-column">5,2 - 11,9 Cent/kWh</td>
+                    <td class="percentage-column">~50%</td>
+                    <td class="percentage-column">~50%</td>
+                    <td>Spezielle Montagesysteme</td>
+                </tr>
+                
+                <tr class="category-header">
+                    <td colspan="5"><strong>WINDKRAFT</strong></td>
+                </tr>
+                <tr>
+                    <td>Wind Onshore</td>
+                    <td class="cost-column">4,3 - 9,2 Cent/kWh</td>
+                    <td class="percentage-column">~65%</td>
+                    <td class="percentage-column">~35%</td>
+                    <td>Starke deutsche Industrie</td>
+                </tr>
+                <tr>
+                    <td>Wind Offshore</td>
+                    <td class="cost-column">5,5 - 10,3 Cent/kWh</td>
+                    <td class="percentage-column">~60%</td>
+                    <td class="percentage-column">~40%</td>
+                    <td>Deutsche Offshore-Expertise</td>
+                </tr>
+                
+                <tr class="category-header">
+                    <td colspan="5"><strong>BIOENERGIE</strong></td>
+                </tr>
+                <tr>
+                    <td>Feste Biomasse</td>
+                    <td class="cost-column">11,5 - 23,5 Cent/kWh</td>
+                    <td class="percentage-column">~85%</td>
+                    <td class="percentage-column">~15%</td>
+                    <td>Rohstoffe + Technik deutsch</td>
+                </tr>
+                <tr>
+                    <td>Biogas</td>
+                    <td class="cost-column">20,1 - 32,5 Cent/kWh</td>
+                    <td class="percentage-column">~90%</td>
+                    <td class="percentage-column">~10%</td>
+                    <td>Vollständig regional</td>
+                </tr>
+                
+                <tr class="category-header">
+                    <td colspan="5"><strong>KONVENTIONELL</strong></td>
+                </tr>
+                <tr>
+                    <td>Gas und Dampf (GuD)</td>
+                    <td class="cost-column">10,9 - 18,1 Cent/kWh</td>
+                    <td class="percentage-column">~25%</td>
+                    <td class="percentage-column">~75%</td>
+                    <td>Gasimporte dominieren</td>
+                </tr>
+                <tr>
+                    <td>Kernkraft</td>
+                    <td class="cost-column">13,6 - 49,0 Cent/kWh</td>
+                    <td class="percentage-column">~20%</td>
+                    <td class="percentage-column">~80%</td>
+                    <td>Uran 100% Import</td>
+                </tr>
+                <tr>
+                    <td>Braunkohle</td>
+                    <td class="cost-column">15,1 - 25,7 Cent/kWh</td>
+                    <td class="percentage-column">~80%</td>
+                    <td class="percentage-column">~20%</td>
+                    <td>Deutscher Rohstoff</td>
+                </tr>
+                <tr>
+                    <td>Gasturbine (flexibel)</td>
+                    <td class="cost-column">15,4 - 32,6 Cent/kWh</td>
+                    <td class="percentage-column">~25%</td>
+                    <td class="percentage-column">~75%</td>
+                    <td>Gasimporte dominieren</td>
+                </tr>
+                <tr>
+                    <td>Steinkohle</td>
+                    <td class="cost-column">17,3 - 29,3 Cent/kWh</td>
+                    <td class="percentage-column">~15%</td>
+                    <td class="percentage-column">~85%</td>
+                    <td>Kohle 100% Import</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Wichtige Erkenntnisse</h2>
+        
+        <h3>Erneuerbare sind ohne Förderung konkurrenzfähig</h3>
+        <p><strong>Solar und Wind</strong> sind bereits heute die <strong>günstigsten Stromquellen</strong>. PV-Freiflächenanlagen und Onshore-Wind kosten nur <span class="key-figure">4-7 Cent/kWh</span>. Selbst kleine Dach-PV ist günstiger als alle fossilen Kraftwerke.</p>
+        
+        <h3>Fossile Kraftwerke werden teurer</h3>
+        <p><strong>Steigende CO₂-Preise</strong> treiben Kosten von Kohle und Gas. Selbst das günstigste GuD-Kraftwerk kostet <strong>mindestens 11 Cent/kWh</strong>. <strong>Kernkraft</strong> hat sehr hohe Bandbreite (13-49 Cent) - ohne Endlagerung.</p>
+        
+        <h3>Bioenergie ist teuer aber flexibel</h3>
+        <p><strong>Biogas über 20 Cent/kWh</strong> - aber grundlastfähig. Feste Biomasse günstiger, aber immer noch über 11 Cent/kWh.</p>
+    </div>
+
+    <div class="section">
+        <div class="calculation">
+            <h4>Kostentrends bis 2045</h4>
+            <ul>
+                <li><strong>Erneuerbare:</strong> Weitere Kostensenkung auf 3-8 Cent/kWh</li>
+                <li><strong>Fossile:</strong> Steigende Kosten durch höhere CO₂-Preise</li>
+                <li><strong>Kernkraft:</strong> Bleibt teuer und unflexibel</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Fazit</h2>
+        
+        <p><strong>Solar und Wind sind ohne jede Förderung bereits die günstigsten Stromquellen.</strong> Die EEG-Förderung beschleunigt nur den Ausbau - wirtschaftlich sind erneuerbare Energien längst konkurrenzfähig.</p>
+        
+        <p><span class="highlight">Volkswirtschaftlich profitiert Deutschland doppelt:</span> Niedrigere Stromkosten und höhere inländische Wertschöpfung bei erneuerbaren Energien (45-65%) gegenüber fossilen Importen (nur 15-25% verbleiben in Deutschland).</p>
+    </div>
+
+    <div class="footnote">
+        <p><strong>Quelle:</strong> Fraunhofer ISE "Stromgestehungskosten Erneuerbare Energien" Juli 2024. Alle Kosten beinhalten Investition, Betrieb, Wartung und Rückbau über die gesamte Anlagenlebensdauer ohne staatliche Förderung.</p>
+    </div>
+</body>
+</html>
