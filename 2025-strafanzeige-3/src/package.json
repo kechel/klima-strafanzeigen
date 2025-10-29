@@ -1,0 +1,16 @@
+{
+  "name": "strafanzeige-builder",
+  "version": "1.0.0",
+  "description": "ODT Builder für Strafanzeigen aus Markdown",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "dependencies": {
+    "simple-odf": "^3.0.3",
+    "fs-extra": "^11.1.1"
+  },
+  "author": "Jan Kechel",
+  "license": "MIT"
+}
