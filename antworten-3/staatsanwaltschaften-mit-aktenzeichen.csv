@@ -1,12 +1,12 @@
-Name,Strasse,PLZ,Ort,Email,Bundesland,Aktenzeichen
-Staatsanwaltschaft Konstanz,Postfach 10 19 42,78419,Konstanz,poststelle@sta-konstanz.justiz.bwl.de,Baden-Württemberg,40 AR 594/25
+Name,Strasse,PLZ,Ort,Aktenzeichen,Verschickt
+Staatsanwaltschaft Konstanz,Postfach 10 19 42,78419,Konstanz,40 AR 594/25,09.11.2025
 Staatsanwaltschaft Ravensburg,Seestraße 1,88214,Ravensburg
-Staatsanwaltschaft Potsdam,Postfach 601355,14413,Potsdam,poststelle@sta-potsdam.brandenburg.de,Brandenburg
-Staatsanwaltschaft Nürnberg-Fürth,Fürther Str. 112,90429,Nürnberg,poststelle@sta-n.bayern.de,Bayern
-Staatsanwaltschaft Kempten,Residenzplatz 4,87435,Kempten,poststelle@sta-ke.bayern.de,Bayern
-Staatsanwaltschaft Lüneburg,Postfach 28 80,21318,Lüneburg,info@sta-lg.niedersachsen.de,Niedersachsen
-Staatsanwaltschaft Kleve,Große Straße 106,47533,Kleve,poststelle@sta-kleve.nrw.de,NRW
-Staatsanwaltschaft Cottbus,Postfach 101243,03012,Cottbus,poststelle@sta-cottbus.brandenburg.de,Brandenburg
+Staatsanwaltschaft Potsdam,Postfach 601355,14413,Potsdam
+Staatsanwaltschaft Nürnberg-Fürth,Fürther Str. 112,90429,Nürnberg
+Staatsanwaltschaft Kempten,Residenzplatz 4,87435,Kempten
+Staatsanwaltschaft Lüneburg,Postfach 28 80,21318,Lüneburg
+Staatsanwaltschaft Kleve,Große Straße 106,47533,Kleve
+Staatsanwaltschaft Cottbus,Postfach 101243,03012,Cottbus
 Staatsanwaltschaft Itzehoe,Feldschmiedekamp 2,25524,Itzehoe,info.sta-itzehoe@justiz.landsh.de,Schleswig-Holstein
 Staatsanwaltschaft Krefeld,Postfach 10 10 55,47710,Krefeld,poststelle@sta-krefeld.nrw.de,NRW
 Staatsanwaltschaft Zwickau,Werdauer Straße 62,08009,Zwickau,info.sta-zwickau@justiz.sachsen.de,Sachsen
