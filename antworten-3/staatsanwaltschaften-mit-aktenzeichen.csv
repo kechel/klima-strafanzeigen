@@ -1,7 +1,7 @@
 Name,Strasse,PLZ,Ort,Aktenzeichen,Verschickt
 Staatsanwaltschaft Konstanz,Postfach 10 19 42,78419,Konstanz,40 AR 594/25,09.11.2025
 Staatsanwaltschaft Freiburg,H.-v.-Stephan-Str. 1,79100,Freiburg,5140 Js 35954/25,15.11.2025
-Staatsanwaltschaft Mosbach,Hauptstrasse 87-897,74821,Mosbach,21 JS 9687/25,15.11.2025
+Staatsanwaltschaft Mosbach,Hauptstrasse 87-897,74821,Mosbach,21 JS 9687/25,15.11.2025,02.12.2025
 Staatsanwaltschaft Kleve,Große Straße 106,47533,Kleve,503 Js 285/25,18.11.2025
 Staatsanwaltschaft Kempten,Residenzplatz 4,87435,Kempten,310 AR 1865/25,20.11.2025
 Staatsanwaltschaft des Landes Brandenburg,Steinstrasse 61,14767,Brandenburg an der Havel,52 AR 430/25,20.11.2025
@@ -10,6 +10,7 @@ Staatsanwaltschaft Bayreuth,Wittelsbacherring 22,95444,Bayreuth,173 UJs 5711/25,
 Staatsanwaltschaft Memmingen,Hallhof 1,87700,Memmingen,201 AR 716/25,26.11.2025
 Staatsanwaltschaft Dortmund,Postfach 102942,44029,Dortmund,71 Js 38/25,28.11.2025
 Staatsanwaltschaft Aachen,Postfach 10 17 16,52017,Aachen,51 AR 84/25,02.12.2025
+Staatsanwaltschaft Paderborn,Postfach 2520,33055,Paderborn,27 UJs 55/25,03.12.2025
 Staatsanwaltschaft Potsdam,Postfach 601355,14413,Potsdam
 Staatsanwaltschaft Nürnberg-Fürth,Fürther Str. 112,90429,Nürnberg
 Staatsanwaltschaft Lüneburg,Postfach 28 80,21318,Lüneburg
@@ -30,7 +31,6 @@ Staatsanwaltschaft Landau in der Pfalz,Marienring 13,76829,Landau,poststelle@sta
 Staatsanwaltschaft Ellwangen,Marktplatz 6,73479,Ellwangen,poststelle@sta-ellwangen.justiz.bwl.de,Baden-Württemberg
 Staatsanwaltschaft Regensburg Straubing,Schlossplatz 2a14,94315,Straubing,poststelle@sta-r.bayern.de,Bayern
 Staatsanwaltschaft Erfurt,Postfach 90 04 34,99107,Erfurt,poststelle.sta-erfurt@justiz.thueringen.de,Thüringen
-Staatsanwaltschaft Paderborn,Postfach 2520,33055,Paderborn,poststelle@sta-paderborn.nrw.de,NRW
 Staatsanwaltschaft Frankfurt (Oder),Postfach 1352,15203,Frankfurt (Oder),poststelle@sta-ffo.brandenburg.de,Brandenburg
 Staatsanwaltschaft Magdeburg,Breiter Weg 203-206,39104,Magdeburg,poststelle@sta-magdeburg.sachsen-anhalt.de,Sachsen-Anhalt
 Staatsanwaltschaft Traunstein,Herzog-Otto-Str. 1,83278,Traunstein,poststelle@sta-ts.bayern.de,Bayern
