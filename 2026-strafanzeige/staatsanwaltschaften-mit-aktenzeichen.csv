@@ -1,0 +1,58 @@
+Name,Strasse,PLZ,Ort,Aktenzeichen,Verschickt
+Staatsanwaltschaft Essen,,45117 Essen,
+Staatsanwaltschaft Stuttgart,Neckarstraße 145,70190 Stuttgart,
+Staatsanwaltschaft Konstanz,Postfach 10 19 42,78419,Konstanz,40 AR 594/25,09.11.2025
+Staatsanwaltschaft Freiburg,H.-v.-Stephan-Str. 1,79100,Freiburg,5140 Js 35954/25,15.11.2025
+Staatsanwaltschaft Mosbach,Hauptstrasse 87-897,74821,Mosbach,21 JS 9687/25,15.11.2025,02.12.2025
+Staatsanwaltschaft Kleve,Große Straße 106,47533,Kleve,503 Js 285/25,18.11.2025
+Staatsanwaltschaft Kempten,Residenzplatz 4,87435,Kempten,310 AR 1865/25,20.11.2025
+Staatsanwaltschaft des Landes Brandenburg,Steinstrasse 61,14767,Brandenburg an der Havel,52 AR 430/25,20.11.2025
+Staatsanwaltschaft Ravensburg,Seestraße 1,88214,Ravensburg,56 Js 24654/25,20.11.2025
+Staatsanwaltschaft Bayreuth,Wittelsbacherring 22,95444,Bayreuth,173 UJs 5711/25,23.11.2025
+Staatsanwaltschaft Memmingen,Hallhof 1,87700,Memmingen,201 AR 716/25,26.11.2025
+Staatsanwaltschaft Dortmund,Postfach 102942,44029,Dortmund,71 Js 38/25,28.11.2025
+Staatsanwaltschaft Aachen,Postfach 10 17 16,52017,Aachen,51 AR 84/25,02.12.2025
+Staatsanwaltschaft Paderborn,Postfach 2520,33055,Paderborn,27 UJs 55/25,03.12.2025
+Staatsanwaltschaft Würzburg,Ottostraße 5,97070,Würzburg,611 AR 478/25 Fre,-- kein geeignetes Projekt / UVP gefunden
+Staatsanwaltschaft Potsdam,Postfach 601355,14413,Potsdam
+Staatsanwaltschaft Nürnberg-Fürth,Fürther Str. 112,90429,Nürnberg
+Staatsanwaltschaft Lüneburg,Postfach 28 80,21318,Lüneburg
+Staatsanwaltschaft Cottbus,Postfach 101243,03012,Cottbus
+Staatsanwaltschaft Itzehoe,Feldschmiedekamp 2,25524,Itzehoe,info.sta-itzehoe@justiz.landsh.de,Schleswig-Holstein
+Staatsanwaltschaft Krefeld,Postfach 10 10 55,47710,Krefeld,poststelle@sta-krefeld.nrw.de,NRW
+Staatsanwaltschaft Zwickau,Werdauer Straße 62,08009,Zwickau,info.sta-zwickau@justiz.sachsen.de,Sachsen
+Staatsanwaltschaft München I,Nymphenburger Straße 16,80335,München,poststelle@sta-m1.bayern.de,Bayern
+Staatsanwaltschaft München II,Leonrodstraße 21,80636,München,poststelle@sta-m2.bayern.de,Bayern
+Staatsanwaltschaft Rottweil,Schillerstr. 65,78628,Rottweil,poststelle@sta-rottweil.justiz.bwl.de,Baden-Württemberg
+Staatsanwaltschaft Augsburg,Gögginger Straße 101,86199,Augsburg,poststelle@sta-a.bayern.de,Bayern
+Staatsanwaltschaft Gera,Postfach 17521,07507,Gera,poststelle.sta-gera@justiz.thueringen.de,Thüringen
+Staatsanwaltschaft Heidelberg,Kurfürsten-Anlage 15,69115,Heidelberg,poststelle@sta-heidelberg.justiz.bwl.de,Baden-Württemberg
+Staatsanwaltschaft Dessau-Roßlau,Ruststrasse 52,06844,Dessau-Roßlau,poststelle@sta-dessau.sachsen-anhalt.de,Sachsen-Anhalt
+Staatsanwaltschaft Halle (Saale),Postfach 100256,06141,Halle (Saale),poststelle@sta-halle.sachsen-anhalt.de,Sachsen-Anhalt
+Staatsanwaltschaft Frankfurt am Main,Hahnenstrasse 25,60528,Frankfurt am Main,staatsanwaltschaft@sta-ffm.justiz.hessen.de,Hessen
+Staatsanwaltschaft Landau in der Pfalz,Marienring 13,76829,Landau,poststelle@sta-ld.justiz.rlp.de,Rheinland-Pfalz
+Staatsanwaltschaft Ellwangen,Marktplatz 6,73479,Ellwangen,poststelle@sta-ellwangen.justiz.bwl.de,Baden-Württemberg
+Staatsanwaltschaft Regensburg Straubing,Schlossplatz 2a14,94315,Straubing,poststelle@sta-r.bayern.de,Bayern
+Staatsanwaltschaft Erfurt,Postfach 90 04 34,99107,Erfurt,poststelle.sta-erfurt@justiz.thueringen.de,Thüringen
+Staatsanwaltschaft Frankfurt (Oder),Postfach 1352,15203,Frankfurt (Oder),poststelle@sta-ffo.brandenburg.de,Brandenburg
+Staatsanwaltschaft Magdeburg,Breiter Weg 203-206,39104,Magdeburg,poststelle@sta-magdeburg.sachsen-anhalt.de,Sachsen-Anhalt
+Staatsanwaltschaft Traunstein,Herzog-Otto-Str. 1,83278,Traunstein,poststelle@sta-ts.bayern.de,Bayern
+Staatsanwaltschaft Zweibrücken,Postfach 01461,66464,Zweibrücken,poststelle@sta-zw.justiz.rlp.de,Rheinland-Pfalz
+Staatsanwaltschaft Weiden i.d.OPf.,Ledererstrasse 9,92637,Weiden,poststelle@sta-wen.bayern.de,Bayern
+Staatsanwaltschaft Oldenburg,Postfach 92 19,26140,Oldenburg,info@sta-ol.niedersachsen.de,Niedersachsen
+Staatsanwaltschaft Memmingen (Neu-Ulm),Schützenstraße 17,89231,Neu-Ulm,poststelle@sta-mm.bayern.de,Bayern
+Staatsanwaltschaft Landshut,Maximilianstrasse 25,84028,Landshut,poststelle@sta-la.bayern.de,Bayern
+Staatsanwaltschaft Braunschweig,Postfach 45 12,38035,Braunschweig,info@sta-bs.niedersachsen.de,Niedersachsen
+Staatsanwaltschaft Verden,Am Allerufer 8,27283,Verden,info@sta-ver.niedersachsen.de,Niedersachsen
+Staatsanwaltschaft Gießen,Marburger Strasse 2,35390,Gießen,staatsanwaltschaft@sta-gi.justiz.hessen.de,Hessen
+Staatsanwaltschaft Rostock,Postfach 101059,18001,Rostock,poststelle.staatsanwaltschaft@justiz.mv-regierung.de,Mecklenburg-Vorpommern
+Staatsanwaltschaft Hannover,Volgersweg 67,30175,Hannover,info@sta-hannover.niedersachsen.de,Niedersachsen
+Staatsanwaltschaft Schweinfurt,Rüfferstrasse 1,97421,Schweinfurt,poststelle@sta-sw.bayern.de,Bayern
+Staatsanwaltschaft Bochum,Josef-Neuberger-Strasse 1,44787,Bochum,poststelle@sta-bochum.nrw.de,NRW
+Staatsanwaltschaft Bielefeld,Rohrteichstr. 16,33602,Bielefeld,poststelle@sta-bielefeld.nrw.de,NRW
+Staatsanwaltschaft Marburg,Universitätsstrasse 48,35037,Marburg,staatsanwaltschaft@sta-mr.justiz.hessen.de,Hessen
+Staatsanwaltschaft Bamberg,Lorenz-Krapp-Park 1,96052,Bamberg,poststelle@sta-ba.bayern.de,Bayern
+Staatsanwaltschaft Passau,Domplatz 7a,94032,Passau,poststelle@sta-pa.bayern.de,Bayern
+Staatsanwaltschaft Hamburg,Postfach 30 52 61,20316,Hamburg,info@sta-hh.justiz.hamburg.de,Hamburg
+Staatsanwaltschaft Mannheim,Schlossplatz 4-6,68141,Mannheim,poststelle@sta-mannheim.justiz.bwl.de,Baden-Württemberg
+Staatsanwaltschaft Berlin,,14548,Berlin,postfach@sta.berlin.de,Berlin
