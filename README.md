@@ -1,5 +1,8 @@
 https://co2-entnahme.info/
 
+Petition: https://weact.campact.de/p/gud-kosten-ausweisen
+
+
 1. Fossiles CO₂ ist klimaschädlich – Wissenschaftlicher Konsens (IPCC)
 1. Das 2°C-Ziel ist gesetzlich verankert – Pariser Abkommen, KSG
 1. Das CO₂-Budget für 1,5°C ist aufgebraucht – jede weitere Emission erfordert eine Entfernung (PIK, Copernicus, 3-Jahres-Ø > 1,5°C)
