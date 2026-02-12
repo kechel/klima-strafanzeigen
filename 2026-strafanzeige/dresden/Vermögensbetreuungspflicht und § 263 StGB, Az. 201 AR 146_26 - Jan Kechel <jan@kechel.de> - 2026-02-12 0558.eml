@@ -1,0 +1,436 @@
+X-Envelope-From: <jan@kechel.de>
+X-Envelope-To: <jan@kechel.de>
+X-Delivery-Time: 1770872312
+X-UID: 437965
+Return-Path: <jan@kechel.de>
+ARC-Seal: i=2; a=rsa-sha256; t=1770872312; cv=pass;
+    d=strato.com; s=strato-dkim-0002;
+    b=g+XWZTbyuo9oy12gCYhafchJ891vNBMrmedc4Dz+QhERKwP28vyR3ZU610jF2Qcboi
+    wdotMunXjw2u/qSzUI8EJZaeuOeFQWWyG6WcMx7lNPlWsZ7NBDM8VaXntLQ+fL3YE4e/
+    wvpzDogMFITPSvOpX1VIZ5gx+fPQggfeAtFyQwSCbB9q8JZHAq0RxAD4njl8tfVm3gir
+    Jc4mGuvR2MQDU2vh0r50DhHeApQDper6Nu4cPCrF+L8vOOBH76ByJi9WlJumSdpT2HoY
+    J8O8KqcEExRzm58k0xppDS5wGu3vHtdFjczWfv+lkXTw2wdBSo8hDc6q9RJmrmF00X+T
+    aucg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; t=1770872312;
+    s=strato-dkim-0002; d=strato.com;
+    h=Subject:From:To:Date:Message-ID:Cc:Date:From:Subject:Sender;
+    bh=zpRkAMZUu9Fdu4oqJ3VbKp4+0RPFsvhrGVsyJNQERl4=;
+    b=kRPY+LyVMjt7hYRrHBoZK+ayQAHP6Yt/B1dkL7gA6uuUiP11HkPAy8E2CxZxtJCa51
+    IbBz/xWX6CU5vNLM8x7FMuFGunq+q1S2aE48Mf+MfatkAugbIYENoQkuE2XPQuyULK0Y
+    Ju89OCgYfuc11nP6N2ASuaJJP3T2j/zHN0YTlcz662igtRYjLXVj4Jwgt/jzsUT4k7B3
+    fMT/XlGLzaBIvN289Cld8ljBK5XhD8lsdFReEg9aG0ktl/4SXqIWf9PM8MSAoglX4I9C
+    HImGP2MPJma3C5sD6Es/ZVj/M18CwauTYqnCw2Fp9F3rQ6QiSKA2hkbio7MNzqcphUlJ
+    AzPg==
+ARC-Authentication-Results: i=2; strato.com;
+    dmarc=pass (p=REJECT sp=NONE) header.from="kechel.de";
+    arc=pass (i=1) smtp.remote-ip=81.169.146.220;
+    dkim=pass header.d="kechel.de" header.s="strato-dkim-0003" header.a="ed25519-sha256";
+    dkim=pass header.d="kechel.de" header.s="strato-dkim-0002" header.a="rsa-sha256";
+    dkim-adsp=pass;
+    spf=pass smtp.mailfrom="jan@kechel.de"
+Authentication-Results: strato.com;
+    dmarc=pass (p=REJECT sp=NONE) header.from="kechel.de";
+    arc=pass (i=1) smtp.remote-ip=81.169.146.220;
+    dkim=pass header.d="kechel.de" header.s="strato-dkim-0003" header.a="ed25519-sha256";
+    dkim=pass header.d="kechel.de" header.s="strato-dkim-0002" header.a="rsa-sha256";
+    dkim-adsp=pass;
+    spf=pass smtp.mailfrom="jan@kechel.de"
+X-RZG-Expurgate: clean/normal
+X-RZG-Expurgate-ID: 149500::1770872312-9FF2DAF7-6049BBEC/0/0
+X-GEM-Spam-Flag: NO
+X-RZG-CLASS-ID: mi00
+Received-SPF: pass
+    (strato.com: domain _spf.strato.com designates 81.169.146.220 as permitted sender)
+    mechanism=ip4;
+    client-ip=81.169.146.220;
+    helo="mo4-p00-ob.smtp.rzone.de";
+    envelope-from="jan@kechel.de";
+    receiver=smtpin.rzone.de;
+    identity=mailfrom;
+Received: from mo4-p00-ob.smtp.rzone.de ([81.169.146.220])
+    by smtpin.rzone.de (RZmta 55.0.1 OK)
+    with ESMTPS id g3588c21C4wWvQq
+    (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+    (Client CN "*.smtp.rzone.de", Issuer "Telekom Security ServerID OV Class 2 CA" (verified OK (+EmiG)))
+        (Client hostname verified OK)
+    for <jan@kechel.de>;
+    Thu, 12 Feb 2026 05:58:32 +0100 (CET)
+ARC-Seal: i=1; a=rsa-sha256; t=1770872312; cv=none;
+    d=strato.com; s=strato-dkim-0002;
+    b=NiA1BYvi4XJWG9u9Nex18EOx+moCpgjhNZsH6b+3y2F+enu+DRM0nhsO0cp2F4nZYX
+    d/URnoWYt5kmwIbO2L3WDf/KHGsxx4jkSl1n4ugm+I7FHnR3zT0t6RSQAZtmhHav0DUs
+    FrOLgOfIXLP2i2T9Moz/40s46Bzv7vjvPOv3dq0epZuZsmFlsSRC+fenoegzajC2mFaM
+    hMvkphfqEde+zhF5LA1Qly4Dmdcmujs1J4bD1BucOzWxwtT7s2ojmCbZMts5nP1senlJ
+    sxD7UjxIfKPT32813ZmnPDkqUXiOUQAeVaanHYscET7ywE1a8+xvDjxRqckwCCbXPF7X
+    h/LA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; t=1770872312;
+    s=strato-dkim-0002; d=strato.com;
+    h=Subject:From:To:Date:Message-ID:Cc:Date:From:Subject:Sender;
+    bh=zpRkAMZUu9Fdu4oqJ3VbKp4+0RPFsvhrGVsyJNQERl4=;
+    b=WtKnrQyPVcrtUEfeDZnDrv2nyTqZGPb+swespSSYZOF7Gp8BjxNiav2ZvtLLOlBI0E
+    UzpNtMpbIuNDwsUZ8toSDsMHt5Z8YJpC2ZSjqopgFGL/CaU5we/iyOILsn8Eqak8N1cg
+    InXUTOS9ft/xZLlQRA97Hxq6/Irmr41z7k4bwStU8yjCiSPE9wh4ratTr6Q31WL6FgZ4
+    M5YxHov0/Hfr326Ds/dVNztpZ3kBJc5H7qISnyZtmP6wRC1cArgTadj5Ff1ISzH6Q0gE
+    GaWumyyHacWyVThGWhXFcfgj9HmVrilr/8Pfs/wLp9AVNKqg3npxWGPxEDadjZMKIeF7
+    KMbg==
+ARC-Authentication-Results: i=1; strato.com;
+    arc=none;
+    dkim=none
+X-RZG-CLASS-ID: mo00
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1770872312;
+    s=strato-dkim-0002; d=kechel.de;
+    h=Subject:From:To:Date:Message-ID:Cc:Date:From:Subject:Sender;
+    bh=zpRkAMZUu9Fdu4oqJ3VbKp4+0RPFsvhrGVsyJNQERl4=;
+    b=smU52dbQVnibGulIrFvNZJ5T74FIQFyjH5sj8aAayuDFU7206LsrOSus9TkAVE49v1
+    mtp4oOkkJVGlalA+m2YBcTkxzJiv1pZCsLak9vjJvu5Mz1anE6ddHtUdJ1PBu5vXpEgt
+    k2WLHy8LG69QVFRvcNUERyEbGKyTsGmqraFX9/pYE4lVBxOuxTPlDrvS4Jws1Lj5FiF3
+    ATHbnfUCFcB4uk/8xm0iTeJ5m4ZwJyLjVqZbQBElsu967WROtCpO0WbcUQadCMzmE53+
+    U87hp83TkCGqihrp/t02qLmJ10YwB9kJYfOPUfwDy0yRXSWb/lnRt5EcbML5WzL0gDu4
+    xF3A==
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; t=1770872312;
+    s=strato-dkim-0003; d=kechel.de;
+    h=Subject:From:To:Date:Message-ID:Cc:Date:From:Subject:Sender;
+    bh=zpRkAMZUu9Fdu4oqJ3VbKp4+0RPFsvhrGVsyJNQERl4=;
+    b=Des2vcwvRxg1W+K/lEQyMR0UWvWnJIMo0qr9z8S+rdFwhy7pMgJX1zEJ/biyjL63NN
+    APoxsElhjSxYmbXmqNDg==
+X-RZG-AUTH: ":Jm0KVUutePfyCNZdXM6BZKFVw1GzZKYLozKyB6bOIi8P8+yUpHOSpKBNtWXWhe0SjmITiKXa77UYA3s5WRsdTnRNv92U"
+Received: from [IPV6:2a00:79c0:728:4a00:b546:3084:dcd0:58d1]
+    by smtp.strato.de (RZmta 55.0.1 AUTH)
+    with ESMTPSA id z92cbd21C4wVezP
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+	(Client did not present a certificate);
+    Thu, 12 Feb 2026 05:58:31 +0100 (CET)
+Content-Type: multipart/alternative;
+ boundary="------------8oDZusnFX7070RDegwXjYhFq"
+Message-ID: <96e8d60e-88cc-47b3-97d0-b32c7896f997@kechel.de>
+Date: Thu, 12 Feb 2026 05:58:31 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+To: poststelle@stadd.justiz.sachsen.de
+From: Jan Kechel <jan@kechel.de>
+Subject: =?UTF-8?Q?Verm=C3=B6gensbetreuungspflicht_und_=C2=A7_263_StGB=2C_Az?=
+ =?UTF-8?Q?=2E_201_AR_146/26?=
+Autocrypt: addr=jan@kechel.de; keydata=
+ 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
+Content-Transfer-Encoding: 8bit
+
+This is a multi-part message in MIME format.
+--------------8oDZusnFX7070RDegwXjYhFq
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Sehr geehrte Damen und Herren,
+
+vielen Dank für Ihre substantiierte Begründung vom 22.01.2026 Az. 201 AR 
+146/26. Sie haben völlig Recht: Eine *Vermögensbetreuungspflicht im 
+Sinne des § 266 StGB* fehlt beim Landesamt für Umwelt, Landwirtschaft 
+und Geologie.
+
+*Allerdings:*
+
+Der Tatbestand des *§ 263 StGB (Betrug)* setzt *keine* 
+Vermögensbetreuungspflicht voraus.
+
+*Tatbestandsmerkmale:*
+
+*1. Täuschung durch Unterlassen:*
+
+  * Im UVP-Verfahren werden Carbon-Removal-Kosten von 7,4-15 Mrd. Euro
+    verschwiegen
+  * Im Genehmigungsbescheid werden sie verschwiegen
+  * Im Haushaltsplan werden sie nicht ausgewiesen
+
+*2. Garantenstellung (§ 13 StGB):*
+
+  * § 17 Abs. 2 SäHO verpflichtet zur Darlegung der "voraussichtlichen
+    Gesamtkosten"
+  * Die Genehmigungsbehörde ist Garant für vollständige
+    Genehmigungsunterlagen
+  * Sie ist Garant für Einhaltung der Haushaltsgrundsätze bei Amtsausübung
+
+*3. Irrtum:*
+
+  * Die Haushaltsbehörde befindet sich im Irrtum über die tatsächlichen
+    Folgekosten
+  * Der Landtag bewilligt den Haushalt im Irrtum über die Verbindlichkeiten
+
+*4. Vermögensverfügung:*
+
+  * Die Genehmigung begründet die Verbindlichkeit
+
+*5. Vermögensschaden:*
+
+  * 7,4-15 Mrd. Euro Carbon-Removal-Kosten
+
+*Meine Frage:*
+
+Warum haben Sie § 263 StGB nicht geprüft?
+
+
+Abschließend möchte ich um etwas Kreativität bei der rechtlichen 
+Würdigung bitten.
+
+Die Klimafolgen sind hart, und unser Rechtssystem tut sich mit der 
+'anteiligen Schuld' an globalen Klimaschäden außerordentlich schwer - zu 
+Recht, denn solche Ansprüche sind kaum justiziabel. Die Politik ist 
+trotz allem Bemühen weitgehend machtlos, solange andere Länder nicht 
+mitziehen.
+
+*Dieser Ansatz ist anders:*
+
+Carbon-Removal-Kosten sind keine diffusen Klimafolgekosten, sondern *1:1 
+zuordenbare, konkrete Beseitigungskosten*:
+
+  * 1t CO₂ emittiert = 1t entfernen
+  * Verursacher konkret bekannt (DEHSt-Anlagenliste)
+  * Kosten konkret bezifferbar (500-1.200 €/t)
+  * Rechtspflicht verfassungsrechtlich geboten (BVerfG)
+
+Das wäre *DER Hebel*, um nicht nur den Klimawandel, sondern auch unsere 
+Wirtschaft zu schützen - denn ohne Carbon-Removal werden die Lasten 
+unkontrolliert auf künftige Generationen verschoben, was deren 
+wirtschaftliche Handlungsfähigkeit massiv einschränkt.
+
+Ich bitte Sie, diese neue rechtliche Kategorie nicht vorschnell zu 
+verwerfen.
+
+
+Mit freundlichen Grüßen
+
+
+Jan Kechel
+
+
+-- 
+Jan Kechel
+Computerfuzzy
+
+E-Mail:jan@kechel.de
+Homepage:https://kechel.de/
+Pronomen:        [er/ihm; he/him]
+
+--------------8oDZusnFX7070RDegwXjYhFq
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Sehr
+      geehrte Damen und Herren,</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">vielen
+      Dank für Ihre substantiierte Begründung vom 22.01.2026 Az. 201 AR
+      146/26. Sie haben völlig Recht: Eine <strong>Vermögensbetreuungspflicht
+        im Sinne des § 266 StGB</strong> fehlt beim Landesamt für
+      Umwelt, Landwirtschaft und Geologie.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Allerdings:</strong></p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Der
+      Tatbestand des <strong>§ 263 StGB (Betrug)</strong> setzt <strong>keine</strong>
+      Vermögensbetreuungspflicht voraus.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Tatbestandsmerkmale:</strong></p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>1.
+        Täuschung durch Unterlassen:</strong></p>
+    <ul
+class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+      <li class="whitespace-normal break-words pl-2">Im UVP-Verfahren
+        werden Carbon-Removal-Kosten von 7,4-15 Mrd. Euro verschwiegen</li>
+      <li class="whitespace-normal break-words pl-2">Im
+        Genehmigungsbescheid werden sie verschwiegen</li>
+      <li class="whitespace-normal break-words pl-2">Im Haushaltsplan
+        werden sie nicht ausgewiesen</li>
+    </ul>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>2.
+        Garantenstellung (§ 13 StGB):</strong></p>
+    <ul
+class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+      <li class="whitespace-normal break-words pl-2">§ 17 Abs. 2 SäHO
+        verpflichtet zur Darlegung der "voraussichtlichen Gesamtkosten"</li>
+      <li class="whitespace-normal break-words pl-2">Die
+        Genehmigungsbehörde ist Garant für vollständige
+        Genehmigungsunterlagen</li>
+      <li class="whitespace-normal break-words pl-2">Sie ist Garant für
+        Einhaltung der Haushaltsgrundsätze bei Amtsausübung</li>
+    </ul>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>3.
+        Irrtum:</strong></p>
+    <ul
+class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+      <li class="whitespace-normal break-words pl-2">Die
+        Haushaltsbehörde befindet sich im Irrtum über die tatsächlichen
+        Folgekosten</li>
+      <li class="whitespace-normal break-words pl-2">Der Landtag
+        bewilligt den Haushalt im Irrtum über die Verbindlichkeiten</li>
+    </ul>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>4.
+        Vermögensverfügung:</strong></p>
+    <ul
+class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+      <li class="whitespace-normal break-words pl-2">Die Genehmigung
+        begründet die Verbindlichkeit</li>
+    </ul>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>5.
+        Vermögensschaden:</strong></p>
+    <ul
+class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+      <li class="whitespace-normal break-words pl-2">7,4-15 Mrd. Euro
+        Carbon-Removal-Kosten</li>
+    </ul>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Meine
+        Frage:</strong></p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Warum
+      haben Sie § 263 StGB nicht geprüft?</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><br>
+    </p>
+    <div>
+      <div
+class="standard-markdown grid-cols-1 grid [&amp;_&gt;_*]:min-w-0 gap-3">
+        <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Abschließend
+          möchte ich um etwas Kreativität bei der rechtlichen Würdigung
+          bitten.</p>
+      </div>
+    </div>
+    <div>
+      <div
+class="standard-markdown grid-cols-1 grid [&amp;_&gt;_*]:min-w-0 gap-3">
+        <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Die
+          Klimafolgen sind hart, und unser Rechtssystem tut sich mit der
+          'anteiligen Schuld' an globalen Klimaschäden außerordentlich
+          schwer - zu Recht, denn solche Ansprüche sind kaum
+          justiziabel. Die Politik ist trotz allem Bemühen weitgehend
+          machtlos, solange andere Länder nicht mitziehen.</p>
+      </div>
+    </div>
+    <div>
+      <div
+class="standard-markdown grid-cols-1 grid [&amp;_&gt;_*]:min-w-0 gap-3">
+        <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Dieser
+            Ansatz ist anders:</strong></p>
+      </div>
+    </div>
+    <div>
+      <div
+class="standard-markdown grid-cols-1 grid [&amp;_&gt;_*]:min-w-0 gap-3">
+        <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Carbon-Removal-Kosten
+          sind keine diffusen Klimafolgekosten, sondern <strong>1:1
+            zuordenbare, konkrete Beseitigungskosten</strong>:</p>
+        <ul
+class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+          <li class="whitespace-normal break-words pl-2">1t CO₂
+            emittiert = 1t entfernen</li>
+          <li class="whitespace-normal break-words pl-2">Verursacher
+            konkret bekannt (DEHSt-Anlagenliste)</li>
+          <li class="whitespace-normal break-words pl-2">Kosten konkret
+            bezifferbar (500-1.200 €/t)</li>
+          <li class="whitespace-normal break-words pl-2">Rechtspflicht
+            verfassungsrechtlich geboten (BVerfG)</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div
+class="standard-markdown grid-cols-1 grid [&amp;_&gt;_*]:min-w-0 gap-3">
+        <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Das
+          wäre <strong>DER Hebel</strong>, um nicht nur den
+          Klimawandel, sondern auch unsere Wirtschaft zu schützen - denn
+          ohne Carbon-Removal werden die Lasten unkontrolliert auf
+          künftige Generationen verschoben, was deren wirtschaftliche
+          Handlungsfähigkeit massiv einschränkt.</p>
+      </div>
+    </div>
+    <div>
+      <div
+class="standard-markdown grid-cols-1 grid [&amp;_&gt;_*]:min-w-0 gap-3">
+        <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Ich
+          bitte Sie, diese neue rechtliche Kategorie nicht vorschnell zu
+          verwerfen.</p>
+        <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><br>
+        </p>
+      </div>
+    </div>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Mit
+      freundlichen Grüßen</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><br>
+    </p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Jan
+      Kechel</p>
+    <p><br>
+    </p>
+    <pre class="moz-signature" cols="72">-- 
+Jan Kechel
+Computerfuzzy
+
+E-Mail:          <a class="moz-txt-link-abbreviated" href="mailto:jan@kechel.de">jan@kechel.de</a>
+Homepage:        <a class="moz-txt-link-freetext" href="https://kechel.de/">https://kechel.de/</a>
+Pronomen:        [er/ihm; he/him]</pre>
+  </body>
+</html>
+
+--------------8oDZusnFX7070RDegwXjYhFq--
