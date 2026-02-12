@@ -1,0 +1,405 @@
+X-Envelope-From: <jan@kechel.de>
+X-Envelope-To: <jan@kechel.de>
+X-Delivery-Time: 1770870571
+X-UID: 437964
+Return-Path: <jan@kechel.de>
+ARC-Seal: i=2; a=rsa-sha256; t=1770870571; cv=pass;
+    d=strato.com; s=strato-dkim-0002;
+    b=QCoYhZC8mbnqGmJS48+cwkJfMN0o980th1vdx+YqiUsuWIHetxwazIpqRFOly0jiX/
+    X6IjdPH5KW4VjUk3mWrlWWVrMtJtTvbtvrb8JfF31IMvKWu3AF34MGuIpX+rc/dZWL0F
+    TCJh/2H3nhNGkOSYerZgCNIDpP4ZhGvAmSFfHYOzlUlKV8AsZoPzDzTsv6cyWNP0XLhC
+    r9SHV6AIfxPYbeVLmwcytZd3cw94JLOa+K00lygky4I9txx7qcY5Qnqb8HiyZ6VdWNqE
+    JvJDTcx+RZa18DWGMKrwU8QiougUYvaf6LHKH3+DS3GgdJCcUK5eVbtFrUBU4mO5zL/8
+    10cA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; t=1770870571;
+    s=strato-dkim-0002; d=strato.com;
+    h=Subject:From:To:Date:Message-ID:Cc:Date:From:Subject:Sender;
+    bh=+L39YQkWeYMfVh1z/tn8vNKweJdNy25I73MXrSwKVwU=;
+    b=smbm8KQEbDXW2L9Ti6QNph46GbLe4U+1CFoMqfN8c0nvsZsUolBTYMVmVGiMfroK12
+    0GIzQKAcFbtRS0F3yalPOIbzuUqii7a+zzx89Yf7bBVp81bIxiBNa+Gmk5UByJjdByc/
+    a2rnhY6VAHX2uooDUaDJPE9xiwXITEblCyFK8kKH22AJ7eX1v2F4tvoXRdkiSkKT5rOF
+    NY4rnIwJxTOGv9cSvSlvVtBHHAJjlmQsQ8jxvp8/vxCWMoi6JZoKwiV5mOxsY8AkWTT7
+    rZBycVaVf5wSo6f3pkL3UfrIznoBX8PNRd2IKK1NX87Te3wilLpRZ+Z4RJeyfPK0HfSf
+    hm2w==
+ARC-Authentication-Results: i=2; strato.com;
+    dmarc=pass (p=REJECT sp=NONE) header.from="kechel.de";
+    arc=pass (i=1) smtp.remote-ip=81.169.146.160;
+    dkim=pass header.d="kechel.de" header.s="strato-dkim-0003" header.a="ed25519-sha256";
+    dkim=pass header.d="kechel.de" header.s="strato-dkim-0002" header.a="rsa-sha256";
+    dkim-adsp=pass;
+    spf=pass smtp.mailfrom="jan@kechel.de"
+Authentication-Results: strato.com;
+    dmarc=pass (p=REJECT sp=NONE) header.from="kechel.de";
+    arc=pass (i=1) smtp.remote-ip=81.169.146.160;
+    dkim=pass header.d="kechel.de" header.s="strato-dkim-0003" header.a="ed25519-sha256";
+    dkim=pass header.d="kechel.de" header.s="strato-dkim-0002" header.a="rsa-sha256";
+    dkim-adsp=pass;
+    spf=pass smtp.mailfrom="jan@kechel.de"
+X-RZG-Expurgate: clean/normal
+X-RZG-Expurgate-ID: 149500::1770870571-F4DA083D-FA45098B/0/0
+X-GEM-Spam-Flag: NO
+X-RZG-CLASS-ID: mi00
+Received-SPF: pass
+    (strato.com: domain _spf.strato.com designates 81.169.146.160 as permitted sender)
+    mechanism=ip4;
+    client-ip=81.169.146.160;
+    helo="mo4-p00-ob.smtp.rzone.de";
+    envelope-from="jan@kechel.de";
+    receiver=smtpin.rzone.de;
+    identity=mailfrom;
+Received: from mo4-p00-ob.smtp.rzone.de ([81.169.146.160])
+    by smtpin.rzone.de (RZmta 55.0.1 OK)
+    with ESMTPS id A372ba21C4TVv54
+    (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+    (Client CN "*.smtp.rzone.de", Issuer "Telekom Security ServerID OV Class 2 CA" (verified OK (+EmiG)))
+        (Client hostname verified OK)
+    for <jan@kechel.de>;
+    Thu, 12 Feb 2026 05:29:31 +0100 (CET)
+ARC-Seal: i=1; a=rsa-sha256; t=1770870571; cv=none;
+    d=strato.com; s=strato-dkim-0002;
+    b=cVJDrUfze4tKRzJaRXBS/xuRueUsJQMrYLiMAe2wcyxa/lc02yc5fEYTVmUyAcdZSR
+    CohVKKeV4XJiimhMifW/6pQjzuKT+5WPQwo66M2hGsIXeBajk5hBit1x0ezKOKuVhpZd
+    JaLntCayCYU41laz6K1Vs83qJ3uRnNTL9Eo5DgCsunR1jpvByqL/tB5DM30JjqwWCJut
+    CpHQnjtjFVef/BHTJCeXZwH0nTzfqsXWT8EQC5ZqlHLXJVnEFG9dbWzI9lM/dFRcfZBQ
+    aA3ro4aqBPGS/9wgXPy1fWqBIjPWihD29XIwAuMI6nx7Ak8eHm0CHIg+4gjtvDGD/1Sz
+    b6Xw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; t=1770870571;
+    s=strato-dkim-0002; d=strato.com;
+    h=Subject:From:To:Date:Message-ID:Cc:Date:From:Subject:Sender;
+    bh=+L39YQkWeYMfVh1z/tn8vNKweJdNy25I73MXrSwKVwU=;
+    b=mYXNmCSA9tpp/rMqHIU0uMugjIEALrIQJNYGgHLZ3qrtYJrl8ClMGmeQ+LNOI6+wap
+    Xd8NAdiqc3Yc+RCGwVmtxTluB/FvpvAg4cXUcGrp2m/FgaeflQb/4XvaBIfQJ/ueZ+jW
+    FJ4FxPRjCJAzCKT2GhnbqVXT4CBqtgq6q3l3KG8wm81KS9oMlVXZDE8hX770OacWQIZo
+    uYLbHl/8GM7BLe+Uk8m1J6UEM90KYTVoygOVwQ9OHeDfelWef/4YfPpf2APCE+pp/uXV
+    B7W/Q/sinCIjKRnVF4X+Wq2B5xWcSS6bHy8URNRpd0kEl0GgmHQlK1X4Njl8Q8TVa4ST
+    T2nw==
+ARC-Authentication-Results: i=1; strato.com;
+    arc=none;
+    dkim=none
+X-RZG-CLASS-ID: mo00
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1770870571;
+    s=strato-dkim-0002; d=kechel.de;
+    h=Subject:From:To:Date:Message-ID:Cc:Date:From:Subject:Sender;
+    bh=+L39YQkWeYMfVh1z/tn8vNKweJdNy25I73MXrSwKVwU=;
+    b=sNuYATWYNr8EOq/2CjCU0kN5CMjnXUfs+QpAyOXG03azIwr0RCmtKofbwC7H+DAb92
+    XcZegWgYqpuBZyQeL54yDsavUzdzIZUQ3nPq5owt++eOH/MRc5tBMoqSv3CZntd23MES
+    CGJC18D9Wt1FR1RFadNkEGY7Ve0kVcvC11Sk9G2j5Gl5CMyPTqy3UC47R6coYhheJgHT
+    KYJiY4Q+FF0PemqeZfP1hMN2uBuqYcFnU8u+Iv0X1PI5dIpCWoiEfIfzhwv83rlzL87P
+    cR7mux91p/6TrzKoD0tru1JRB/nQvMdJtIbJVtZutnPTSliaIlEvsrpPAGsqP1CVbL0t
+    HVKA==
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; t=1770870571;
+    s=strato-dkim-0003; d=kechel.de;
+    h=Subject:From:To:Date:Message-ID:Cc:Date:From:Subject:Sender;
+    bh=+L39YQkWeYMfVh1z/tn8vNKweJdNy25I73MXrSwKVwU=;
+    b=+8Bd2MMx5sH/FYGDoetPgii7Y4ajt3kTp30c5SKFanfQdjemqbx7KOb4e+EowGppi1
+    yZ1aWGNlci/UopxFiJBw==
+X-RZG-AUTH: ":Jm0KVUutePfyCNZdXM6BZKFVw1GzZKYLozKyB6bOIi8P8+yUpHOSpKBNtWXWhe0SjmITiKXa77UYA3s5WRsdTnRNv92U"
+Received: from [IPV6:2a00:79c0:728:4a00:b546:3084:dcd0:58d1]
+    by smtp.strato.de (RZmta 55.0.1 AUTH)
+    with ESMTPSA id z92cbd21C4TVexY
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+	(Client did not present a certificate);
+    Thu, 12 Feb 2026 05:29:31 +0100 (CET)
+Content-Type: multipart/alternative;
+ boundary="------------qTHVuwB09NzDjKSzAKVGNSsK"
+Message-ID: <af81720f-6ad3-4896-abde-4ab49181f4ea@kechel.de>
+Date: Thu, 12 Feb 2026 05:29:31 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+To: poststelle@stadd.justiz.sachsen.de
+From: Jan Kechel <jan@kechel.de>
+Subject: =?UTF-8?Q?Betreff=3A_Zur_Verm=C3=B6gensbetreuungspflicht_bei_Genehm?=
+ =?UTF-8?Q?igungsbeh=C3=B6rden_201_AR=2C146/26?=
+Autocrypt: addr=jan@kechel.de; keydata=
+ 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
+Content-Transfer-Encoding: 8bit
+
+This is a multi-part message in MIME format.
+--------------qTHVuwB09NzDjKSzAKVGNSsK
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Sehr geehrte Damen und Herren,
+
+vielen Dank für Ihre Verfügung vom 22.01.2026 / Az. 201 AR 146/26. Ich 
+respektiere Ihre Einschätzung und möchte diese E-Mail ausdrücklich als 
+formloses Auskunftsersuchen verstanden wissen - nicht als Rechtsbelehrung.
+
+Ihre Begründung hat mir sehr geholfen, den Kern der 
+Meinungsverschiedenheit zu verstehen. Sie verneinen eine 
+*Vermögensbetreuungspflicht* des Landesamtes im Sinne des § 266 StGB.
+
+*Dazu möchte ich höflich folgende Fragen stellen:*
+
+*1. Zur Vermögensbetreuungspflicht:*
+
+Das Landesamt für Umwelt, Landwirtschaft und Geologie genehmigt kraft 
+Amtes Anlagen nach BImSchG. Diese Genehmigungen begründen 
+Verbindlichkeiten des Freistaates Sachsen (Carbon-Removal-Kosten).
+
+Nach § 266 StGB liegt eine Vermögensbetreuungspflicht vor, wenn jemand 
+"fremde Vermögensinteressen wahrzunehmen hat". Das Landesamt nimmt durch 
+seine Genehmigungstätigkeit die Vermögensinteressen des Freistaates wahr.
+
+*Meine Frage:* Sehen Sie keine Vermögensbetreuungspflicht gegenüber dem 
+Landeshaushalt, obwohl die Genehmigung unmittelbar Verbindlichkeiten des 
+Landes begründet?
+
+*Vergleich:*
+
+  * Ein Beamter, der ohne Genehmigung Verträge abschließt, die den
+    Haushalt belasten → Untreue
+  * Ein Beamter, der bei Vertragsabschluss Kosten verschweigt → Untreue
+  * Ein Beamter, der bei Genehmigungen Verbindlichkeiten verschweigt →
+    keine Untreue?
+
+Wo liegt der Unterschied?
+
+*2. Zur "Behauptung ins Blaue":*
+
+Sie bezeichnen das Verwaltungsunrecht als "Behauptung ins Blaue hinein". 
+Ich verstehe das so, dass Sie die *rechtliche Pflicht zur Ausweisung* 
+der Carbon-Removal-Kosten bezweifeln.
+
+*Meine Frage:* Sehen Sie keine Ausweispflicht nach §§ 7, 11, 17 SäHO für 
+absehbare Verbindlichkeiten - oder bestreiten Sie die Existenz der 
+Verbindlichkeit selbst?
+
+*Konkret:*
+
+  * § 17 Abs. 2 SäHO verlangt bei mehrjährigen Maßnahmen die Darlegung
+    der "voraussichtlichen Gesamtkosten"
+  * Diese Pflicht gilt auch für wirtschaftlich unvermeidbare Folgekosten
+    (vgl. Pensionen, Renaturierung, Atommüll)
+  * Carbon-Removal-Kosten sind wirtschaftlich unvermeidbar (BVerfG 1 BvR
+    2656/18 + IPCC AR6)
+
+*Meine Frage:* Warum greifen die Haushaltsgrundsätze hier nicht?
+
+*3. Zur strafrechtlichen Inkriminierung:*
+
+Sie schreiben, die Pflichtverletzungen wären "nicht strafrechtlich 
+inkriminiert".
+
+Nach BGH-Rechtsprechung kann der Vermögensschaden bereits in der 
+*Begründung einer Verbindlichkeit* liegen (BGHSt 21, 384, 385 - 
+Provisionsvertreter-Fall).
+
+*Meine Frage:* Warum ist die Begründung einer 7,4-15 Mrd. 
+Euro-Verbindlichkeit ohne Ausweisung kein Vermögensschaden im Sinne des 
+§ 266 StGB?
+
+------------------------------------------------------------------------
+
+*Abschließend:*
+
+Ich bin mir bewusst, dass Sie zu einer Antwort nicht verpflichtet sind. 
+Ich frage deshalb, weil ich verstehen möchte, an welcher Stelle meine 
+rechtliche Einschätzung fehlgeht.
+
+Wenn die Antwort lautet "keine Vermögensbetreuungspflicht gegenüber dem 
+Haushalt", wäre das ein wichtiger Hinweis für mich, dass der Ansatz über 
+§ 266 StGB nicht trägt.
+
+Vielen Dank für Ihre Geduld.
+
+Mit freundlichen Grüßen
+
+Jan Kechel
+
+
+-- 
+Jan Kechel
+Computerfuzzy
+
+E-Mail:jan@kechel.de
+Homepage:https://kechel.de/
+Pronomen:        [er/ihm; he/him]
+
+--------------qTHVuwB09NzDjKSzAKVGNSsK
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Sehr
+      geehrte Damen und Herren,</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">vielen
+      Dank für Ihre Verfügung vom 22.01.2026 / Az. 201 AR 146/26. Ich
+      respektiere Ihre Einschätzung und möchte diese E-Mail ausdrücklich
+      als formloses Auskunftsersuchen verstanden wissen - nicht als
+      Rechtsbelehrung.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Ihre
+      Begründung hat mir sehr geholfen, den Kern der
+      Meinungsverschiedenheit zu verstehen. Sie verneinen eine <strong>Vermögensbetreuungspflicht</strong>
+      des Landesamtes im Sinne des § 266 StGB.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Dazu
+        möchte ich höflich folgende Fragen stellen:</strong></p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>1.
+        Zur Vermögensbetreuungspflicht:</strong></p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Das
+      Landesamt für Umwelt, Landwirtschaft und Geologie genehmigt kraft
+      Amtes Anlagen nach BImSchG. Diese Genehmigungen begründen
+      Verbindlichkeiten des Freistaates Sachsen (Carbon-Removal-Kosten).</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Nach
+      § 266 StGB liegt eine Vermögensbetreuungspflicht vor, wenn jemand
+      "fremde Vermögensinteressen wahrzunehmen hat". Das Landesamt nimmt
+      durch seine Genehmigungstätigkeit die Vermögensinteressen des
+      Freistaates wahr.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Meine
+        Frage:</strong> Sehen Sie keine Vermögensbetreuungspflicht
+      gegenüber dem Landeshaushalt, obwohl die Genehmigung unmittelbar
+      Verbindlichkeiten des Landes begründet?</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Vergleich:</strong></p>
+    <ul
+class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+      <li class="whitespace-normal break-words pl-2">Ein Beamter, der
+        ohne Genehmigung Verträge abschließt, die den Haushalt belasten
+        → Untreue</li>
+      <li class="whitespace-normal break-words pl-2">Ein Beamter, der
+        bei Vertragsabschluss Kosten verschweigt → Untreue</li>
+      <li class="whitespace-normal break-words pl-2">Ein Beamter, der
+        bei Genehmigungen Verbindlichkeiten verschweigt → keine Untreue?</li>
+    </ul>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Wo
+      liegt der Unterschied?</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>2.
+        Zur "Behauptung ins Blaue":</strong></p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Sie
+      bezeichnen das Verwaltungsunrecht als "Behauptung ins Blaue
+      hinein". Ich verstehe das so, dass Sie die <strong>rechtliche
+        Pflicht zur Ausweisung</strong> der Carbon-Removal-Kosten
+      bezweifeln.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Meine
+        Frage:</strong> Sehen Sie keine Ausweispflicht nach §§ 7, 11, 17
+      SäHO für absehbare Verbindlichkeiten - oder bestreiten Sie die
+      Existenz der Verbindlichkeit selbst?</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Konkret:</strong></p>
+    <ul
+class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+      <li class="whitespace-normal break-words pl-2">§ 17 Abs. 2 SäHO
+        verlangt bei mehrjährigen Maßnahmen die Darlegung der
+        "voraussichtlichen Gesamtkosten"</li>
+      <li class="whitespace-normal break-words pl-2">Diese Pflicht gilt
+        auch für wirtschaftlich unvermeidbare Folgekosten (vgl.
+        Pensionen, Renaturierung, Atommüll)</li>
+      <li class="whitespace-normal break-words pl-2">Carbon-Removal-Kosten
+        sind wirtschaftlich unvermeidbar (BVerfG 1 BvR 2656/18 + IPCC
+        AR6)</li>
+    </ul>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Meine
+        Frage:</strong> Warum greifen die Haushaltsgrundsätze hier
+      nicht?</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>3.
+        Zur strafrechtlichen Inkriminierung:</strong></p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Sie
+      schreiben, die Pflichtverletzungen wären "nicht strafrechtlich
+      inkriminiert".</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Nach
+      BGH-Rechtsprechung kann der Vermögensschaden bereits in der <strong>Begründung
+        einer Verbindlichkeit</strong> liegen (BGHSt 21, 384, 385 -
+      Provisionsvertreter-Fall).</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Meine
+        Frage:</strong> Warum ist die Begründung einer 7,4-15 Mrd.
+      Euro-Verbindlichkeit ohne Ausweisung kein Vermögensschaden im
+      Sinne des § 266 StGB?</p>
+    <hr class="border-border-200 border-t-0.5 my-3 mx-1.5">
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Abschließend:</strong></p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Ich
+      bin mir bewusst, dass Sie zu einer Antwort nicht verpflichtet
+      sind. Ich frage deshalb, weil ich verstehen möchte, an welcher
+      Stelle meine rechtliche Einschätzung fehlgeht.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Wenn
+      die Antwort lautet "keine Vermögensbetreuungspflicht gegenüber dem
+      Haushalt", wäre das ein wichtiger Hinweis für mich, dass der
+      Ansatz über § 266 StGB nicht trägt.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Vielen
+      Dank für Ihre Geduld.</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Mit
+      freundlichen Grüßen</p>
+    <p
+class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Jan
+      Kechel</p>
+    <p><br>
+    </p>
+    <pre class="moz-signature" cols="72">-- 
+Jan Kechel
+Computerfuzzy
+
+E-Mail:          <a class="moz-txt-link-abbreviated" href="mailto:jan@kechel.de">jan@kechel.de</a>
+Homepage:        <a class="moz-txt-link-freetext" href="https://kechel.de/">https://kechel.de/</a>
+Pronomen:        [er/ihm; he/him]</pre>
+  </body>
+</html>
+
+--------------qTHVuwB09NzDjKSzAKVGNSsK--
