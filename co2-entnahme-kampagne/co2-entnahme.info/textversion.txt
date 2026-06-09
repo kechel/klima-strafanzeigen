@@ -63,7 +63,7 @@ Der Gesetzgeber hat sich schliesslich einen vollständigen und wahren Haushalt p
 
 Quellenverzeichnis
 [1] Petition (WeAct) - https://weact.campact.de/petitions/wahre-kosten-von-gaskraftwerken-veroffentlichen
-[2] ePetition - https://github.com/kechel/klima-strafanzeigen/blob/main/petitionen/Petition_191921.pdf
+[2] ePetition - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/petitionen/Petition_191921.pdf
 [3] IPCC - https://www.ipcc.ch/
 [4] Pariser Abkommen - https://www.consilium.europa.eu/de/policies/paris-agreement-climate/
 [5] KSG - https://www.gesetze-im-internet.de/ksg/
@@ -74,7 +74,7 @@ Quellenverzeichnis
 [10] Tipping Points - https://modernsciences.org/climate-tipping-points-ice-sheets-oceans-optimism-november-2025/
 [11] duration matters - https://esd.copernicus.org/articles/16/1523/2025/esd-16-1523-2025.html
 [12] Few realistic scenarios left to limit global warming to 1.5°C (PIK) - https://www.pik-potsdam.de/en/news/latest-news/few-realistic-scenarios-left-to-limit-global-warming-to-1-5degc
-[13] Original Paper PDF - https://github.com/kechel/klima-strafanzeigen/blob/main/Warszawski_2021_Environ._Res._Lett._16_064037.pdf (lokal: Warszawski_2021_Environ._Res._Lett._16_064037.pdf)
+[13] Original Paper PDF - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/co2-entnahme.info/Warszawski_2021_Environ._Res._Lett._16_064037.pdf (lokal: Warszawski_2021_Environ._Res._Lett._16_064037.pdf)
 [14] BVerfG 1 BvR 2656/18 - https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2021/03/rs20210324_1bvr265618.html
 [15] Art. 2 Abs. 1 GG - https://www.gesetze-im-internet.de/gg/art_2.html
 [16] Art. 20a GG - https://www.gesetze-im-internet.de/gg/art_20a.html
@@ -88,26 +88,26 @@ Quellenverzeichnis
 [24] § 5 BImSchG - https://www.gesetze-im-internet.de/bimschg/__5.html
 [25] § 5 Abs. 1 BImSchG - https://www.gesetze-im-internet.de/bimschg/__5.html
 [26] § 5 Abs. 2 BImSchG - https://www.gesetze-im-internet.de/bimschg/__5.html
-[27] 6-Klimaschadens-Kostenliste.pdf - https://github.com/kechel/klima-strafanzeigen/blob/main/attachments/6-Klimaschadens-Kostenliste.pdf (lokal: attachments/6-Klimaschadens-Kostenliste.pdf)
+[27] 6-Klimaschadens-Kostenliste.pdf - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/co2-entnahme.info/attachments/6-Klimaschadens-Kostenliste.pdf (lokal: attachments/6-Klimaschadens-Kostenliste.pdf)
 [28] BEHG - https://www.gesetze-im-internet.de/behg/
 [29] §§ 7, 11, 17 BHO/LHO - https://www.gesetze-im-internet.de/bho/
 [30] § 249 HGB - https://www.gesetze-im-internet.de/hgb/__249.html
 [31] GuD Altbach/Deizisau - https://www.uvp-verbund.de/trefferanzeige?docuuid=8ea610cb-12f5-4bc6-8dc7-439498b5e991
 [32] GuD Eschweiler - https://www.uvp-verbund.de/trefferanzeige?docuuid=517d7250-56d8-4989-b364-4c1f64c8e319
-[33] Kleve - https://github.com/kechel/klima-strafanzeigen/blob/main/antworten/kleve/20250611-kleve-seite-1.jpeg
-[34] Mosbach - https://github.com/kechel/klima-strafanzeigen/blob/main/antworten/mosbach/20250616-mosbach.jpeg
-[35] Leipzig - https://github.com/kechel/klima-strafanzeigen/blob/main/2026-strafanzeige/antworten/202512-von-sta-leipzig.jpg
-[36] Rostock - https://github.com/kechel/klima-strafanzeigen/blob/main/2026-strafanzeige/antworten/20251218-von-sta-rostock.jpg
-[37] Bayreuth Seite 1 - https://github.com/kechel/klima-strafanzeigen/blob/main/2026-strafanzeige/antworten/20260116-von-sta-bayreuth-1.jpg
-[38] Bayreuth Seite 2 - https://github.com/kechel/klima-strafanzeigen/blob/main/2026-strafanzeige/antworten/20260116-von-sta-bayreuth-2.jpg
+[33] Kleve - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/2025-strafanzeige/antworten/kleve/20250611-kleve-seite-1.jpeg
+[34] Mosbach - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/2025-strafanzeige/antworten/mosbach/20250616-mosbach.jpeg
+[35] Leipzig - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/2026-strafanzeige/antworten/202512-von-sta-leipzig.jpg
+[36] Rostock - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/2026-strafanzeige/antworten/20251218-von-sta-rostock.jpg
+[37] Bayreuth Seite 1 - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/2026-strafanzeige/antworten/20260116-von-sta-bayreuth-1.jpg
+[38] Bayreuth Seite 2 - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/2026-strafanzeige/antworten/20260116-von-sta-bayreuth-2.jpg
 [39] Stuttgart - https://fragdenstaat.de/anfrage/verbindlichkeiten-aus-gud-altbach-deizisau-nicht-ausgewiesen-im-haushalt/
 [40] Köln - https://fragdenstaat.de/anfrage/kraftwerk-weisweiler/
 [41] Düsseldorf - https://fragdenstaat.de/anfrage/kraftwerk-voerde/
 [42] UVP - https://www.uvp-verbund.de/trefferanzeige?docuuid=8ea610cb-12f5-4bc6-8dc7-439498b5e991
 [43] Genehmigungsbescheid - https://www.uvp-verbund.de/documents-ige-ng/igc_bw/8ea610cb-12f5-4bc6-8dc7-439498b5e991/2024-01-17%20Internetausfertigung%20FS%20Altbach%20VB%20u%201%20TG.pdf
 [44] UVPG - https://www.gesetze-im-internet.de/uvpg/
-[45] Düsseldorf - https://github.com/kechel/klima-strafanzeigen/blob/main/2026-strafanzeige/antworten/20260123-antwort-auf-anfrage-duesseldorf.pdf
-[46] Koblenz - https://github.com/kechel/klima-strafanzeigen/blob/main/2026-strafanzeige/antworten/20251212-von-genehmigungsdirektion-nord-koblenz-2.jpg
+[45] Düsseldorf - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/2026-strafanzeige/antworten/20260123-antwort-auf-anfrage-duesseldorf.pdf
+[46] Koblenz - https://github.com/kechel/klima-strafanzeigen/blob/main/co2-entnahme-kampagne/2026-strafanzeige/antworten/20251212-von-genehmigungsdirektion-nord-koblenz-2.jpg
 [47] BGHSt 21, 384, 385 - https://dejure.org/dienste/vernetzung/rechtsprechung?Text=BGHSt+21,+384
 [48] BGHSt 16, 220 - https://dejure.org/dienste/vernetzung/rechtsprechung?Text=BGHSt+16,+220
 [49] BGHSt 23, 300 - https://dejure.org/dienste/vernetzung/rechtsprechung?Text=BGHSt+23,+300

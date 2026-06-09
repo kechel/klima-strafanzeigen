@@ -8,20 +8,22 @@ This repository contains legal documents for climate-related criminal charges (S
 
 ## Repository Structure
 
-- `2025-strafanzeige/` - Main criminal charge documents and materials
+Each criminal-charge round lives in its own folder, with that round's incoming
+responses nested under it in an `antworten/` subfolder (sorted by case/year, 09.06.2026):
+
+- `2025-strafanzeige/` - First round (May 2025): core legal documents and materials
   - `2025-strafanzeige-wegen-foerderung-fossiler-brennstoffe.odt/pdf` - Core legal document
   - `2025-strafanzeige-serienbrief.odt/pdf` - Mail merge version
-  - `staatsanwaltschaften.csv` - Database of prosecutor offices with contact details
-  - `staatsanwaltschaften.ods` - Spreadsheet version of prosecutor database
-  - `libreoffice-staatsanwaltschaften.odb` - LibreOffice database file
+  - `staatsanwaltschaften.csv` / `.ods` / `libreoffice-staatsanwaltschaften.odb` - Prosecutor database
   - Visualization materials (PNG/XCF files) showing CO2 cycles
+  - `antworten/` - Responses to this round, organized by city/region
+    - `20250722-antwort-an-alle/` - Mass response to all offices
+    - `vorlagen/` - Templates for responses
 
-- `antworten/` - Responses and correspondence organized by city/region
-  - Each subdirectory contains responses from specific prosecutor offices
-  - `20250722-antwort-an-alle/` - Mass response to all offices
-  - `vorlagen/` - Templates for responses
+- `2025-strafanzeige-3/` - Third round (Oct 2025, carbon-removal Serienbrief)
+  - `antworten/` - Responses to this round (was top-level `antworten-3/`)
 
-- `2025-strafanzeige-2/` - Additional materials directory
+- `2026-strafanzeige/` - 2026 round, with its own `antworten/` and per-city subfolders
 
 ## Development Commands
 
