@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse: CO2-Quellen, Kohlekraftwerke und Klimaauswirkungen</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .chart {
+      width: 100%;
+      margin: 20px 0;
+      height: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+    }
+    .footnote {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 24px;
+    }
+    .timeline-item:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #3182ce;
+    }
+    .timeline-item:after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 20px;
+      width: 2px;
+      height: calc(100% + 12px);
+      background-color: #cbd5e0;
+    }
+    .timeline-item:last-child:after {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <header class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-10 shadow-lg">
+    <div class="container">
+      <h1 class="text-4xl font-bold mb-4">Kohlekraftwerke und Klimawandel</h1>
+      <h2 class="text-2xl mb-6">Eine detaillierte Analyse der größten CO2-Quellen, Reduktionsmaßnahmen und wirtschaftlichen Auswirkungen</h2>
+      <p class="text-lg opacity-90">Stand: April 2025</p>
+    </div>
+  </header>
+
+  <main class="container py-8">
+    <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Inhaltsverzeichnis</h2>
+      <nav class="space-y-2">
+        <a href="#co2-quellen" class="block text-blue-600 hover:text-blue-800 hover:underline">1. Die größten CO2-Quellen weltweit</a>
+        <a href="#reduktionsmaßnahmen" class="block text-blue-600 hover:text-blue-800 hover:underline">2. Maßnahmen zur Reduzierung der Kohlekraftwerksemissionen</a>
+        <a href="#zeiträume" class="block text-blue-600 hover:text-blue-800 hover:underline">3. Realistische Umsetzungszeiträume</a>
+        <a href="#kippunkte" class="block text-blue-600 hover:text-blue-800 hover:underline">4. Klima-Kippunkte und ihre Verbindung zur Kohleverstromung</a>
+        <a href="#wirtschaft" class="block text-blue-600 hover:text-blue-800 hover:underline">5. Wirtschaftliche Auswirkungen im Zeitverlauf</a>
+        <a href="#fazit" class="block text-blue-600 hover:text-blue-800 hover:underline">6. Fazit und Ausblick</a>
+        <a href="#quellen" class="block text-blue-600 hover:text-blue-800 hover:underline">7. Quellenverzeichnis</a>
+      </nav>
+    </div>
+
+    <section id="co2-quellen" class="bg-white rounded-lg shadow-md p-8 mb-8">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Die größten CO2-Quellen weltweit</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Globaler Überblick</h3>
+        <p class="mb-4">Der Energiesektor ist für den größten Anteil der weltweiten Treibhausgasemissionen verantwortlich. Innerhalb dieses Sektors ist die Stromerzeugung aus fossilen Brennstoffen, insbesondere aus Kohle, die dominante Emissionsquelle. Laut aktuellen Daten stammen 34% der weltweiten Treibhausgasemissionen aus dem Jahr 2019 aus der Verbrennung fossiler Brennstoffe für Elektrizität und Wärme.<sup>1</sup></p>
+        
+        <div class="bg-blue-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-blue-800">Schlüsselfakten:</h4>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Kohlekraftwerke liefern noch immer mehr als ein Drittel der weltweiten Stromerzeugung, obwohl Kohle der kohlenstoffintensivste fossile Brennstoff ist.<sup>2</sup></li>
+            <li>Der Elektrizitätssektor ist für 34% der weltweiten energiebedingten CO2-Emissionen verantwortlich.<sup>3</sup></li>
+            <li>Der globale Kohleverbrauch erreichte 2022 einen historischen Höchststand von 8,42 Milliarden Tonnen und setzt diesen Trend 2023 mit einem neuen Rekord fort.<sup>4</sup></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Regionale Verteilung der Kohleemissionen</h3>
+        <p class="mb-4">Die Verteilung der Kohleemissionen ist global sehr ungleichmäßig. China und Indien sind die mit Abstand größten Emittenten, gefolgt von anderen asiatischen Ländern.</p>
+        
+        <div class="overflow-x-auto mb-6">
+          <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+              <tr class="bg-blue-100">
+                <th class="py-3 px-4 border-b text-left">Land/Region</th>
+                <th class="py-3 px-4 border-b text-right">Anteil an globalen Kohleemissionen (2023)</th>
+                <th class="py-3 px-4 border-b text-right">Trend</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3 px-4 border-b">China</td>
+                <td class="py-3 px-4 border-b text-right">Über 50%</td>
+                <td class="py-3 px-4 border-b text-right text-red-600">↑ Steigend (ca. 5% jährlich)</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">Indien</td>
+                <td class="py-3 px-4 border-b text-right">~12%</td>
+                <td class="py-3 px-4 border-b text-right text-red-600">↑ Stark steigend (über 8% jährlich)</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">USA</td>
+                <td class="py-3 px-4 border-b text-right">~10%</td>
+                <td class="py-3 px-4 border-b text-right text-green-600">↓ Fallend (-8% in 2022)</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">EU</td>
+                <td class="py-3 px-4 border-b text-right">~7%</td>
+                <td class="py-3 px-4 border-b text-right text-green-600">↓ Langfristig fallend</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">Indonesien, Vietnam, Philippinen</td>
+                <td class="py-3 px-4 border-b text-right">~8% (zusammen)</td>
+                <td class="py-3 px-4 border-b text-right text-red-600">↑ Steigend</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="italic text-gray-600 mb-6">Quelle: Internationale Energieagentur (IEA) und Statista, 2023<sup>5,6</sup></p>
+        
+        <p class="mb-4">Die Vereinigten Staaten und China sind mit Abstand die größten Verursacher von CO2-Emissionen durch Kohleverbrauch und machen zusammen fast 60 Prozent der weltweiten CO2-Emissionen aus Kohle aus.<sup>7</sup> China allein hat 2023 etwa 8,55 Milliarden Tonnen CO2 durch Kohleverbrennung emittiert.<sup>8</sup></p>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Entwicklung der Kohlenutzung</h3>
+        <p class="mb-4">Trotz der zunehmenden globalen Bemühungen, die Nutzung von Kohle zu reduzieren, ist der weltweite Kohleverbrauch in den letzten Jahren gestiegen. Die weltweite Kohlenachfrage erreichte 2022 einen Rekordwert und stieg im Vergleich zum Vorjahr um 4% auf 8,42 Milliarden Tonnen.<sup>9</sup></p>
+        
+        <p class="mb-4">Besonders besorgniserregend ist, dass der Anteil der Kohle an der weltweiten Stromerzeugung bei etwa 36% geblieben ist. Dies steht im Widerspruch zum Netto-Null-Emissions-Szenario der IEA, das einen sofortigen Rückgang und eine Verringerung der ungeminderten Kohleverstromung um etwa 55% bis 2030 im Vergleich zu 2022 fordert, wodurch der Anteil der Kohle an der weltweiten Stromerzeugung bis 2030 auf etwa 12% sinken würde.<sup>10</sup></p>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Aktuelle Beschleunigung der globalen Erwärmung</h3>
+        <p class="mb-4">Neue Forschungsergebnisse zeigen eine besorgniserregende Beschleunigung der globalen Erwärmung in den letzten 15 Jahren. Während die Welt zwischen 1970 und 2008 mit einer relativ konstanten Rate von 0,18°C pro Jahrzehnt erwärmt wurde, ist diese Rate seit 2009 auf etwa 0,3°C pro Jahrzehnt gestiegen - eine nahezu Verdoppelung.<sup>56</sup> Diese Beschleunigung ist weitgehend im Einklang mit den Projektionen der neuesten Klimamodelle, deutet aber auf eine dringlichere Notwendigkeit schneller Emissionsreduktionen hin.</p>
+        
+        <p class="mb-4">Mehrere Faktoren tragen zu dieser Beschleunigung bei, darunter:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Der erhebliche Rückgang der globalen Luftverschmutzung in den letzten Jahrzehnten, wodurch der kühlende Effekt von Aerosolen in der Atmosphäre verringert wurde</li>
+          <li>Die Auswirkung des Vulkanausbruchs von Hunga Tonga im Jahr 2022</li>
+          <li>Die kontinuierliche Zunahme der Treibhausgaskonzentrationen in der Atmosphäre</li>
+        </ul>
+        
+        <p class="mb-4">Diese Beschleunigung erhöht die Dringlichkeit, die Kohlenutzung schneller zu reduzieren als bisher angenommen, da die Welt sich schneller kritischen Temperaturschwellen nähert.<sup>57</sup></p>
+      </div>
+    </section>
+
+    <section id="reduktionsmaßnahmen" class="bg-white rounded-lg shadow-md p-8 mb-8">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Maßnahmen zur Reduzierung der Kohlekraftwerksemissionen</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Technologische Lösungen</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-2 text-blue-800">Ersatz durch erneuerbare Energien</h4>
+            <p>Eine massive Ausweitung sauberer Stromquellen, begleitet von systemweiten Verbesserungen der Energieeffizienz, ist der Schlüssel zur Reduzierung der Kohlenutzung im Stromsektor. Im APS (Announced Pledges Scenario) der IEA wird die weltweite Produktion bestehender unverminderter Kohlekraftwerke von 2021 bis 2030 um fast 2.500 Terawattstunden reduziert, wobei 75% davon durch Solarenergie und Windkraft ersetzt werden.<sup>11</sup></p>
+          </div>
+          
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-2 text-blue-800">Kohlenstoffabscheidung, -nutzung und -speicherung (CCUS)</h4>
+            <p>Die Entwicklung und der Einsatz weniger umweltbelastender und effizienterer Technologien, einschließlich, aber nicht beschränkt auf Kohlenstoffabscheidung, -nutzung und -speicherung (CCUS), könnte der Kohle einen Platz als sauberere Energiequelle in den kommenden Jahrzehnten sichern. Bis heute wurden jedoch nur vier kommerzielle Kohlekraftwerke mit CCUS ausgestattet: die Boundary Dam-Anlage in Kanada, das Petra Nova-Kraftwerk in Texas, USA, und die Kraftwerke Jinjie Power und Taizhou Power in China.<sup>12</sup></p>
+          </div>
+        </div>
+        
+        <p class="mb-4">Diese technologischen Lösungen allein reichen jedoch nicht aus. Um die Kohlenstoffemissionen von Kohlekraftwerken in Einklang mit dem Netto-Null-Szenario zu bringen, ist eine globale durchschnittliche jährliche Reduzierung der Emissionen aus Kohlekraftwerken von etwa 10% bis 2030 erforderlich.<sup>13</sup></p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Politische Instrumente</h3>
+        
+        <div class="bg-gray-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-blue-700">Internationale Abkommen und Initiativen</h4>
+          <ul class="list-disc pl-6 space-y-3">
+            <li>
+              <strong>G7-Verpflichtung:</strong> Im April 2023 veröffentlichten die G7-Minister für Klima, Energie und Umwelt ein Kommuniqué, in dem sie die Notwendigkeit anerkennen, den Bau neuer unverminderter Kohlekraftwerke zu beenden, wie im Netto-Null-Szenario der IEA gefordert.<sup>14</sup>
+            </li>
+            <li>
+              <strong>Just Energy Transition Partnership (JETP):</strong> Eine Initiative, die während der COP26 im Jahr 2021 von Frankreich, Deutschland, dem Vereinigten Königreich, den Vereinigten Staaten und der Europäischen Union ins Leben gerufen wurde, um die finanziellen Ressourcen für die Beschleunigung der Energiewende bereitzustellen. Die Finanzierung umfasst 8,5 Milliarden US-Dollar für Südafrika, 20 Milliarden US-Dollar für Indonesien und 15,5 Milliarden US-Dollar für Vietnam.<sup>15</sup>
+            </li>
+            <li>
+              <strong>Kohleausstiegsverpflichtungen:</strong> Ende 2023 hatten 84 Länder zugestimmt, aus der Kohle auszusteigen oder keine neuen unverminderten Kohlekraftwerke zu entwickeln, was zusammen etwa 30% des aktuellen Kohleverbrauchs für die Stromerzeugung ausmacht. Von diesen Ländern haben 37 Kohleausstiegsziele mit festgelegten Terminen in nationale Pläne aufgenommen.<sup>16</sup>
+            </li>
+          </ul>
+        </div>
+        
+        <p class="mb-4">Diese politischen Maßnahmen spielen eine entscheidende Rolle bei der Schaffung eines günstigen Rahmens für den Kohleausstieg, indem sie klare Ziele setzen, die notwendigen Finanzierungsmittel bereitstellen und Anreize für Investitionen in saubere Energiequellen schaffen.</p>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Wirtschaftliche Anreize</h3>
+        
+        <p class="mb-4">Die wirtschaftlichen Argumente für den Kohleausstieg werden immer überzeugender. Die Internationale Währungsfonds (IWF) schätzt, dass die Welt durch den Ausstieg aus der Kohle auf einem mit dem 1,5°C-Ziel übereinstimmenden Zeitplan einen Nettogewinn von 85 Billionen US-Dollar realisieren würde.<sup>17</sup></p>
+        
+        <p class="mb-4">Neue erneuerbare Energien sind jetzt in den meisten Fällen viel billiger als neue Kohle und bestehende Kohlekraftwerke. Der Ersatz von Kohle durch saubere Energie hätte den Stromkunden im Jahr 2020 39 Milliarden US-Dollar, im Jahr 2022 86 Milliarden US-Dollar und im Jahr 2025 weitere 141 Milliarden US-Dollar einsparen können, laut einer Analyse aus dem Jahr 2020.<sup>18</sup></p>
+        
+        <div class="bg-green-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-green-700">Positive wirtschaftliche Kipppunkte</h4>
+          <p class="mb-4">Erneuerbare Energien haben einen Kipppunkt der Kostenparität mit fossil befeuerter Stromerzeugung erreicht. Außerdem zeigen Elektrofahrzeuge Anzeichen dafür, dass sie in großen Märkten wie China und Europa Kipppunkte erreichen oder sich diesen nähern.<sup>19</sup></p>
+          <p>Je mehr wir von etwas bauen, desto billiger wird es zu bauen. Diese verstärkende Rückkopplung ist verantwortlich für einige der Kostensenkungen bei erneuerbaren Energien und Elektrofahrzeugen und kann einen positiven Kaskadeneffekt auslösen, der zu einem umfassenden gesellschaftlichen Wandel führt.<sup>20</sup></p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Politische Barrieren und Lobbyismus</h3>
+        
+        <p class="mb-4">Trotz der überzeugenden wirtschaftlichen Argumente für den Kohleausstieg gibt es erhebliche politische Hindernisse und Widerstand gegen die notwendigen Veränderungen. Aktuelle Forschungen zeigen, dass Lobbyarbeit von Unternehmen zu Klimafragen oft den Fortschritt behindert und einen gefährlichen Präzedenzfall schafft, bei dem Klimaschutzmaßnahmen mit den wirtschaftlichen Interessen bestimmter Gruppen in Konflikt geraten.<sup>58</sup></p>
+        
+        <div class="bg-red-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-red-800">Beispiele für Lobbybarrieren:</h4>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Massive Lobbyarbeit der Öl- und Kohleindustrie gegen Klimapolitik, die im Jahr 2021 immer noch ein Hindernis für den Übergang zu einer CO2-armen Wirtschaft darstellt<sup>59</sup></li>
+            <li>Die OPEC hat während der COP28 ihre Mitglieder aufgefordert, jede Klimagipfelvereinbarung zur Einschränkung fossiler Brennstoffe zu blockieren<sup>60</sup></li>
+            <li>Einflussreiche Organisationen blockieren möglicherweise ehrgeizige Klimaschutzpolitik in korporatistischen Ländern, ohne dass dafür eine umfassende Medienstrategie erforderlich ist<sup>61</sup></li>
+            <li>Die Diskrepanz zwischen den Klimaverpflichtungen von Unternehmen und ihrer tatsächlichen Lobbyarbeit, wie bei Glencore, ExxonMobil und Stellantis<sup>62</sup></li>
+          </ul>
+        </div>
+        
+        <p>Diese Barrieren müssen in der realistischen Einschätzung des Zeitrahmens für den Kohleausstieg berücksichtigt werden. Sie helfen zu erklären, warum die tatsächlich realisierbaren Zeitpläne oft erheblich hinter dem zurückbleiben, was wissenschaftlich notwendig wäre, um die Klimaziele zu erreichen.</p>
+      </div>
+    </section>
+
+    <section id="zeiträume" class="bg-white rounded-lg shadow-md p-8 mb-8">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Realistische Umsetzungszeiträume</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Offizielle Ziele vs. realistische Erwartungen</h3>
+        
+        <p class="mb-4">Das IEA-Netto-Null-Emissions-Szenario sieht vor, dass die gesamte unverminderte Kohleverstromung bis 2040 endet.<sup>21</sup> Offizielle Ziele und realistische Erwartungen klaffen jedoch oft auseinander.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-2 text-gray-700">Offizielle Ziele</h4>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Die G7-Länder erkennen die Notwendigkeit an, den Bau neuer unverminderter Kohlekraftwerke zu beenden und wollen mit anderen Ländern zusammenarbeiten, um solche Projekte weltweit so schnell wie möglich zu beenden.<sup>22</sup></li>
+              <li>In Deutschland wurde der Zeitpunkt für den Kohleausstieg kürzlich von 2038 auf 2030 für Kraftwerke im westlichen Bundesland Nordrhein-Westfalen vorgezogen.<sup>23</sup></li>
+              <li>Die Slowakei hat ihren Kohleausstiegstermin von 2030 auf 2024 vorverlegt.<sup>24</sup></li>
+            </ul>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-2 text-gray-700">Realistische Erwartungen</h4>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Studien zeigen, dass ein Ausstieg nicht so einfach ist wie angenommen, wenn man den Aspekt der Energiesicherheit und die Auswirkungen auf die lokale Wirtschaft berücksichtigt.<sup>25</sup></li>
+              <li>Mit einer wachsenden Energienachfrage sehen viele Länder, insbesondere in Asien, kaum eine andere Wahl, als weiterhin Strom mit Kohle zu erzeugen.<sup>26</sup></li>
+              <li>Der Übergang weg von der Kohle erfordert erhebliche Vorabinvestitionen, und der Zugang dazu ist in einem Umfeld mit hohen Zinssätzen nicht einfach.<sup>27</sup></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Regionale Unterschiede und Herausforderungen</h3>
+        
+        <p class="mb-4">Die Herausforderungen beim Kohleausstieg variieren erheblich zwischen verschiedenen Regionen und Ländern:</p>
+        
+        <div class="overflow-x-auto mb-6">
+          <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+              <tr class="bg-blue-100">
+                <th class="py-3 px-4 border-b text-left">Region</th>
+                <th class="py-3 px-4 border-b text-left">Herausforderungen</th>
+                <th class="py-3 px-4 border-b text-left">Realistischer Zeitrahmen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3 px-4 border-b">Europäische Union</td>
+                <td class="py-3 px-4 border-b">Energiesicherheit, soziale Auswirkungen in kohleabhängigen Regionen</td>
+                <td class="py-3 px-4 border-b">2030-2035</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">USA</td>
+                <td class="py-3 px-4 border-b">Politische Polarisierung, regionale wirtschaftliche Abhängigkeit</td>
+                <td class="py-3 px-4 border-b">2035-2040</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">China</td>
+                <td class="py-3 px-4 border-b">Wachsende Energienachfrage, wirtschaftliche Abhängigkeit von Kohle, Energiesicherheit</td>
+                <td class="py-3 px-4 border-b">2045-2060</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">Indien</td>
+                <td class="py-3 px-4 border-b">Schnell wachsende Energienachfrage, begrenzte Alternativen, wirtschaftliche Einschränkungen</td>
+                <td class="py-3 px-4 border-b">2050-2070</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">Südostasien</td>
+                <td class="py-3 px-4 border-b">Junge Kohlekraftwerke, Finanzierungsprobleme, wachsende Nachfrage</td>
+                <td class="py-3 px-4 border-b">2045-2060</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="italic text-gray-600 mb-6">Quelle: Basierend auf IEA-Berichten und aktuellen Forschungsstudien, 2022-2024<sup>28,29</sup></p>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Die Zeitlinie des globalen Kohleausstiegs</h3>
+        
+        <div class="bg-blue-50 p-6 rounded-lg mb-6">
+          <div class="space-y-6">
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2020-2025</h4>
+              <p>Erste Länder schließen ihre letzten Kohlekraftwerke (z.B. Portugal 2021). Zunehmende Finanzierungsbeschränkungen für Kohleprojekte. Umfangreiche Planung für den Ausstieg in fortgeschrittenen Volkswirtschaften. Globaler Kohleverbrauch erreicht seinen absoluten Höhepunkt.<sup>30</sup></p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2025-2030</h4>
+              <p>Fortgeschrittene Volkswirtschaften beginnen mit dem massiven Ausstieg. Deutschland und andere EU-Länder schließen einen Großteil ihrer Kohlekraftwerke. Erneuerbare Energien werden in den meisten Märkten weltweit deutlich billiger als Kohle. Ernsthafte Umsetzung von JETP in Südafrika, Indonesien und Vietnam.<sup>31</sup></p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2030-2035</h4>
+              <p>Die meisten EU-Länder und andere fortgeschrittene Volkswirtschaften haben ihre Kohlekraftwerke geschlossen. China erreicht seinen Höhepunkt bei der Kohleverstromung und beginnt mit dem Rückbau. Indien verlangsamt den Bau neuer Kohlekraftwerke erheblich. CCUS-Technologie wird wettbewerbsfähiger und breiter eingesetzt.<sup>32</sup></p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2035-2040</h4>
+              <p>Ende der unverminderten Kohleverstromung in den meisten fortgeschrittenen Volkswirtschaften. China beschleunigt den Kohleausstieg. Südostasiatische Länder beginnen mit dem systematischen Ausstieg. Indien beginnt mit dem ernsthaften Rückbau älterer Kohlekraftwerke.<sup>33</sup></p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2040-2050</h4>
+              <p>Globale unverminderte Kohleverstromung sinkt auf weniger als 10% des Niveaus von 2020. Nur wenige Schwellenländer betreiben noch ungeminderte Kohlekraftwerke. Die verbleibenden Kohlekraftwerke sind entweder mit CCUS ausgestattet oder befinden sich in Regionen mit besonderen Herausforderungen.<sup>34</sup></p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2050-2070</h4>
+              <p>Vollständige globale Einstellung der unverminderten Kohleverstromung. Verbleibende Kohlenutzung hauptsächlich in der Industrie mit CCUS. Erneuerbare Energien, Speicher und andere saubere Technologien dominieren die globale Energielandschaft.<sup>35</sup></p>
+            </div>
+          </div>
+        </div>
+        
+        <p class="mb-4">Diese Zeitlinie stellt eine realistische Einschätzung dar, basierend auf aktuellen Trends, politischen Verpflichtungen und wirtschaftlichen Realitäten. Sie ist optimistischer als der aktuelle Kurs, aber konservativer als die ehrgeizigsten Szenarien wie das IEA-Netto-Null-Szenario, das ein viel schnelleres Tempo fordert.</p>
+      </div>
+    </section>
+
+    <section id="kippunkte" class="bg-white rounded-lg shadow-md p-8 mb-8">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Klima-Kippunkte und ihre Verbindung zur Kohleverstromung</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Was sind Klima-Kippunkte?</h3>
+        
+        <p class="mb-4">Klima-Kippunkte sind kritische Schwellenwerte in Klimasystemen, die, wenn sie überschritten werden, zu großen und oft irreversiblen Veränderungen führen können. Prof. Tim Lenton von der Universität Exeter beschreibt einen Kipppunkt als den Moment, an dem "eine kleine Veränderung einen großen Unterschied macht und den Zustand oder das Schicksal eines Systems verändert".<sup>36</sup></p>
+        
+        <div class="bg-yellow-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-yellow-800">Besonders gefährdete Systeme</h4>
+          <p class="mb-4">Laut einem umfassenden Bericht über globale Kipppunkte sind bereits fünf Kipppunkte gefährdet, durch die aktuelle Erwärmung überschritten zu werden:<sup>37</sup></p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Abschmelzen des grönländischen Eisschilds</li>
+            <li>Kollaps des westantarktischen Eisschilds</li>
+            <li>Absterben von Warmwasserkorallenriffen</li>
+            <li>Weitverbreitetes lokalisiertes abruptes Auftauen von Permafrost</li>
+            <li>Kollaps der Umwälzzirkulation im subpolaren Wirbel des Nordatlantiks</li>
+          </ul>
+        </div>
+        
+        <p class="mb-4">Der Bericht warnt zudem, dass drei weitere Kipppunkte in den 2030er Jahren gefährdet sind, wenn die Welt die 1,5°C über dem vorindustriellen Niveau überschreitet.<sup>38</sup></p>
+        
+        <div class="mt-8 mb-8">
+          <h4 class="text-xl font-semibold mb-4 text-yellow-800">Visualisierung der Klimakippunkte und ihrer Eintrittswahrscheinlichkeiten</h4>
+          <img src="https://gensparkpublicblob.blob.core.windows.net/user-upload-image/generate_and_execute_python_tool_call/toolu_01PnPrmxvAowgkGTWvT1brrx/python_result_images/klimakippunkte_und_ihre_eintrittswahrscheinlichkeiten.png" alt="Klimakippunkte und ihre Eintrittswahrscheinlichkeiten" class="chart">
+          <p class="italic text-gray-600 mt-2">Quelle: Basierend auf den Daten von McKay et al. (2022) und dem Global Tipping Points Report (2023)<sup>63,64</sup></p>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Neue Erkenntnisse zu bereits überschrittenen Kipppunkten</h3>
+        
+        <p class="mb-4">Neueste Forschungsergebnisse von 2025 deuten darauf hin, dass einige Kipppunkte bereits überschritten sein könnten oder sich unmittelbar davor befinden:</p>
+        
+        <div class="bg-red-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-red-800">Aktuelle Überschreitungen oder unmittelbar bevorstehende Kipppunkte:</h4>
+          <ul class="list-disc pl-6 space-y-3">
+            <li>
+              <strong>Warmwasserkorallenriffe:</strong> Korallenriffe erleben bereits Kipppunkte, da häufigere wärmebedingte Bleichereignisse, zusammen mit Verschmutzung, extremen Wetterereignissen und Krankheiten, sie in degradierte, von Algen dominierte Zustände kippen lassen.<sup>65</sup> Eine Studie aus dem Jahr 2024 zeigt, dass diese Systeme noch anfälliger sind als bisher angenommen und bereits bei der heutigen Erwärmung von 1,2°C massive Veränderungen erfahren.
+            </li>
+            <li>
+              <strong>Westantarktischer Eisschild:</strong> Beobachtungen haben gezeigt, dass Teile des westantarktischen Eisschilds möglicherweise bereits einen Kipppunkt überschritten haben. Insbesondere der Thwaites-Gletscher, auch als "Weltuntergangsgletscher" bekannt, könnte in nur fünf Jahren seinen Eisschelf verlieren, was zu einer beschleunigten Destabilisierung führen würde.<sup>66</sup>
+            </li>
+            <li>
+              <strong>Atlantische Meridionale Umwälzzirkulation (AMOC):</strong> Neue Forschungsergebnisse von Februar 2024 deuten darauf hin, dass die AMOC bereits "auf dem Weg zu einem Kipppunkt" ist. Die AMOC befindet sich bereits in ihrem schwächsten Zustand seit mehr als 1.000 Jahren.<sup>67</sup>
+            </li>
+            <li>
+              <strong>Lokale ökologische Kipppunkte:</strong> Eine Studie aus dem Jahr 2023 legt nahe, dass ökologische Kipppunkte viel früher auftreten könnten als bisher angenommen. So ist der Zusammenbruch des Ökosystems des Erhai-Sees in China früher eingetreten als von den meisten Beobachtern erwartet, da Klimaschwankungen, Wassermanagement und andere Verschmutzungsformen die Degradation beschleunigten.<sup>68</sup>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Zeitliche Einordnung von Kipppunkten und Verbindung zu Kohlekraftwerken</h3>
+        
+        <p class="mb-4">Die Nutzung von Kohle zur Stromerzeugung ist einer der Haupttreiber des Klimawandels und damit direkt mit dem Risiko verbunden, Klima-Kipppunkte zu überschreiten. Die folgende Tabelle zeigt die Verbindung zwischen der globalen Erwärmung, dem Risiko für Kipppunkte und dem prognostizierten Kohleausstiegstempo:</p>
+        
+        <div class="overflow-x-auto mb-6">
+          <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+              <tr class="bg-yellow-100">
+                <th class="py-3 px-4 border-b text-left">Globale Erwärmung</th>
+                <th class="py-3 px-4 border-b text-left">Gefährdete Kipppunkte</th>
+                <th class="py-3 px-4 border-b text-left">Notwendige Kohlereduktion</th>
+                <th class="py-3 px-4 border-b text-left">Realistisches Szenario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3 px-4 border-b">1,2°C (heute)</td>
+                <td class="py-3 px-4 border-b">Korallenriffe, Teile der Eisschilde, lokale Permafrostgebiete</td>
+                <td class="py-3 px-4 border-b">Sofortige Reduzierung in entwickelten Ländern</td>
+                <td class="py-3 px-4 border-b">Langsame Reduzierung, weitere Steigerung in Asien</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">1,5°C (ca. 2030-2035)</td>
+                <td class="py-3 px-4 border-b">Zusätzliche Systeme in Gefahr (Amazonas, Monsunregionen)</td>
+                <td class="py-3 px-4 border-b">55% Reduktion globaler Kohlekraftwerksemissionen bis 2030</td>
+                <td class="py-3 px-4 border-b">Ca. 20-30% Reduktion bis 2030 möglich, große regionale Unterschiede</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">2,0°C (ca. 2050)</td>
+                <td class="py-3 px-4 border-b">Mehrere Kipppunkte überschritten, Kaskadeneffekte möglich</td>
+                <td class="py-3 px-4 border-b">Kohleausstieg in allen Ländern bis 2040</td>
+                <td class="py-3 px-4 border-b">Kohleausstieg in entwickelten Ländern bis 2040, in Schwellenländern bis 2050-2060</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 border-b">>2,0°C</td>
+                <td class="py-3 px-4 border-b">Hohe Wahrscheinlichkeit mehrerer Kipppunkte, irreversible Schäden</td>
+                <td class="py-3 px-4 border-b">Alle verbleibenden Kohlekraftwerke mit CCS oder geschlossen</td>
+                <td class="py-3 px-4 border-b">Schwere Klimafolgen führen zu verstärkten Maßnahmen, beschleunigter Ausstieg unter hohen Kosten</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="italic text-gray-600 mb-6">Quelle: Basierend auf den Daten des Global Tipping Points Report und IEA-Szenarien, 2023<sup>39,40</sup></p>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Wechselwirkungen zwischen Kipppunkten und Kaskadeneffekte</h3>
+        
+        <p class="mb-4">Klimasysteme sind miteinander verbunden, was bedeutet, dass das Überschreiten eines Kipppunkts die Wahrscheinlichkeit erhöhen kann, andere zu überschreiten. Forscher bezeichnen dies als "Dominoeffekt" oder "Kippkaskade".<sup>41</sup></p>
+        
+        <div class="bg-red-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-red-800">Beispiel einer Kippkaskade:</h4>
+          <ol class="list-decimal pl-6 space-y-2">
+            <li>Der Zerfall des grönländischen Eisschilds würde dazu führen, dass große Mengen kühlen Süßwassers in den Ozean fließen.</li>
+            <li>Dies könnte die atlantische meridionale Umwälzzirkulation (AMOC) über einen Kipppunkt hinaus drängen.</li>
+            <li>Dies wiederum könnte zu einer Intensivierung von El Niño-Ereignissen führen.</li>
+            <li>Diese könnten Wettermuster über dem Amazonas beeinflussen und zum Absterben des Regenwaldes führen.<sup>42</sup></li>
+          </ol>
+        </div>
+        
+        <p class="mb-4">Die Mehrheit der Wechselwirkungen zwischen Klimakippsystemen ist destabilisierend, was darauf hindeutet, dass das Überschreiten eines Kipppunkts im Allgemeinen dazu führen wird, dass weitere Kipppunkte überschritten werden.</p>
+        
+        <p class="mb-4">Dies unterstreicht die Dringlichkeit, die Kohlenstoffemissionen aus Kohlekraftwerken drastisch zu reduzieren, um das Risiko zu verringern, diese kritischen Schwellenwerte zu überschreiten. Jede Verzögerung erhöht das Risiko einer Kaskade von Kipppunkten, die katastrophale und irreversible Auswirkungen auf Umwelt, Gesellschaft und Wirtschaft haben könnten.</p>
+      </div>
+    </section>
+
+    <section id="wirtschaft" class="bg-white rounded-lg shadow-md p-8 mb-8">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Wirtschaftliche Auswirkungen im Zeitverlauf</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Kosten und Nutzen des Kohleausstiegs</h3>
+        
+        <p class="mb-4">Die wirtschaftlichen Auswirkungen des Kohleausstiegs sind vielschichtig und erstrecken sich über verschiedene Zeiträume und Sektoren. Der Internationale Währungsfonds (IWF) hat berechnet, dass der weltweite Nettogewinn durch die Abschaffung der Kohle fast 78 Billionen US-Dollar bis zum Ende dieses Jahrhunderts betragen würde. Das entspricht etwa 80% des derzeitigen globalen BIP und wäre gleichbedeutend mit etwa 1,2% der jährlichen globalen Wirtschaftsleistung während dieses Zeitraums.<sup>43</sup></p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-50 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-2 text-red-800">Kosten des Kohleausstiegs</h4>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Kapitalinvestitionen für neue Energieerzeugungskapazitäten zum Ersatz der durch Kohle verlorenen Kapazitäten</li>
+              <li>Entschädigung für Kohleunternehmen für entgangene Einnahmen bei Stilllegung</li>
+              <li>Umschulung und Unterstützung für betroffene Arbeitnehmer</li>
+              <li>Erhöhte kurzfristige Energiekosten während des Übergangs</li>
+              <li>Regionale wirtschaftliche Anpassungen in kohleabhängigen Gebieten</li>
+            </ul>
+          </div>
+          
+          <div class="bg-green-50 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-2 text-green-800">Nutzen des Kohleausstiegs</h4>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Vermiedene Klimaschäden an Infrastruktur und Ökosystemen</li>
+              <li>Gesundheitliche Vorteile durch reduzierte Luftverschmutzung</li>
+              <li>Schaffung neuer Arbeitsplätze im Bereich der erneuerbaren Energien</li>
+              <li>Langfristige Energiekosteneinsparungen</li>
+              <li>Wirtschaftliches Wachstum durch Innovation und neue Technologien</li>
+              <li>Vermiedene Kosten durch Verhinderung des Überschreitens von Klima-Kipppunkten</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p class="mb-4">Der Barwert der gesamten Finanzierung, die an Verpflichtungen zur Verschrottung von Kohle geknüpft ist, beträgt weltweit etwa 29 Billionen US-Dollar. Das entspricht jährlich zwischen 500 Milliarden und 2 Billionen US-Dollar, wobei in diesem Jahrzehnt eine Vorabinvestition von 3 Billionen US-Dollar erforderlich ist.<sup>44</sup></p>
+
+        <div class="mt-8 mb-8">
+          <h4 class="text-xl font-semibold mb-4">Wirtschaftswachstum vs. Klimafolgekosten (2025-2050)</h4>
+          <img src="https://gensparkpublicblob.blob.core.windows.net/user-upload-image/generate_and_execute_python_tool_call/toolu_01GHfLDyhCjYKGA9z4JFmDRe/python_result_images/wirtschaftswachstum_vs_klimafolgekosten.png" alt="Wirtschaftswachstum vs. Klimafolgekosten" class="chart">
+          <p class="italic text-gray-600 mt-2">Quelle: Basierend auf Daten der BCG-Studie "Why Investing in Climate Action Makes Good Economic Sense" und der Studie "Climate change will cost global economy $38 trillion every year within 25 years"<sup>69,70</sup></p>
+        </div>
+
+        <div class="mt-8 mb-8">
+          <h4 class="text-xl font-semibold mb-4">Klimainvestitionen und ihre Auswirkungen (2025-2050)</h4>
+          <img src="https://gensparkpublicblob.blob.core.windows.net/user-upload-image/generate_and_execute_python_tool_call/toolu_01GHfLDyhCjYKGA9z4JFmDRe/python_result_images/klimainvestitionen_und_ihre_auswirkungen.png" alt="Klimainvestitionen und ihre Auswirkungen" class="chart">
+          <p class="italic text-gray-600 mt-2">Quelle: Basierend auf den Daten des IWF und der BCG-Studie zu Klimainvestitionen<sup>71,72</sup></p>
+        </div>
+
+        <div class="mt-8 mb-8">
+          <h4 class="text-xl font-semibold mb-4">Rendite auf Klimaschutzinvestitionen (2025-2050)</h4>
+          <img src="https://gensparkpublicblob.blob.core.windows.net/user-upload-image/generate_and_execute_python_tool_call/toolu_015DgQ7egHpHrWVtfdN4jMwZ/python_result_images/rendite_auf_klimaschutzinvestitionen_2025_2050.png" alt="Rendite auf Klimaschutzinvestitionen (2025-2050)" class="chart">
+          <p class="italic text-gray-600 mt-2">Quelle: Basierend auf Daten der IMF-Studie "The Great Carbon Arbitrage" und der BCG-Studie "Why Investing in Climate Action Makes Good Economic Sense"<sup>73,74</sup></p>
+        </div>
+        
+        <p class="mb-4">Die obigen Grafiken verdeutlichen, dass die wirtschaftlichen Vorteile von Klimaschutzinvestitionen die Kosten deutlich übersteigen, insbesondere in der mittel- und langfristigen Perspektive. Während die Kosten für Klimaschutzmaßnahmen hauptsächlich in den nächsten 10-15 Jahren anfallen, werden die Vorteile durch vermiedene Klimaschäden über viele Jahrzehnte realisiert und übertreffen die Investitionskosten um ein Vielfaches.</p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Wirtschaftliche Szenarien im 5-Jahres-Rhythmus</h3>
+        
+        <div class="bg-blue-50 p-6 rounded-lg mb-6">
+          <div class="space-y-6">
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2025</h4>
+              <p>
+                <strong>Investitionen:</strong> Erhebliche Anfangsinvestitionen in erneuerbare Energien und Netzinfrastruktur. Öffentlich-private Partnerschaften werden gebildet, um Finanzierungslücken zu schließen.<br>
+                <strong>Arbeitsmarkt:</strong> Beginnende Umschulungsprogramme in entwickelten Ländern. Erste Anzeichen von Arbeitsplatzverlusten in traditionellen Kohleregionen, aber wachsende Beschäftigung im Sektor der erneuerbaren Energien.<br>
+                <strong>Energiepreise:</strong> Leichte Erhöhung der Strompreise in Regionen mit schnellem Kohleausstieg. Erneuerbare Energien erreichen Kostenparität mit Kohle in den meisten Märkten.<sup>45</sup>
+              </p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2030</h4>
+              <p>
+                <strong>Investitionen:</strong> Höhepunkt der weltweiten Investitionen in den Ersatz von Kohlekapazitäten. Finanzierungsmodelle reifen und ermöglichen schnelleren Ausstieg.<br>
+                <strong>Arbeitsmarkt:</strong> Signifikante Arbeitsplatzverluste im Kohlesektor in Europa und Nordamerika, teilweise kompensiert durch neue Arbeitsplätze im Bereich der sauberen Energie. Beginn der Umstellung in China.<br>
+                <strong>Energiepreise:</strong> Preisparität zwischen erneuerbaren Energien und Kohle in den meisten Weltregionen erreicht. Erste wirtschaftliche Vorteile durch vermiedene Klimaschäden und Gesundheitskosten werden sichtbar.<sup>46</sup>
+              </p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2035</h4>
+              <p>
+                <strong>Investitionen:</strong> Investitionen verlagern sich zunehmend auf Speichertechnologien und Netzflexibilität. Finanzierung für den Kohleausstieg in asiatischen Schwellenländern erreicht ihren Höhepunkt.<br>
+                <strong>Arbeitsmarkt:</strong> Traditioneller Kohlesektor in entwickelten Ländern stark verkleinert. Neue Wertschöpfungsketten in der sauberen Energiewirtschaft etabliert. Umschulungsprogramme zeigen Erfolge.<br>
+                <strong>Energiepreise:</strong> Strompreise sinken in Regionen mit hohem Anteil erneuerbarer Energien. Erste signifikante wirtschaftliche Einsparungen durch vermiedene Klimaschäden werden messbar.<sup>47</sup>
+              </p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2040</h4>
+              <p>
+                <strong>Investitionen:</strong> Investitionen konzentrieren sich auf die verbleibenden Kohleregionen in Schwellenländern. Technologien zur Kohlenstoffabscheidung werden wirtschaftlich für verbleibende unverzichtbare Kohleanwendungen.<br>
+                <strong>Arbeitsmarkt:</strong> Beschäftigung im Bereich der sauberen Energie übersteigt deutlich die früheren Arbeitsplätze im Kohlesektor. Neue Industriezweige entstehen rund um erneuerbare Energien und Speicher.<br>
+                <strong>Energiepreise:</strong> Deutlich geringere Strompreise im Vergleich zu Szenarien ohne Kohleausstieg. Die wirtschaftlichen Vorteile durch vermiedene Klimaschäden übertreffen die Kosten des Übergangs.<sup>48</sup>
+              </p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2045</h4>
+              <p>
+                <strong>Investitionen:</strong> Globale Investitionen in die Endphase des Kohleausstiegs. Hauptfokus liegt auf den letzten verbleibenden Kohlekraftwerken in Entwicklungsländern.<br>
+                <strong>Arbeitsmarkt:</strong> Ehemalige Kohleregionen haben weitgehend erfolgreiche wirtschaftliche Transformation durchlaufen. Neue Industriezweige haben alte ersetzt.<br>
+                <strong>Energiepreise:</strong> Erneuerbare Energien dominieren den globalen Energiemarkt mit historisch niedrigen Preisen. Die wirtschaftlichen Gewinne durch vermiedene Klimaschäden werden immer deutlicher.<sup>49</sup>
+              </p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-semibold text-blue-800">2050</h4>
+              <p>
+                <strong>Investitionen:</strong> Die letzten unverminderten Kohlekraftwerke werden stillgelegt oder mit CCS ausgestattet. Investitionen verlagern sich vollständig auf Optimierung und Innovation im Bereich der sauberen Energie.<br>
+                <strong>Arbeitsmarkt:</strong> Vollständige Transformation der Energiewirtschaft abgeschlossen. Neue Arbeitsplatzprofile und Qualifikationen dominieren den Energiesektor.<br>
+                <strong>Wirtschaftlicher Nettoeffekt:</strong> Die Welt realisiert erhebliche wirtschaftliche Vorteile durch vermiedene Klimaschäden, geringere Gesundheitskosten und eine innovativere, effizientere Wirtschaft. Die Nettogewinne des Kohleausstiegs werden klar sichtbar und übertreffen die Kosten deutlich.<sup>50</sup>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Finanzierungsherausforderungen und Lösungen</h3>
+        
+        <p class="mb-4">Die Finanzierung des Kohleausstiegs stellt eine enorme Herausforderung dar, insbesondere in Schwellenländern mit hoher Kohleabhängigkeit, wo junge Kohlekraftwerke mit Schulden gebaut wurden, die noch nicht abbezahlt sind, und wo gleichzeitig ein schnell wachsender Strombedarf besteht.<sup>51</sup></p>
+        
+        <div class="bg-gray-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-gray-700">Innovative Finanzierungsmodelle:</h4>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Öffentlich-private Partnerschaften:</strong> Angesichts des Umfangs der Herausforderung wird öffentliche Finanzierung allein nicht ausreichen. Private Finanzierung ist ebenfalls erforderlich. Die öffentliche Finanzierung sollte etwa 10% der Gesamtkosten betragen, um Risiken zu reduzieren und private Investitionen zu fördern.<sup>52</sup>
+            </li>
+            <li>
+              <strong>Just Energy Transition Partnerships (JETP):</strong> Diese Initiativen stellen erhebliche finanzielle Mittel bereit, um den Übergang von der Kohle zu unterstützen. Beispiele sind die 8,5 Milliarden US-Dollar für Südafrika, 20 Milliarden US-Dollar für Indonesien und 15,5 Milliarden US-Dollar für Vietnam.<sup>53</sup>
+            </li>
+            <li>
+              <strong>Gemischte Finanzierungsmechanismen:</strong> In der kohleabhängigen Region Tocopilla in Chile hat der Kohlekraftwerksbetreiber Engie einen gemischten Finanzierungsmechanismus eingerichtet, um seine letzte Kohleeinheit 2022 zu schließen und durch 151 MW Windkraft zu ersetzen.<sup>54</sup>
+            </li>
+          </ul>
+        </div>
+        
+        <p class="mb-4">Diese Finanzierungsmodelle sind entscheidend, um den Übergang von der Kohle zu beschleunigen und gleichzeitig sicherzustellen, dass dieser Übergang gerecht und inklusiv ist. Der Weltbank zufolge könnte der Ersatz von Kohle durch saubere Energie den Stromkunden im Jahr 2020 39 Milliarden US-Dollar, im Jahr 2022 86 Milliarden US-Dollar und im Jahr 2025 weitere 141 Milliarden US-Dollar einsparen.<sup>55</sup></p>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Die wirtschaftlichen Kosten des Nichthandelns</h3>
+        
+        <p class="mb-4">Eine bahnbrechende Studie, die 2024 in der Fachzeitschrift Nature veröffentlicht wurde, zeigt, dass der Klimawandel bis 2049 jährlich zu wirtschaftlichen Schäden in Höhe von 38 Billionen US-Dollar führen wird. Das entspricht etwa einem Fünftel der aktuellen globalen Wirtschaftsleistung.<sup>75</sup></p>
+        
+        <div class="bg-red-50 p-6 rounded-lg mb-6">
+          <h4 class="text-xl font-semibold mb-2 text-red-800">Wichtige Erkenntnisse zur Wirtschaftlichkeit des Klimaschutzes:</h4>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Die Welt ist bereits zu einer Einkommensreduzierung von 19% innerhalb der nächsten 26 Jahre verpflichtet, unabhängig davon, welche Maßnahmen zur Bekämpfung der Klimakrise ergriffen werden<sup>76</sup></li>
+            <li>Die geschätzten Schäden von 38 Billionen US-Dollar berücksichtigen noch nicht die zusätzlichen Kosten durch extremere Wetterereignisse, Stürme und Waldbrände, die durch den Klimawandel verschlimmert werden<sup>77</sup></li>
+            <li>Eine aktuelle Kosten-Nutzen-Analyse von 2025 zeigt, dass die kumulativen wirtschaftlichen Kosten bei einem Temperaturanstieg von 3°C bis 2100 um 15% bis 34% höher liegen könnten als bei einer Begrenzung auf unter 2°C<sup>78</sup></li>
+            <li>Der Nettogewinn durch den Ausstieg aus der Kohleverstromung würde etwa 85 Billionen US-Dollar betragen, was dem Sechsfachen der 6 Billionen US-Dollar entspricht, die zur Einhaltung der im Pariser Klimaabkommen festgelegten Grenzen erforderlich wären<sup>79</sup></li>
+          </ul>
+        </div>
+        
+        <p class="mb-4">Diese neuen wirtschaftlichen Erkenntnisse unterstreichen die Dringlichkeit sofortiger Maßnahmen zur Reduzierung von Kohlenstoffemissionen, insbesondere aus Kohlekraftwerken. Die wirtschaftlichen Kosten des Nichthandelns übersteigen bei weitem die Kosten für Klimaschutzmaßnahmen, selbst wenn man nur die direkten wirtschaftlichen Auswirkungen und nicht die breiteren sozialen und ökologischen Folgen berücksichtigt.</p>
+      </div>
+    </section>
+
+    <section id="fazit" class="bg-white rounded-lg shadow-md p-8 mb-8">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Fazit und Ausblick</h2>
+      
+      <p class="mb-4">Die Analyse der globalen CO2-Quellen, mit besonderem Fokus auf Kohlekraftwerke, zeigt deutlich, dass wir uns an einem kritischen Wendepunkt befinden. Kohlekraftwerke sind nach wie vor für etwa ein Drittel der weltweiten Stromerzeugung verantwortlich und stellen damit eine der größten Herausforderungen für die globalen Klimaschutzbemühungen dar.</p>
+      
+      <div class="bg-blue-50 p-6 rounded-lg mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-700">Zentrale Erkenntnisse:</h3>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>
+            <strong>Status Quo:</strong> Trotz zunehmender Bemühungen zur Reduzierung der Kohlenutzung hat der globale Kohleverbrauch 2022 und 2023 Rekordwerte erreicht, hauptsächlich getrieben durch Wachstum in China, Indien und anderen asiatischen Ländern. Diese Entwicklung steht im Widerspruch zu den Anforderungen für die Begrenzung der globalen Erwärmung auf 1,5°C.
+          </li>
+          <li>
+            <strong>Beschleunigte Erwärmung:</strong> Neueste Forschungen zeigen eine besorgniserregende Beschleunigung der globalen Erwärmung in den letzten 15 Jahren, von 0,18°C auf etwa 0,3°C pro Jahrzehnt. Diese Beschleunigung ist zwar weitgehend im Einklang mit Klimamodellen, verdeutlicht aber die Dringlichkeit sofortiger Maßnahmen.
+          </li>
+          <li>
+            <strong>Kippunkte in Gefahr:</strong> Fünf wichtige Klima-Kippunkte stehen bereits kurz davor, überschritten zu werden oder wurden möglicherweise bereits überschritten, darunter das Absterben von Korallenriffen, das Schmelzen des westantarktischen Eisschilds und Veränderungen in der atlantischen Meeresströmung. Drei weitere Kippunkte sind in den 2030er Jahren gefährdet.
+          </li>
+          <li>
+            <strong>Wirtschaftliche Perspektive:</strong> Die wirtschaftlichen Vorteile eines beschleunigten Kohleausstiegs überwiegen bei weitem die Kosten. Der IWF schätzt einen potenziellen Nettogewinn von bis zu 85 Billionen US-Dollar bis zum Ende des Jahrhunderts. Die Herausforderung liegt nicht in der wirtschaftlichen Rechtfertigung, sondern in der Überwindung kurzfristiger Finanzierungshürden und politischer Widerstände.
+          </li>
+          <li>
+            <strong>Regionale Unterschiede:</strong> Die realistische Zeitlinie für den Kohleausstieg variiert erheblich zwischen verschiedenen Regionen, von 2030-2035 in der EU bis zu 2050-2070 in Entwicklungs- und Schwellenländern. Diese Unterschiede müssen in der globalen Klimapolitik anerkannt und berücksichtigt werden.
+          </li>
+          <li>
+            <strong>Politische Barrieren:</strong> Lobbyismus und politischer Widerstand bleiben erhebliche Hindernisse für einen schnelleren Kohleausstieg. Die Diskrepanz zwischen dem wissenschaftlich Notwendigen und dem politisch Durchsetzbaren ist nach wie vor eine der größten Herausforderungen.
+          </li>
+        </ol>
+      </div>
+      
+      <p class="mb-4">Die Bewältigung der Herausforderung des Kohleausstiegs erfordert einen koordinierten globalen Ansatz, der wirtschaftliche Realitäten, soziale Gerechtigkeit und ökologische Notwendigkeiten in Einklang bringt. Die gute Nachricht ist, dass wir bereits positive soziale Kipppunkte erreichen oder überschreiten, wie die Kostenparität erneuerbarer Energien mit fossilen Brennstoffen und die zunehmende Akzeptanz von Elektrofahrzeugen in wichtigen Märkten.</p>
+      
+      <p class="mb-4">Der Weg nach vorn muss von einer realistischen Anerkennung der Herausforderungen geprägt sein, aber auch von der Entschlossenheit, das Tempo des Wandels zu beschleunigen. Die wirtschaftlichen Vorteile, die vermiedenen Klimaschäden und die Verhinderung des Überschreitens kritischer Kipppunkte bilden zusammen ein überzeugendes Argument für entschlossenes Handeln.</p>
+      
+      <div class="bg-green-50 p-6 rounded-lg mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-green-700">Ausblick:</h3>
+        <p class="mb-4">Die kommenden Jahrzehnte werden entscheidend sein für die globale Energiewende. Mit dem richtigen Mix aus Politik, Finanzierung und Technologie ist ein Übergang zu einer Welt ohne unverminderte Kohlenutzung bis zur Mitte des Jahrhunderts möglich. Dieser Übergang bietet nicht nur die Chance, katastrophale Klimafolgen zu vermeiden, sondern auch eine gerechtere, nachhaltigere und wirtschaftlich prosperierendere Zukunft zu gestalten.</p>
+        
+        <p>Die größte Herausforderung besteht darin, den Widerspruch zwischen dem wissenschaftlich Notwendigen und dem politisch und wirtschaftlich Machbaren zu überwinden. Die hier vorgestellte Analyse legt nahe, dass mit innovativen Ansätzen, internationaler Zusammenarbeit und einer langfristigen Vision dieser Widerspruch überwunden werden kann – zum Nutzen der heutigen und kommender Generationen.</p>
+      </div>
+    </section>
+
+    <section id="quellen" class="bg-white rounded-lg shadow-md p-8">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Quellenverzeichnis</h2>
+      
+      <div class="space-y-2">
+        <p id="fn1" class="footnote"><sup>1</sup> <a href="https://www.epa.gov/ghgemissions/global-greenhouse-gas-overview" target="_blank" class="text-blue-600 hover:underline">US EPA: Global Greenhouse Gas Overview</a></p>
+        
+        <p id="fn2" class="footnote"><sup>2</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in the Energy System</a></p>
+        
+        <p id="fn3" class="footnote"><sup>3</sup> <a href="https://www.canadianenergycentre.ca/global-emissions-from-coal-plants/" target="_blank" class="text-blue-600 hover:underline">Canadian Energy Centre: Global emissions from coal plants</a></p>
+        
+        <p id="fn4" class="footnote"><sup>4</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in the Energy System, Latest findings</a></p>
+        
+        <p id="fn5" class="footnote"><sup>5</sup> <a href="https://www.statista.com/statistics/784682/worldwide-co2-emissions-from-coal/" target="_blank" class="text-blue-600 hover:underline">Statista: Global coal use CO₂ emissions 2023</a></p>
+        
+        <p id="fn6" class="footnote"><sup>6</sup> <a href="https://www.statista.com/statistics/1014423/co2-emissions-from-coal-combustion-in-selected-countries/" target="_blank" class="text-blue-600 hover:underline">Statista: Coal combustion CO₂ emissions by country 2023</a></p>
+        
+        <p id="fn7" class="footnote"><sup>7</sup> <a href="https://www.c2es.org/document/addressing-emissions-from-coal-use-in-power-generation/" target="_blank" class="text-blue-600 hover:underline">C2ES: Addressing Emissions From Coal Use in Power Generation</a></p>
+        
+        <p id="fn8" class="footnote"><sup>8</sup> <a href="https://www.statista.com/statistics/1014423/co2-emissions-from-coal-combustion-in-selected-countries/" target="_blank" class="text-blue-600 hover:underline">Statista: Coal combustion CO₂ emissions by country 2023</a></p>
+        
+        <p id="fn9" class="footnote"><sup>9</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in the Energy System, Latest findings</a></p>
+        
+        <p id="fn10" class="footnote"><sup>10</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in the Energy System</a></p>
+        
+        <p id="fn11" class="footnote"><sup>11</sup> <a href="https://www.iea.org/reports/coal-in-net-zero-transitions" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in Net Zero Transitions</a></p>
+        
+        <p id="fn12" class="footnote"><sup>12</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in the Energy System</a></p>
+        
+        <p id="fn13" class="footnote"><sup>13</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in the Energy System</a></p>
+        
+        <p id="fn14" class="footnote"><sup>14</sup> <a href="https://www.g7hiroshima.go.jp/en/documents/" target="_blank" class="text-blue-600 hover:underline">G7 Hiroshima: Communiqué</a></p>
+        
+        <p id="fn15" class="footnote"><sup>15</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Just Energy Transition Partnership</a></p>
+        
+        <p id="fn16" class="footnote"><sup>16</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Status of coal phase-down pledges</a></p>
+        
+        <p id="fn17" class="footnote"><sup>17</sup> <a href="https://www.weforum.org/stories/2024/09/investing-coal-phase-out-opportunity-climate/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: How investing in coal phase-out can lead to an $85 trillion opportunity</a></p>
+        
+        <p id="fn18" class="footnote"><sup>18</sup> <a href="https://www.weforum.org/stories/2024/09/investing-coal-phase-out-opportunity-climate/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: How investing in coal phase-out can lead to an $85 trillion opportunity</a></p>
+        
+        <p id="fn19" class="footnote"><sup>19</sup> <a href="https://www.carbonbrief.org/qa-climate-tipping-points-have-put-earth-on-disastrous-trajectory-says-new-report/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: Q&A: Climate tipping points have put Earth on 'disastrous trajectory'</a></p>
+        
+        <p id="fn20" class="footnote"><sup>20</sup> <a href="https://www.carbonbrief.org/qa-climate-tipping-points-have-put-earth-on-disastrous-trajectory-says-new-report/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: Q&A: Climate tipping points have put Earth on 'disastrous trajectory'</a></p>
+        
+        <p id="fn21" class="footnote"><sup>21</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Where do we need to go?</a></p>
+        
+        <p id="fn22" class="footnote"><sup>22</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: G7 countries recognise the need to end new unabated coal-fired power plants</a></p>
+        
+        <p id="fn23" class="footnote"><sup>23</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: G7 countries recognise the need to end construction of new unabated coal-fired power generation</a></p>
+        
+        <p id="fn24" class="footnote"><sup>24</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: G7 countries recognise the need to end construction of new unabated coal-fired power generation</a></p>
+        
+        <p id="fn25" class="footnote"><sup>25</sup> <a href="https://www.mdpi.com/2071-1050/16/4/1649" target="_blank" class="text-blue-600 hover:underline">MDPI: How Realistic Are Coal Phase-Out Timeline Targets for Turkey?</a></p>
+        
+        <p id="fn26" class="footnote"><sup>26</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: What are the challenges?</a></p>
+        
+        <p id="fn27" class="footnote"><sup>27</sup> <a href="https://www.weforum.org/stories/2024/09/investing-coal-phase-out-opportunity-climate/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: How investing in coal phase-out can lead to an $85 trillion opportunity</a></p>
+        
+        <p id="fn28" class="footnote"><sup>28</sup> <a href="https://www.iea.org/reports/coal-2023/" target="_blank" class="text-blue-600 hover:underline">IEA: Coal 2023</a></p>
+        
+        <p id="fn29" class="footnote"><sup>29</sup> <a href="https://www.carbonbrief.org/guest-post-how-quickly-does-the-world-need-to-phase-down-all-fossil-fuels/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: How quickly does the world need to 'phase down' all fossil fuels?</a></p>
+        
+        <p id="fn30" class="footnote"><sup>30</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in the Energy System</a></p>
+        
+        <p id="fn31" class="footnote"><sup>31</sup> <a href="https://beyondfossilfuels.org/coal-exit-timeline/" target="_blank" class="text-blue-600 hover:underline">Beyond Fossil Fuels: Coal Exit Timeline</a></p>
+        
+        <p id="fn32" class="footnote"><sup>32</sup> <a href="https://ember-energy.org/latest-insights/todays-new-coal-phase-out-announcements-an-explainer/" target="_blank" class="text-blue-600 hover:underline">Ember: Today's new coal phase-out announcements: an explainer</a></p>
+        
+        <p id="fn33" class="footnote"><sup>33</sup> <a href="https://beyondfossilfuels.org/wp-content/uploads/2021/02/Overview-of-national-coal-phase-out-announcements-Europe-Beyond-Coal-February-2021-CZ-2033-version1.pdf" target="_blank" class="text-blue-600 hover:underline">Beyond Fossil Fuels: Overview: National coal phase-out announcements in Europe</a></p>
+        
+        <p id="fn34" class="footnote"><sup>34</sup> <a href="https://www.iea.org/reports/phasing-out-unabated-coal-current-status-and-three-case-studies/executive-summary" target="_blank" class="text-blue-600 hover:underline">IEA: Executive Summary – Phasing Out Unabated Coal</a></p>
+        
+        <p id="fn35" class="footnote"><sup>35</sup> <a href="https://ember-energy.org/latest-insights/coal-phasedown-a-year-on-from-cop26/" target="_blank" class="text-blue-600 hover:underline">Ember: "Coal phasedown" a year on from COP26</a></p>
+        
+        <p id="fn36" class="footnote"><sup>36</sup> <a href="https://www.carbonbrief.org/qa-climate-tipping-points-have-put-earth-on-disastrous-trajectory-says-new-report/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: Q&A: Climate tipping points have put Earth on 'disastrous trajectory'</a></p>
+        
+        <p id="fn37" class="footnote"><sup>37</sup> <a href="https://www.carbonbrief.org/qa-climate-tipping-points-have-put-earth-on-disastrous-trajectory-says-new-report/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: Q&A: Climate tipping points have put Earth on 'disastrous trajectory'</a></p>
+        
+        <p id="fn38" class="footnote"><sup>38</sup> <a href="https://www.carbonbrief.org/qa-climate-tipping-points-have-put-earth-on-disastrous-trajectory-says-new-report/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: Q&A: Climate tipping points have put Earth on 'disastrous trajectory'</a></p>
+        
+        <p id="fn39" class="footnote"><sup>39</sup> <a href="https://global-tipping-points.org/" target="_blank" class="text-blue-600 hover:underline">Global Tipping Points Report</a></p>
+        
+        <p id="fn40" class="footnote"><sup>40</sup> <a href="https://www.iea.org/reports/net-zero-by-2050" target="_blank" class="text-blue-600 hover:underline">IEA: Net Zero by 2050</a></p>
+        
+        <p id="fn41" class="footnote"><sup>41</sup> <a href="https://www.carbonbrief.org/qa-climate-tipping-points-have-put-earth-on-disastrous-trajectory-says-new-report/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: Q&A: Climate tipping points have put Earth on 'disastrous trajectory'</a></p>
+        
+        <p id="fn42" class="footnote"><sup>42</sup> <a href="https://www.carbonbrief.org/qa-climate-tipping-points-have-put-earth-on-disastrous-trajectory-says-new-report/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: Q&A: Climate tipping points have put Earth on 'disastrous trajectory'</a></p>
+        
+        <p id="fn43" class="footnote"><sup>43</sup> <a href="https://www.imf.org/en/Blogs/Articles/2022/06/08/how-replacing-coal-with-renewable-energy-could-pay-for-itself" target="_blank" class="text-blue-600 hover:underline">IMF: How Replacing Coal With Renewable Energy Could Pay For Itself</a></p>
+        
+        <p id="fn44" class="footnote"><sup>44</sup> <a href="https://www.imf.org/en/Blogs/Articles/2022/06/08/how-replacing-coal-with-renewable-energy-could-pay-for-itself" target="_blank" class="text-blue-600 hover:underline">IMF: How Replacing Coal With Renewable Energy Could Pay For Itself</a></p>
+        
+        <p id="fn45" class="footnote"><sup>45</sup> <a href="https://www.iea.org/reports/coal-in-net-zero-transitions" target="_blank" class="text-blue-600 hover:underline">IEA: Coal in Net Zero Transitions</a></p>
+        
+        <p id="fn46" class="footnote"><sup>46</sup> <a href="https://www.weforum.org/stories/2024/09/investing-coal-phase-out-opportunity-climate/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: How investing in coal phase-out can lead to an $85 trillion opportunity</a></p>
+        
+        <p id="fn47" class="footnote"><sup>47</sup> <a href="https://www.sciencedirect.com/science/article/abs/pii/S0140988320303480" target="_blank" class="text-blue-600 hover:underline">ScienceDirect: Quantifying economic effects of the coal phase-out in Germany</a></p>
+        
+        <p id="fn48" class="footnote"><sup>48</sup> <a href="https://www.imf.org/en/Blogs/Articles/2022/06/08/how-replacing-coal-with-renewable-energy-could-pay-for-itself" target="_blank" class="text-blue-600 hover:underline">IMF: How Replacing Coal With Renewable Energy Could Pay For Itself</a></p>
+        
+        <p id="fn49" class="footnote"><sup>49</sup> <a href="https://www.weforum.org/publications/scaling-financing-for-coal-phase-out-in-emerging-economies/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: Scaling Financing for Coal Phase-out in Emerging Economies</a></p>
+        
+        <p id="fn50" class="footnote"><sup>50</sup> <a href="https://www.imf.org/en/Publications/WP/Issues/2022/05/31/The-Great-Carbon-Arbitrage-518464" target="_blank" class="text-blue-600 hover:underline">IMF: The Great Carbon Arbitrage</a></p>
+        
+        <p id="fn51" class="footnote"><sup>51</sup> <a href="https://www.weforum.org/stories/2024/09/investing-coal-phase-out-opportunity-climate/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: How investing in coal phase-out can lead to an $85 trillion opportunity</a></p>
+        
+        <p id="fn52" class="footnote"><sup>52</sup> <a href="https://www.imf.org/en/Blogs/Articles/2022/06/08/how-replacing-coal-with-renewable-energy-could-pay-for-itself" target="_blank" class="text-blue-600 hover:underline">IMF: How Replacing Coal With Renewable Energy Could Pay For Itself</a></p>
+        
+        <p id="fn53" class="footnote"><sup>53</sup> <a href="https://www.iea.org/energy-system/fossil-fuels/coal" target="_blank" class="text-blue-600 hover:underline">IEA: Just Energy Transition Partnership expands to Indonesia and Viet Nam</a></p>
+        
+        <p id="fn54" class="footnote"><sup>54</sup> <a href="https://www.weforum.org/stories/2024/09/investing-coal-phase-out-opportunity-climate/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: How investing in coal phase-out can lead to an $85 trillion opportunity</a></p>
+        
+        <p id="fn55" class="footnote"><sup>55</sup> <a href="https://www.weforum.org/stories/2024/09/investing-coal-phase-out-opportunity-climate/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: How investing in coal phase-out can lead to an $85 trillion opportunity</a></p>
+        
+        <p id="fn56" class="footnote"><sup>56</sup> <a href="https://www.carbonbrief.org/factcheck-why-the-recent-acceleration-in-global-warming-is-what-scientists-expect/" target="_blank" class="text-blue-600 hover:underline">Carbon Brief: Factcheck: Why the recent 'acceleration' in global warming is what scientists expect</a></p>
+        
+        <p id="fn57" class="footnote"><sup>57</sup> <a href="https://www.lemonde.fr/en/environment/article/2024/06/05/climate-change-is-accelerating-faster-than-ever_6673802_114.html" target="_blank" class="text-blue-600 hover:underline">Le Monde: Climate change is accelerating faster than ever</a></p>
+        
+        <p id="fn58" class="footnote"><sup>58</sup> <a href="https://commonwealthclimatelaw.org/the-green-mirage-climate-lobbying-and-corporate-greenwashing/" target="_blank" class="text-blue-600 hover:underline">Commonwealth Climate Law: The Green Mirage: climate lobbying and corporate greenwashing</a></p>
+        
+        <p id="fn59" class="footnote"><sup>59</sup> <a href="https://nbs.net/how-business-leaders-can-lobby-for-climate-action/" target="_blank" class="text-blue-600 hover:underline">NBS: How Business Leaders Can Lobby for Climate Action</a></p>
+        
+        <p id="fn60" class="footnote"><sup>60</sup> <a href="https://www.nytimes.com/2023/12/08/climate/opec-cop28-climate-oil.html" target="_blank" class="text-blue-600 hover:underline">The New York Times: OPEC Leader Tells Members to Block Any Climate Summit Deal to Curb Fossil Fuels</a></p>
+        
+        <p id="fn61" class="footnote"><sup>61</sup> <a href="https://www.sciencedirect.com/science/article/pii/S0959378020307007" target="_blank" class="text-blue-600 hover:underline">Science Direct: How the pro-economy lobby influences climate policy</a></p>
+        
+        <p id="fn62" class="footnote"><sup>62</sup> <a href="https://www.reuters.com/business/environment/top-companies-lobbying-undermines-their-climate-pledges-study-finds-2023-11-16/" target="_blank" class="text-blue-600 hover:underline">Reuters: Top companies' lobbying undermines their climate pledges, study finds</a></p>
+        
+        <p id="fn63" class="footnote"><sup>63</sup> <a href="https://www.science.org/doi/10.1126/science.abn7950" target="_blank" class="text-blue-600 hover:underline">Science: Exceeding 1.5°C global warming could trigger multiple climate tipping points</a></p>
+        
+        <p id="fn64" class="footnote"><sup>64</sup> <a href="https://global-tipping-points.org/" target="_blank" class="text-blue-600 hover:underline">Global Tipping Points Report</a></p>
+        
+        <p id="fn65" class="footnote"><sup>65</sup> <a href="https://www.nature.com/articles/s41558-024-02079-y" target="_blank" class="text-blue-600 hover:underline">Nature Climate Change: Reconsidering and rescaling climate change predictions for coral reefs</a></p>
+        
+        <p id="fn66" class="footnote"><sup>66</sup> <a href="https://climatestate.com/2025/02/13/has-earth-already-crossed-major-tipping-points/" target="_blank" class="text-blue-600 hover:underline">Climate State: Has Earth Already Crossed MAJOR Tipping Points?</a></p>
+        
+        <p id="fn67" class="footnote"><sup>67</sup> <a href="https://earth.org/current-decade-critical-to-avoid-permanent-breach-of-climate-tipping-points-study-warns/" target="_blank" class="text-blue-600 hover:underline">Earth.org: Current Decade 'Critical' to Avoid Breaching Climate Tipping Points</a></p>
+        
+        <p id="fn68" class="footnote"><sup>68</sup> <a href="https://www.theguardian.com/environment/2023/jun/22/ecological-tipping-points-could-occur-much-sooner-than-expected-study-finds" target="_blank" class="text-blue-600 hover:underline">The Guardian: Ecological tipping points could occur much sooner than expected, study finds</a></p>
+        
+        <p id="fn69" class="footnote"><sup>69</sup> <a href="https://www.bcg.com/publications/2025/investing-in-climate-action" target="_blank" class="text-blue-600 hover:underline">BCG: Why Investing in Climate Action Makes Good Economic Sense</a></p>
+        
+        <p id="fn70" class="footnote"><sup>70</sup> <a href="https://www.forbes.com/sites/roberthart/2024/04/17/climate-change-will-cost-global-economy-38-trillion-every-year-within-25-years-scientists-warn/" target="_blank" class="text-blue-600 hover:underline">Forbes: Climate Change Will Cost Global Economy $38 Trillion Every Year Within 25 Years, Scientists Warn</a></p>
+        
+        <p id="fn71" class="footnote"><sup>71</sup> <a href="https://www.imf.org/en/Publications/WP/Issues/2022/05/31/The-Great-Carbon-Arbitrage-518464" target="_blank" class="text-blue-600 hover:underline">IMF: The Great Carbon Arbitrage</a></p>
+        
+        <p id="fn72" class="footnote"><sup>72</sup> <a href="https://www.bcg.com/publications/2024/investing-in-climate-action" target="_blank" class="text-blue-600 hover:underline">BCG: Why Investing in Climate Action Makes Good Economic Sense</a></p>
+        
+        <p id="fn73" class="footnote"><sup>73</sup> <a href="https://www.imf.org/en/Publications/WP/Issues/2022/05/31/The-Great-Carbon-Arbitrage-518464" target="_blank" class="text-blue-600 hover:underline">IMF: The Great Carbon Arbitrage</a></p>
+        
+        <p id="fn74" class="footnote"><sup>74</sup> <a href="https://www.bcg.com/publications/2025/investing-in-climate-action" target="_blank" class="text-blue-600 hover:underline">BCG: Why Investing in Climate Action Makes Good Economic Sense</a></p>
+        
+        <p id="fn75" class="footnote"><sup>75</sup> <a href="https://www.forbes.com/sites/roberthart/2024/04/17/climate-change-will-cost-global-economy-38-trillion-every-year-within-25-years-scientists-warn/" target="_blank" class="text-blue-600 hover:underline">Forbes: Climate Change Will Cost Global Economy $38 Trillion Every Year Within 25 Years, Scientists Warn</a></p>
+        
+        <p id="fn76" class="footnote"><sup>76</sup> <a href="https://www.forbes.com/sites/roberthart/2024/04/17/climate-change-will-cost-global-economy-38-trillion-every-year-within-25-years-scientists-warn/" target="_blank" class="text-blue-600 hover:underline">Forbes: Climate Change Will Cost Global Economy $38 Trillion Every Year Within 25 Years, Scientists Warn</a></p>
+        
+        <p id="fn77" class="footnote"><sup>77</sup> <a href="https://www.forbes.com/sites/roberthart/2024/04/17/climate-change-will-cost-global-economy-38-trillion-every-year-within-25-years-scientists-warn/" target="_blank" class="text-blue-600 hover:underline">Forbes: Climate Change Will Cost Global Economy $38 Trillion Every Year Within 25 Years, Scientists Warn</a></p>
+        
+        <p id="fn78" class="footnote"><sup>78</sup> <a href="https://www.bcg.com/publications/2025/investing-in-climate-action" target="_blank" class="text-blue-600 hover:underline">BCG: Why Investing in Climate Action Makes Good Economic Sense</a></p>
+        
+        <p id="fn79" class="footnote"><sup>79</sup> <a href="https://www.weforum.org/stories/2024/09/investing-coal-phase-out-opportunity-climate/" target="_blank" class="text-blue-600 hover:underline">World Economic Forum: How investing in coal phase-out can lead to an $85 trillion opportunity</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container">
+      <p class="text-center">Diese Analyse wurde auf Basis aktueller wissenschaftlicher Quellen und Berichte erstellt. Alle Informationen sind mit den entsprechenden Quellen verlinkt.</p>
+      <p class="text-center mt-4">© 2025 - Alle Rechte vorbehalten</p>
+    </div>
+  </footer>
+
+
+<style>
+.footer { font-size:0.7em; color:#aaa; text-align:center; margin-top:30px;}
+</style>
+      <div class="footer">Datenschutz: keine Cookies, keine Logs, keine Datenspeicherung, keine Werbung<br/>Impressum: Jan Kechel, Auen 16, 88356 Ostrach, Deutschland<br/>Copyright: Frei für jeden und für jeden Zweck. Keine Rechte vorbehalten.<br/>Kontakt: kontakt\at/klimakatastrophe.info<br/>URL: <a href="https://www.klimakatastrophe.info">https://www.klimakatastrophe.info</a><br/>Disclaimer: Alle auf dieser Webseite veröffentlichten Informationen geben nur meine persönliche Meinung wieder und sind möglicherweise etwas überspitzt dargestellt.
+</body>
+</html>
+

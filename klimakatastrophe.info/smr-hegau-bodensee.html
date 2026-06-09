@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energieversorgung Hegau-Bodensee Kostenvergleich</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
+  line-height: 1.6;
+  color: #333;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 13px;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.column {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.column.smr {
+  border-color: #0088cc;
+  background: #e6f3ff;
+}
+
+.column.renewable {
+  border-color: #51cf66;
+  background: #f4fcf6;
+}
+
+.column h2 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid currentColor;
+}
+
+.column.smr h2 {
+  color: #005a8c;
+}
+
+.column.renewable h2 {
+  color: #2b8a3e;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #495057;
+  font-weight: 600;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 13px;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  color: #495057;
+  flex: 1;
+}
+
+.data-value {
+  font-weight: 600;
+  color: #212529;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.highlight {
+  background: #fff3bf;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 15px;
+  border-left: 4px solid #fab005;
+}
+
+.highlight h3 {
+  color: #e67700;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.warning {
+  background: #e0f0ff;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border-left: 4px solid #0088cc;
+  font-size: 12px;
+}
+
+.warning h4 {
+  color: #005a8c;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.warning ul {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.warning li {
+  margin: 3px 0;
+  color: #495057;
+}
+
+.benefit {
+  background: #d3f9d8;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border-left: 4px solid #51cf66;
+  font-size: 12px;
+}
+
+.benefit h4 {
+  color: #2b8a3e;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.benefit ul {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.benefit li {
+  margin: 3px 0;
+  color: #495057;
+}
+
+.summary {
+  margin-top: 35px;
+  padding: 20px;
+  background: #e7f5ff;
+  border-radius: 8px;
+  border: 2px solid #1971c2;
+}
+
+.summary h3 {
+  color: #1864ab;
+  margin-bottom: 15px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.summary-item {
+  text-align: center;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: #495057;
+  margin-bottom: 6px;
+}
+
+.summary-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1864ab;
+}
+
+.reality-check {
+  margin-top: 25px;
+  padding: 20px;
+  background: #fff0f6;
+  border-radius: 8px;
+  border: 2px solid #e64980;
+}
+
+.reality-check h3 {
+  color: #c2255c;
+  margin-bottom: 12px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.reality-check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.reality-item {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #e64980;
+}
+
+.reality-item h4 {
+  font-size: 13px;
+  color: #c2255c;
+  margin-bottom: 5px;
+}
+
+.reality-item p {
+  font-size: 12px;
+  color: #495057;
+  line-height: 1.5;
+}
+
+.footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 11px;
+  color: #868e96;
+  padding-top: 15px;
+  border-top: 1px solid #dee2e6;
+  line-height: 1.6;
+}
+
+@media print {
+  body {
+    padding: 0;
+    font-size: 11px;
+  }
+  .container {
+    box-shadow: none;
+    padding: 15px;
+  }
+  .summary-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .reality-check-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@page {
+  size: A4 landscape;
+  margin: 15mm;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Stromversorgung Region Hegau-Bodensee Kostenvergleich</h1>
+<div class="subtitle">Small Modular Reactor vs. Erneuerbare Energien<br>
+Regionaler Strombedarf: 2.030 GWh/Jahr | Stand: Januar 2026</div>
+
+<div class="comparison">
+<div class="column smr">
+<h2>Small Modular Reactor (SMR)</h2>
+
+<div class="section">
+<h3>Technische Daten</h3>
+<div class="data-row">
+<span class="data-label">Standort</span>
+<span class="data-value">Hochrhein</span>
+</div>
+<div class="data-row">
+<span class="data-label">Nennleistung</span>
+<span class="data-value">300 MW</span>
+</div>
+<div class="data-row">
+<span class="data-label">Verfügbarkeit (realistisch)</span>
+<span class="data-value">85% (6.300h/Jahr)</span>
+</div>
+<div class="data-row">
+<span class="data-label">Jahresproduktion (tatsächlich)</span>
+<span class="data-value">1.900 GWh</span>
+</div>
+<div class="data-row">
+<span class="data-label">Bedarfsdeckung</span>
+<span class="data-value">94%</span>
+</div>
+</div>
+
+<div class="section">
+<h3>Investitionskosten</h3>
+<div class="data-row">
+<span class="data-label">Planung & Genehmigung</span>
+<span class="data-value">101 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Reaktorbau (inkl. Verzögerungen)</span>
+<span class="data-value">10,62 Mrd. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Finanzierung (12 Jahre Bau)</span>
+<span class="data-value">3,50 Mrd. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Kühlturm (Hitzeschutz)</span>
+<span class="data-value">450 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Backup-Kapazität (250 MW)</span>
+<span class="data-value">210 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Endlager Allensbach</span>
+<span class="data-value">4,29 Mrd. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Rückstellungen & Risikopuffer</span>
+<span class="data-value">3,56 Mrd. €</span>
+</div>
+<div class="data-row" style="border-top: 2px solid #005a8c; margin-top: 8px; padding-top: 8px;">
+<span class="data-label"><strong>Gesamtinvestition</strong></span>
+<span class="data-value"><strong>22,82 Mrd. €</strong></span>
+</div>
+</div>
+
+<div class="section">
+<h3>Laufende Kosten (jährlich)</h3>
+<div class="data-row">
+<span class="data-label">Personal (400 Personen)</span>
+<span class="data-value">34 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Wartung & Instandhaltung</span>
+<span class="data-value">72 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Brennstoff & Logistik</span>
+<span class="data-value">70 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Versicherung (realistisch)</span>
+<span class="data-value">180 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Endlager-Betrieb</span>
+<span class="data-value">24 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Sicherheit & Terrorschutz</span>
+<span class="data-value">14 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Hitzeausfall-Verluste (Ø)</span>
+<span class="data-value">20 Mio. €</span>
+</div>
+<div class="data-row" style="border-top: 2px solid #005a8c; margin-top: 8px; padding-top: 8px;">
+<span class="data-label"><strong>Summe jährlich</strong></span>
+<span class="data-value"><strong>414 Mio. €</strong></span>
+</div>
+</div>
+
+<div class="section">
+<h3>Zeitplan</h3>
+<div class="data-row">
+<span class="data-label">Planung & Genehmigung</span>
+<span class="data-value">8-12 Jahre</span>
+</div>
+<div class="data-row">
+<span class="data-label">Bauzeit (realistisch)</span>
+<span class="data-value">12-15 Jahre</span>
+</div>
+<div class="data-row">
+<span class="data-label">Erste Stromlieferung</span>
+<span class="data-value">20-27 Jahre</span>
+</div>
+<div class="data-row">
+<span class="data-label">Stromproduktion während Bau</span>
+<span class="data-value">0 GWh</span>
+</div>
+</div>
+
+<div class="warning">
+<h4>Kritische Risikofaktoren</h4>
+<ul>
+<li><strong>Hitze/Niedrigwasser:</strong> 15-25 Tage/Jahr Ausfall bei Hitzewellen (Tendenz steigend)</li>
+<li><strong>Wartung:</strong> 45-60 Tage/Jahr außer Betrieb (geplant + ungeplant)</li>
+<li><strong>Single Point of Failure:</strong> Bei Störung kompletter Regionalausfall</li>
+<li><strong>Versicherung:</strong> Staat haftet für Schäden >2,5 Mrd. € (versteckte Subvention)</li>
+<li><strong>Brennstoff:</strong> Import-abhängig, höhere Anreicherung als Standard-AKW</li>
+</ul>
+</div>
+
+<div class="highlight">
+<h3>Stromgestehungskosten</h3>
+<div class="data-row">
+<span class="data-label">Pro kWh (realistisch)</span>
+<span class="data-value">41,8 Cent</span>
+</div>
+<div class="data-row">
+<span class="data-label">Mit Opportunitätskosten</span>
+<span class="data-value">68,2 Cent</span>
+</div>
+</div>
+</div>
+
+<div class="column renewable">
+<h2>Erneuerbare Energien + Speicher</h2>
+
+<div class="section">
+<h3>Technische Daten</h3>
+<div class="data-row">
+<span class="data-label">1.600 MW Solar (33% Reserve)</span>
+<span class="data-value">1.680 GWh/Jahr</span>
+</div>
+<div class="data-row">
+<span class="data-label">800 MW Wind Onshore (33% Reserve)</span>
+<span class="data-value">1.680 GWh/Jahr</span>
+</div>
+<div class="data-row">
+<span class="data-label">Verfügbarkeit</span>
+<span class="data-value">96-98%</span>
+</div>
+<div class="data-row">
+<span class="data-label">Jahresproduktion (Summe)</span>
+<span class="data-value">3.360 GWh</span>
+</div>
+<div class="data-row">
+<span class="data-label">Bedarfsdeckung</span>
+<span class="data-value">165%</span>
+</div>
+</div>
+
+<div class="section">
+<h3>Investitionskosten</h3>
+<div class="data-row">
+<span class="data-label">Solar (1.600 MW)</span>
+<span class="data-value">1,60 Mrd. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Wind (800 MW)</span>
+<span class="data-value">1,20 Mrd. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Batteriespeicher (8 GWh)</span>
+<span class="data-value">4,00 Mrd. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Backup-Gaskraftwerk (250 MW)</span>
+<span class="data-value">175 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Infrastruktur & Netz</span>
+<span class="data-value">600 Mio. €</span>
+</div>
+<div class="data-row" style="border-top: 2px solid #2b8a3e; margin-top: 8px; padding-top: 8px;">
+<span class="data-label"><strong>Gesamtinvestition</strong></span>
+<span class="data-value"><strong>7,58 Mrd. €</strong></span>
+</div>
+<div class="data-row" style="color: #2b8a3e; font-weight: 600;">
+<span class="data-label">- Stromverkauf während Bau</span>
+<span class="data-value">-1,20 Mrd. €</span>
+</div>
+<div class="data-row" style="border-top: 2px solid #2b8a3e; margin-top: 8px; padding-top: 8px;">
+<span class="data-label"><strong>Netto-Investition</strong></span>
+<span class="data-value"><strong>6,38 Mrd. €</strong></span>
+</div>
+</div>
+
+<div class="section">
+<h3>Laufende Kosten (jährlich)</h3>
+<div class="data-row">
+<span class="data-label">Wartung Solar/Wind</span>
+<span class="data-value">56 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Batteriewartung</span>
+<span class="data-value">40 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Backup-Personal</span>
+<span class="data-value">8 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Versicherung</span>
+<span class="data-value">12 Mio. €</span>
+</div>
+<div class="data-row">
+<span class="data-label">Gas (nur Dunkelflaute, 100h/Jahr)</span>
+<span class="data-value">3,5 Mio. €</span>
+</div>
+<div class="data-row" style="border-top: 2px solid #2b8a3e; margin-top: 8px; padding-top: 8px;">
+<span class="data-label"><strong>Summe jährlich</strong></span>
+<span class="data-value"><strong>119,5 Mio. €</strong></span>
+</div>
+</div>
+
+<div class="section">
+<h3>Zeitplan</h3>
+<div class="data-row">
+<span class="data-label">Planung & Genehmigung</span>
+<span class="data-value">2-3 Jahre</span>
+</div>
+<div class="data-row">
+<span class="data-label">Bauzeit</span>
+<span class="data-value">4-5 Jahre</span>
+</div>
+<div class="data-row">
+<span class="data-label">Erste Stromlieferung</span>
+<span class="data-value">Jahr 1 (schrittweise)</span>
+</div>
+<div class="data-row">
+<span class="data-label">Stromproduktion während Bau</span>
+<span class="data-value">~15.000 GWh</span>
+</div>
+</div>
+
+<div class="benefit">
+<h4>Vorteile Erneuerbare</h4>
+<ul>
+<li><strong>Schrittweise Produktion:</strong> Jede fertige Anlage liefert sofort Strom</li>
+<li><strong>Dezentral:</strong> Ausfall einer Anlage = 0,1% Leistung, keine Totalausfälle</li>
+<li><strong>Klimaresistent:</strong> Funktioniert bei Hitze besser (mehr Sonne)</li>
+<li><strong>Dunkelflaute-sicher:</strong> 8 GWh Speicher + 250 MW Backup für 14 Tage</li>
+<li><strong>Keine Atommüll-Hypothek:</strong> Recycelbar nach 25-30 Jahren</li>
+</ul>
+</div>
+
+<div class="highlight">
+<h3>Stromgestehungskosten</h3>
+<div class="data-row">
+<span class="data-label">Pro kWh</span>
+<span class="data-value">15,2 Cent</span>
+</div>
+<div class="data-row">
+<span class="data-label">CO₂-Bilanz</span>
+<span class="data-value">2-3 g/kWh</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="summary">
+<h3>Wirtschaftlicher Direktvergleich (30 Jahre Betrieb)</h3>
+<div class="summary-grid">
+<div class="summary-item">
+<div class="summary-label">Investitions-<br>unterschied</div>
+<div class="summary-value">16,44 Mrd. €</div>
+</div>
+<div class="summary-item">
+<div class="summary-label">Kosten-<br>unterschied/kWh</div>
+<div class="summary-value">26,6 Cent</div>
+</div>
+<div class="summary-item">
+<div class="summary-label">Faktor<br>teurer</div>
+<div class="summary-value">2,8x</div>
+</div>
+<div class="summary-item">
+<div class="summary-label">Schneller<br>am Netz</div>
+<div class="summary-value">19-24 Jahre</div>
+</div>
+</div>
+</div>
+
+<div class="reality-check">
+<h3>Realitätsprüfung:</h3>
+<div class="reality-check-grid">
+<div class="reality-item">
+<h4>🌡️ Klimawandel-Risiko</h4>
+<p>Rhein-AKW mussten 2003, 2018, 2022 wegen Hitze/Niedrigwasser drosseln oder abschalten. Frankreich 2022: 32 von 56 Reaktoren offline. Tendenz: stark steigend.</p>
+</div>
+<div class="reality-item">
+<h4>⏱️ Wartungsrealität</h4>
+<p>Jährlich 3-4 Wochen Revision, alle 10 Jahre 2-3 Monate. Ungeplante Ausfälle: 2-4 Wochen. Reale Verfügbarkeit: 85% statt beworbener 95%.</p>
+</div>
+<div class="reality-item">
+<h4>💰 Versicherungslüge</h4>
+<p>AKW zahlt 10-15 Mio. €/Jahr Versicherung. Echte Vollkosten-Versicherung: 72 Mrd. €/Jahr. Staat haftet für alles über 2,5 Mrd. € = versteckte Subvention.</p>
+</div>
+<div class="reality-item">
+<h4>⚡ 20 Jahre Wartezeit</h4>
+<p>SMR: 0 kWh Strom bis Jahr 20-27. Erneuerbare: Ab Jahr 1 schrittweise Produktion. Entgangene Einnahmen: ~30 Mrd. € über 20 Jahre.</p>
+</div>
+<div class="reality-item">
+<h4>🎯 Single Point of Failure</h4>
+<p>SMR bei Störung: kompletter Regionalausfall. Backup-Kraftwerk (250 MW, 210 Mio. €) zwingend nötig. Erneuerbare: dezentral, kein Totalausfall möglich.</p>
+</div>
+<div class="reality-item">
+<h4>📈 Kostensteigerungen</h4>
+<p>Alle AKW-Neubauprojekte: +75-150% Kostenüberschreitung. Flamanville: +300%. NuScale: Projekt 2023 abgebrochen wegen Unwirtschaftlichkeit.</p>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<strong>Quellen:</strong> Fraunhofer ISE Studie Stromgestehungskosten 2024, NuScale-Projekt USA (Kostenentwicklung 2021-2023), 
+ICF-Analyse SMR-Kosten 2025, IEA World Energy Outlook 2024/2025, Bundesamt für Wirtschaft (BAFA) Rückbau-Transparenzbericht 2024, 
+Erfahrungswerte Flamanville/Olkiluoto/Hinkley Point C, Hitzesommer-Ausfälle Frankreich 2022/2023, 
+Versicherungsforen Leipzig Studie Atomhaftung, BMWK Prüfvermerk Laufzeitverlängerung 2022
+<br><br>
+<strong>Methodik:</strong> Alle Kosten in Euro 2026, konservative Schätzungen basierend auf realisierten Projekten und empirischen Daten. 
+Berücksichtigt: Bauzeitverzögerungen (historischer Durchschnitt +75%), Wartungsausfälle (reale Verfügbarkeit), 
+Hitzeflauten (Klimatrend), realistische Versicherungskosten, schrittweise Stromproduktion bei Erneuerbaren, 
+Opportunitätskosten durch Bauverzögerung. Dunkelflaute-Sicherheit für beide Systeme: 14 Tage bei 20% EE-Leistung.
+</div>
+</div>
+
+      <div class="footer">Datenschutz: keine Cookies, keine Logs, keine Datenspeicherung, keine Werbung<br/>Impressum: Jan Kechel, Auen 16, 88356 Ostrach, Deutschland<br/>Copyright: Frei für jeden und für jeden Zweck. Keine Rechte vorbehalten.<br/>Kontakt: kontakt\at/klimakatastrophe.info<br/>URL: <a href="https://www.klimakatastrophe.info">https://www.klimakatastrophe.info</a><br/>Disclaimer: Alle auf dieser Webseite veröffentlichten Informationen geben nur meine persönliche Meinung wieder und sind möglicherweise etwas überspitzt dargestellt.
+</body>
+</html>

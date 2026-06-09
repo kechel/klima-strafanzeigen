@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AfD Wahlversprechen 2025</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+    
+    .header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+    
+    .table-container {
+      padding: 30px;
+      overflow-x: auto;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    th {
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      color: white;
+      padding: 20px 15px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+    
+    td {
+      padding: 18px 15px;
+      border-bottom: 1px solid #e8e8e8;
+      vertical-align: top;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    
+    tr:hover {
+      background-color: #e3f2fd;
+      transform: scale(1.01);
+      transition: all 0.3s ease;
+    }
+    
+    .bereich {
+      font-weight: 600;
+      color: #2c3e50;
+      min-width: 150px;
+    }
+    
+    .versprechen {
+      line-height: 1.7;
+    }
+    
+    .versprechen ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    
+    .versprechen li {
+      margin-bottom: 8px;
+    }
+    
+    .footer {
+      background: #f8f9fa;
+      text-align: center;
+      padding: 20px;
+      color: #6c757d;
+      font-size: 0.9em;
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2em;
+      }
+      
+      .table-container {
+        padding: 15px;
+      }
+      
+      th, td {
+        padding: 12px 10px;
+        font-size: 0.9em;
+      }
+    }
+    
+    .image-container {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      margin: 20px auto;
+      padding: 0 30px;
+    }
+
+    .image-container img {
+      width: calc(50% - 10px);
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Mobile: Bilder untereinander */
+    @media (max-width: 768px) {
+      .image-container {
+        flex-direction: column;
+        padding: 0 15px;
+      }
+      
+      .image-container img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AfD Wahlversprechen 2025</h1>
+      <p style="font-size: 1.2em; margin-top: 15px; opacity: 0.9; font-weight: 500;">Es geht gar nicht um Politik.</p>
+    </div>
+    
+    <div style="padding: 30px; background: #f8f9fa; border-bottom: 1px solid #e8e8e8;">      
+      <p style="margin-bottom: 0px; line-height: 1.7; text-align: center;">
+        Manche Menschen behaupten: <i>Der Klimawandel ist real und menschengemacht.</i>
+      </p>
+      <p style="margin-bottom: 0; line-height: 1.7; text-align: center;">
+        <strong>Falls</strong> diese Leute recht haben - was bedeutet das für die AfD-Wahlversprechen?
+      </p>
+    </div>
+    
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Politikbereich</th>
+            <th>Wahlversprechen</th>
+            <th>Auswirkungen bei ignoriertem Klimawandel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="bereich">Familie & Soziales</td>
+            <td class="versprechen">Förderung des traditionellen Familienbildes</td>
+            <td class="versprechen">Klimakriege und Ressourcenkonflikte zerstören Familienstrukturen durch Flucht und Überlebenskampf</td>
+          </tr>
+          <tr>
+            <td class="bereich"></td>
+            <td class="versprechen">Familien sollen "idealerweise von einem Gehalt leben können"</td>
+            <td class="versprechen">Klimabedingte Preissteigerungen machen Ein-Verdiener-Modell unrealistischer</td>
+          </tr>
+          <tr>
+            <td class="bereich"></td>
+            <td class="versprechen">Steigerung der Geburtenrate durch finanzielle Anreize</td>
+            <td class="versprechen">Kinder wachsen in zunehmend lebensfeindlicher Umwelt auf</td>
+          </tr>
+          
+          <tr>
+            <td class="bereich">Arbeitsmarkt</td>
+            <td class="versprechen">Verschärfung der Arbeitslosenversicherung und aktivierende Grundsicherung</td>
+            <td class="versprechen">Klimabedingte Betriebsschließungen führen zu Massenarbeitslosigkeit ohne Absicherung</td>
+          </tr>
+          <tr>
+            <td class="bereich"></td>
+            <td class="versprechen">Förderung "heimischer Potenziale" statt Fachkräfteeinwanderung</td>
+            <td class="versprechen">Enormer Arbeitskräftebedarf für Wiederaufbau und Klimaanpassung bleibt ungedeckt</td>
+          </tr>
+          
+          <tr>
+            <td class="bereich">Rente</td>
+            <td class="versprechen">Erhöhung des Rentenniveaus auf 70% des letzten Nettoeinkommens</td>
+            <td class="versprechen">Klimabedingte Wirtschaftsschäden und Massenarbeitslosigkeit machen hohe Renten unbezahlbar</td>
+          </tr>
+          <tr>
+            <td class="bereich"></td>
+            <td class="versprechen">Abschlagsfreie Rente nach 45 Arbeitsjahren garantieren</td>
+            <td class="versprechen">Klimakrisen zerstören Arbeitsplätze - 45 Jahre Vollzeitarbeit werden unmöglich, Renten werden schon in 10 Jahren (2035) komplett unbezahlbar durch steigende Klimafolgekosten</td>
+          </tr>
+
+          <tr>
+            <td class="bereich">Migration</td>
+            <td class="versprechen">Restriktive Migrationspolitik: Gewahrsamszentren, Rückführungen, strikte Grenzkontrollen</td>
+            <td class="versprechen">Hunderte Millionen Klimaflüchtlinge</td>
+          </tr>
+          <tr>
+            <td class="bereich"></td>
+            <td class="versprechen">Deutsche Migrations- und Asylpolitik</td>
+            <td class="versprechen">Deutschland selbst wird klimabedingt teilweise unbewohnbar - wir müssen selbst fliehen</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Politikbereich</th>
+            <th>Wahlversprechen</th>
+            <th>Auswirkungen bei ignoriertem Klimawandel</th>
+          </tr>
+        </thead>
+
+      </table>
+    </div>
+
+    <div style="padding: 30px; background: #f8f9fa; border-top: 1px solid #e8e8e8;">      
+      <p style="margin-bottom: 20px; line-height: 1.7; text-align: center;">
+        Es gibt nur zwei Möglichkeiten: Entweder haben zehntausende Wissenschaftler weltweit recht, oder sie liegen alle falsch.
+      </p>
+      <p style="margin-bottom: 0; line-height: 1.7; text-align: center;">
+        <strong>Falls sie sich irren</strong>, klingen die AfD-Ziele durchaus vernünftig.
+        <strong>Falls sie recht haben</strong>, bewirkt die AfD genau das Gegenteil von dem, was sie verspricht. 
+      </p>
+    </div>
+
+
+    <div class="image-container">
+      <img src="bilder/veranschaulichung-co2-kreislauf-1.png" alt="CO2 Kreislauf 1"/>
+      <img src="bilder/veranschaulichung-co2-kreislauf-2.png" alt="CO2 Kreislauf 2"/>
+    </div>
+
+    <div style="padding: 30px; background: #f8f9fa; border-top: 1px solid #e8e8e8;">      
+      <p style="margin-bottom: 20px; line-height: 1.7; text-align: center;">
+
+        <br/>
+        <b>Begriff: Klimakatastrophe</b><br/>
+        <br/>
+        <i>Nicht 'Unwetter', sondern alle Folgen der schnellen Erwärmung um 2-3 Grad:</i>
+        <ul style="max-width:80%;margin:auto;">
+          <li>Gewässer kippen um (z.B. durch übermässiges Algenwachstum in Hitzperioden)</li>
+          <li>Ernten werden zerstört (z.B. von ortsfremden Insekten oder Hitzewellen)</li>
+          <li>Wälder sterben ab (z.B. Käfer, Schimmel oder Grundwasserabsenkungen)</li>
+          <li>Ortsfremde Tierarten übertragen Krankheiten (z.B. Malariamücke)</li>
+          <li>Pandemien (Veränderungen im Ökosystem fördern Mutationen)</li>
+          <li>Lieferketten werden gestört wenn in Exportländern z.B. Ernten ausfallen oder Kraftwerke abgeschaltet werden müssen</li>
+          <li>Strompreise explodieren wenn Kraftwerke abgeschaltet werden müssen (z.B. wegen überhitzter Flüsse oder fehlender Energiepflanzen)</li>
+          <li>Renten werden nicht mehr bezahlt (<a href="generationenvertrag-gekuendigt-rentenkatastrophe.html">Sozialvertrag gekündigt</a>)</li>
+          <li>Nahrungsmittel werden viel teurer wenn Ernten geschädigt werden</li>
+          <li>Milliarden Menschen hungern und flüchten (sobald die ersten grossflächigen Ernteausfälle eintreten) - entweder kommen diese zu uns, oder wir sind selber auf der Flucht..</li>
+        </ul>
+      </div>
+
+    <div style="padding: 30px; background: #f8f9fa; border-top: 1px solid #e8e8e8;">      
+      <p style="margin-bottom: 20px; line-height: 1.7; text-align: center;">
+
+        <br/>
+        <b>Verschwörungstheorie</b><br/>
+        <br/>
+        Es gibt eine Verschwörungstheorie, dass sich weltweit alle Klimatologen, Meteorologen, Ozeanographen, Glaziologen, Atmosphärenforscher, Biologen, Physiker und tausende Messstationen gemeinsam den Klimawandel nur ausgedacht hätten und das gar nicht stimmt. Glaubst du an diese Verschwörung, dann klingen die Ziele der AfD super. Bist du kein Verschwörungstheoretiker, bewirkt die AfD aber leider genau das Gegenteil von dem, was sie verspricht.
+      </p>
+    </div>
+
+    
+    
+    <div class="footer">
+      <b>
+        <p style="font-style: italic; margin-bottom: 10px; font-size: 1.1em; color: #2c3e50;">"Gesundheit ist nicht alles, aber alles ist nichts ohne Gesundheit"</p>
+        
+        <p style="font-style: italic; margin-bottom: 20px; font-size: 1.1em; color: #2c3e50;">"Klimaschutz ist nicht alles, aber alles ist nichts ohne Klimaschutz"</p>
+        
+        <a href="index.html">Belege, Quellen, Zusammenhänge & Erklärungen zum Klima</a> | 
+        <a href="afd-wahlprogramm.html">AFD Wahlprogramm</a>
+      </b>
+    </div>
+  </div>
+  
+  <div style="text-align: center; padding: 20px; color: #6c757d; font-size: 0.85em; margin-top: 40px;">
+    Datenschutz: keine Cookies, keine Logs, keine Datenspeicherung, keine Werbung<br/>
+    Impressum: Jan Kechel, Auen 16, 88356 Ostrach, Deutschland<br/>
+    Copyright: Frei für jeden und für jeden Zweck. Keine Rechte vorbehalten.<br/>
+    Kontakt: kontakt@klimakatastrophe.info<br/>
+    URL: <a href="https://www.klimakatastrophe.info" style="color: #3498db;">https://www.klimakatastrophe.info</a>
+  </div>
+</body>
+</html>

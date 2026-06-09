@@ -1,0 +1,10 @@
+CO2_ppm,CO2eq_ppm,Temp_Anstieg_C,Wahrscheinlichkeit_Prozent,Kritische_Kippunkte,Soziale_Kippunkte,CO2_Konflikte_GtC_Jahr_Min,CO2_Konflikte_GtC_Jahr_Max,CO2_Natur_Freisetzung_GtC_Jahr_Min,CO2_Natur_Freisetzung_GtC_Jahr_Max,CO2_Gesamt_Freisetzung_GtC_Jahr_Min,CO2_Gesamt_Freisetzung_GtC_Jahr_Max,Kumulative_Erwärmung_C
+423,520,1.6,AKTUELL,Korallenriffe_Permafrost_beginnt,Regionale_Unruhen_Klimamigration,0.5,2,10,50,10.5,52,1.6
+450,550,1.8,20,Grönland_Eisschild_partiell,Ressourcenkonflikte_Wasserkämpfe,1,3,15,70,16,73,1.9
+480,590,2.1,30,Westantarktis_Eisschild,Massenmigration_Staatszerfall,2,5,25,90,27,95,2.3
+520,640,2.5,40,Amazonas_Dieback_Süd_Ost,Regionale_Kriege_Grenzkrisen,3,8,40,120,43,128,2.8
+560,690,2.9,50,AMOC_Kollaps_Boreale_Wälder,Gesellschaftlicher_Kollaps_lokal,5,12,60,180,65,192,3.4
+620,760,3.4,60,Permafrost_Kaskade_Alpine_Gletscher,Zivilisationsbrüche_regional,8,20,90,250,98,270,4.2
+700,860,4.0,70,Grönland_komplett_Tundra_Shift,Globale_Governance_Krise,12,30,130,350,142,380,5.1
+800,980,4.7,80,Ozeanzirkulation_Kollaps,Zivilisationskollaps_großflächig,20,50,180,450,200,500,6.2
+1200,1450,7.0,95,Stratocumulus_Kollaps,Globaler_Systemkollaps,50,100,300,600,350,700,9.5

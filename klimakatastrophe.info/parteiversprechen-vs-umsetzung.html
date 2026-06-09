@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Versprechen × Klimarealität – Wer liefert wirklich?</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0f0f1a; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState } = React
+
+const parties = ["CDU/CSU", "SPD", "Grüne", "Die Linke", "FDP", "AfD", "BSW"]
+
+const partyColors = {
+  "CDU/CSU": "#1a1a1a", "SPD": "#e3000f", "Grüne": "#46962b", "Die Linke": "#BE3075",
+  "FDP": "#ffed00", "AfD": "#009ee0", "BSW": "#8B1A4A"
+}
+const partyText = {
+  "CDU/CSU": "#fff", "SPD": "#fff", "Grüne": "#fff", "Die Linke": "#fff",
+  "FDP": "#1a1a1a", "AfD": "#fff", "BSW": "#fff"
+}
+
+const climateScores = {
+  "CDU/CSU": 3, "SPD": 4, "Grüne": 8, "Die Linke": 7, "FDP": 1, "AfD": 0, "BSW": 1
+}
+
+const climateDependency = {
+  "CDU/CSU": 0.8,
+  "SPD": 0.8,
+  "Grüne": 0.9,
+  "Die Linke": 0.85,
+  "FDP": 0.7,
+  "AfD": 0.85,
+  "BSW": 0.75
+}
+
+const climateDependencyExplain = {
+  "CDU/CSU": "Infrastruktur, Wirtschaft, Arbeitsplätze, Renten – alles massiv klimaabhängig",
+  "SPD": "Soziale Sicherheit, Wohnen, Gesundheit – Ärmere trifft Klimawandel am härtesten",
+  "Grüne": "Klimaschutz IST das Kernversprechen – maximale Abhängigkeit",
+  "Die Linke": "Soziale Gerechtigkeit ohne stabile Umwelt unmöglich – Ärmste trifft Klimawandel zuerst",
+  "FDP": "Wirtschaftsfreiheit, Wachstum – brauchen stabile ökologische Grundlage",
+  "AfD": "Bezahlbare Energie, Heimatschutz, Landwirtschaft, Renten, Migration – ALLES direkt klimaabhängig. Ländliche AfD-Wähler trifft es am härtesten",
+  "BSW": "Bezahlbares Leben, Frieden, Souveränität – Klimakrise treibt Preise, Konflikte und Abhängigkeiten"
+}
+
+const climateExplain = {
+  "CDU/CSU": "16 Jahre Klimakanzlerin-Image, aber EEG gebremst, Kohle geschützt, Gasabhängigkeit von Russland, Heizungsgesetz abgeschafft",
+  "SPD": "Klimaschutzgesetz eingeführt aber entschärft, LNG schneller als Erneuerbare, Kohleausstieg spät",
+  "Grüne": "EEG 2000, Erneuerbare-Rekord, Heizungsgesetz durchgesetzt, Tempolimit & Klimageld an Partnern gescheitert",
+  "Die Linke": "Klimaneutral 2040 (ambitionierter als Grüne!), 100% Erneuerbare bis 2035, pro Solarpaket, gegen Aufweichung Klimaschutzgesetz. Nie auf Bundesebene regiert",
+  "FDP": "Tempolimit blockiert, Klimageld verhindert, Heizungsgesetz verwässert, Schuldenbremse gegen Klimainvestitionen",
+  "AfD": "Klimaleugnung, will Energiewende rückabwickeln, Pariser Abkommen verlassen, CO2-Gesetz aufheben",
+  "BSW": "CO2-Preis abschaffen, fossile Importe ausbauen, Klimaschutz als Elitenprojekt diffamiert"
+}
+
+const afdPromiseExplain = {
+  title: "Was die AfD verspricht vs. was Klimaschutz damit zu tun hat",
+  items: [
+    { promise: "Bezahlbare Energie", reality: "Erneuerbare sind heute die günstigste Energieform. Wer die Energiewende rückabwickelt, macht Energie teurer, nicht billiger. Gas- und Ölpreise steigen langfristig." },
+    { promise: "Heimatschutz", reality: "Die physische Heimat wird durch Klimawandel zerstört: Hochwasser im Ahrtal, Waldsterben im Harz, Dürren in Brandenburg. Wer die Heimat schützen will, muss das Klima schützen." },
+    { promise: "Starke Landwirtschaft", reality: "20-30% Ernteausfälle bis 2050 ohne Klimaschutz. Bauern sind die ersten Opfer – gerade im ländlichen AfD-Kerngebiet." },
+    { promise: "Sichere Renten", reality: "Klimafolgekosten 280-900 Mrd. € bis 2050 fressen jeden Rentenfonds. Ohne stabile Wirtschaft keine stabilen Renten." },
+    { promise: "Migration begrenzen", reality: "Klimakrise ist Migrationstreiber Nr. 1. Bis 2050 bis zu 200 Mio. Klimaflüchtlinge weltweit. Wer Migration bekämpfen will, muss Fluchtursachen bekämpfen." },
+    { promise: "Wirtschaftskraft", reality: "McKinsey: bis 6% BIP-Verlust durch Klimafolgen. Deutsche Industrie braucht günstige Erneuerbare, nicht teure fossile Importe." }
+  ]
+}
+
+const rawScores = {
+  "CDU/CSU": {
+    "CDU/CSU": { s: 3, d: "Arbeitsplätze: ja, aber auf SPD-Reformen aufbauend. Digitalisierung: 16 Jahre versagt. Infrastruktur: marode." },
+    "SPD": { s: 5, d: "Agenda 2010 schuf Arbeitsmarktboom. Mindestlohn stärkte Kaufkraft. GroKo-Investitionen teils SPD-getrieben." },
+    "Grüne": { s: 3, d: "Erneuerbare stärken Energieunabhängigkeit. Schienennetz-Investitionen. Deutschlandfonds für Infrastruktur." },
+    "Die Linke": { s: 1, d: "Gegensätzliche Wirtschaftsphilosophie. Aber: Linke drückt auf höhere Löhne, stärkt indirekt Kaufkraft und Binnenkonsum." },
+    "FDP": { s: 2, d: "Steuersenkungen v.a. für Besserverdienende. Bürokratieabbau blieb Rhetorik." },
+    "AfD": { s: 0, d: "Nie regiert. Null Umsetzung." },
+    "BSW": { s: 0, d: "Nie regiert." }
+  },
+  "SPD": {
+    "CDU/CSU": { s: 2, d: "In GroKos SPD-Sozialversprechen verwässert. Mietpreisbremse zahnlos." },
+    "SPD": { s: 5, d: "Mindestlohn eingeführt. Bürgergeld umgesetzt. Hartz IV widersprach eigenem Programm. Wohnungsbau zu wenig." },
+    "Grüne": { s: 5, d: "In Ampel gemeinsam: Tarifbindung, Mindestlohn 15€, Kindergrundsicherung." },
+    "Die Linke": { s: 5, d: "Linke drückte SPD zum Mindestlohn 12€. Thüringen/Berlin/Bremen: Sozialpolitik umgesetzt. Stimmt konsistent für SPD-Sozialversprechen." },
+    "FDP": { s: 1, d: "Blockierte Sozialausgaben, wollte Bürgergeld kürzen." },
+    "AfD": { s: 0, d: "Stimmt gegen Sozialgesetze." },
+    "BSW": { s: 0, d: "Nie regiert." }
+  },
+  "Grüne": {
+    "CDU/CSU": { s: 1, d: "EEG gebremst. Kohleausstieg verzögert. Heizungsgesetz abgeschafft." },
+    "SPD": { s: 4, d: "EEG 2000 gemeinsam. Atomausstieg unter Rot-Grün. In Ampel Klimaschutz mitgetragen." },
+    "Grüne": { s: 7, d: "Beste Konsistenz. EEG, Erneuerbare-Rekord, Heizungsgesetz. Tempolimit & CO2-Preis scheiterten an Partnern." },
+    "Die Linke": { s: 5, d: "Pro Solarpaket, pro EEG, gegen Aufweichung Klimaschutzgesetz. 100% Erneuerbare bis 2035, Kohleausstieg 2030. Programmatisch sogar ambitionierter." },
+    "FDP": { s: 0, d: "Tempolimit blockiert, Klimageld verhindert, Heizungsgesetz verwässert." },
+    "AfD": { s: 0, d: "Will Energiewende rückabwickeln." },
+    "BSW": { s: 0, d: "CO2-Preis abschaffen, fossile Importe." }
+  },
+  "Die Linke": {
+    "CDU/CSU": { s: 1, d: "Gegensätzlich bei Umverteilung, Vermögenssteuer, Mietenpolitik." },
+    "SPD": { s: 4, d: "Mindestlohn ja, aber Bürgergeld mit Sanktionen verwässert. Mietendeckel nicht unterstützt." },
+    "Grüne": { s: 4, d: "Kindergrundsicherung gemeinsam, Klimageld, sozial-ökologischer Umbau. Weniger radikal bei Umverteilung." },
+    "Die Linke": { s: 4, d: "Landesebene: Thüringen (680 Mio Krankenhäuser, Sozialwohnungen), Berlin (Mietendeckel – kassiert), Bremen (Landesmindestlohn). Nie Bundesregierung." },
+    "FDP": { s: 0, d: "Maximaler Gegensatz." },
+    "AfD": { s: 0, d: "Stimmt gegen Sozialgesetze, gegen Mindestlohn, gegen Mieterschutz." },
+    "BSW": { s: 0, d: "Nie regiert. BSW gegen Klimaschutz untergräbt Linke-Grundlage." }
+  },
+  "FDP": {
+    "CDU/CSU": { s: 4, d: "Ähnliche Wirtschaftsrichtung. Unternehmenssteuer-Senkung. Schuldenbremse." },
+    "SPD": { s: 1, d: "Gegensätzlich. SPD will mehr Staat, FDP weniger." },
+    "Grüne": { s: 1, d: "Minimal: Digitalisierung teils gemeinsam." },
+    "Die Linke": { s: 0, d: "Maximaler Gegensatz. Vermögenssteuer vs. Steuersenkung." },
+    "FDP": { s: 3, d: "Schuldenbremse durchgesetzt. Soli teilweise weg. Steuersenkung nie breit geliefert." },
+    "AfD": { s: 0, d: "Nie regiert." },
+    "BSW": { s: 0, d: "Nie regiert." }
+  },
+  "AfD": {
+    "CDU/CSU": { s: 2, d: "Migration: rhetorische Nähe, Asylrecht verschärft. Wirtschaft: CDU liefert teilweise. Energie: CDU bremst Erneuerbare – macht Energie langfristig teurer." },
+    "SPD": { s: 2, d: "Renten: SPD stabilisiert Sozialsysteme. Wirtschaft: Agenda 2010 brachte Jobs. Bezahlbares Leben: Mindestlohn hilft AfD-Wählern direkt." },
+    "Grüne": { s: 3, d: "Bezahlbare Energie: Erneuerbare = günstigste Quelle. Heimatschutz: Klimaschutz schützt physische Heimat. Landwirtschaft: Klimaschutz sichert Ernten. Migration: bekämpft Fluchtursache Nr. 1." },
+    "Die Linke": { s: 2, d: "Bezahlbares Leben: Mindestlohn, Mietendeckel. Renten: Mindestrente 1.400€. Ländlicher Raum: Investitionen in Thüringen. Aber: bei Migration diametraler Gegensatz." },
+    "FDP": { s: 1, d: "Wirtschaftsfreiheit minimal. Aber FDP pro-EU, pro-NATO – Gegensatz zu AfD." },
+    "AfD": { s: 0, d: "Nie regiert. Null Bilanz. Kein einziges Versprechen je eingelöst oder auch nur getestet." },
+    "BSW": { s: 0, d: "Nie regiert. Rhetorik-Überschneidung, aber null Umsetzung." }
+  },
+  "BSW": {
+    "CDU/CSU": { s: 1, d: "Rhetorische Nähe Migration. Sozialprogramm widerspricht CDU." },
+    "SPD": { s: 2, d: "Überschneidung bei Mindestlohn, Rente. Aber SPD pro-EU." },
+    "Grüne": { s: 1, d: "Minimal bei Sozialpolitik." },
+    "Die Linke": { s: 2, d: "Überschneidung Soziales und teils Friedenspolitik. Linke pro Klimaschutz, BSW dagegen." },
+    "FDP": { s: 0, d: "Keine Überschneidung." },
+    "AfD": { s: 0, d: "Nie regiert." },
+    "BSW": { s: 0, d: "Nie regiert." }
+  }
+}
+
+const calcAdjusted = (promiser, implementer) => {
+  const raw = rawScores[promiser][implementer].s
+  const implClimate = climateScores[implementer] / 10
+  const dep = climateDependency[promiser]
+  const sustainMult = 0.3 + 0.7 * implClimate
+  const adjRaw = raw * sustainMult
+  const climateBonus = dep * implClimate * 3
+  return Math.round((adjRaw + climateBonus) * 10) / 10
+}
+
+const getColor = (score, max) => {
+  const ratio = max > 0 ? score / max : 0
+  if (score === 0 || ratio < 0.05) return { bg: "#1a1a2e", text: "#4b5563" }
+  if (ratio < 0.25) return { bg: "#2d1b1b", text: "#f87171" }
+  if (ratio < 0.4) return { bg: "#2d1f1b", text: "#fb923c" }
+  if (ratio < 0.55) return { bg: "#2d2a1b", text: "#fbbf24" }
+  if (ratio < 0.7) return { bg: "#252d1b", text: "#a3e635" }
+  if (ratio < 0.85) return { bg: "#1b2d24", text: "#34d399" }
+  return { bg: "#1b2a2d", text: "#22d3ee" }
+}
+
+const getClimateBarColor = (s) => {
+  if (s <= 1) return "#ef4444"
+  if (s <= 3) return "#f97316"
+  if (s <= 5) return "#eab308"
+  if (s <= 7) return "#84cc16"
+  return "#22d3ee"
+}
+
+const shortName = (p) => p === "Die Linke" ? "Linke" : p
+
+function FinalMatrix() {
+  const [mode, setMode] = useState("adjusted")
+  const [selected, setSelected] = useState(null)
+  const [showClimateDetail, setShowClimateDetail] = useState(false)
+  const [showAfdDetail, setShowAfdDetail] = useState(false)
+
+  const getScore = (p, i) => mode === "raw" ? rawScores[p][i].s : calcAdjusted(p, i)
+
+  const getRowMax = (promiser) => {
+    let max = 0
+    parties.forEach(i => { const s = getScore(promiser, i); if (s > max) max = s })
+    return max
+  }
+
+  const getBest = (promiser) => {
+    let best = null, bestS = -1
+    parties.forEach(i => {
+      const s = getScore(promiser, i)
+      if (s > bestS) { bestS = s; best = i }
+    })
+    return { party: best, score: bestS }
+  }
+
+  const getSelf = (promiser) => getScore(promiser, promiser)
+
+  return (
+    <div style={{
+      fontFamily: "'Inter', -apple-system, sans-serif",
+      background: "#0f0f1a", color: "#e2e8f0",
+      minHeight: "100vh", padding: "14px", boxSizing: "border-box"
+    }}>
+      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
+        <h1 style={{ fontSize: 17, fontWeight: 700, marginBottom: 2, color: "#f1f5f9" }}>
+          Wer setzt wessen Versprechen wirklich um?
+        </h1>
+        <p style={{ fontSize: 10, color: "#94a3b8", marginBottom: 12, lineHeight: 1.4 }}>
+          Zeile = Versprechen einer Partei · Spalte = wer sie umsetzt · ★ = bester Umsetzer · Klick für Details
+        </p>
+
+        <div style={{
+          display: "flex", alignItems: "center", gap: 4,
+          marginBottom: 12, background: "#1a1a2e",
+          borderRadius: 7, padding: 3, width: "fit-content"
+        }}>
+          {[
+            { id: "raw", label: "Ohne Klimafaktor" },
+            { id: "adjusted", label: "Mit Klimarealität" }
+          ].map(m => (
+            <button key={m.id} onClick={() => { setMode(m.id); setSelected(null) }} style={{
+              padding: "5px 11px", border: "none", borderRadius: 5, fontSize: 10,
+              fontWeight: mode === m.id ? 600 : 400,
+              background: mode === m.id ? (m.id === "adjusted" ? "#2d1b24" : "#2d2d44") : "transparent",
+              color: mode === m.id ? (m.id === "adjusted" ? "#f87171" : "#e2e8f0") : "#64748b",
+              cursor: "pointer"
+            }}>{m.label}</button>
+          ))}
+        </div>
+
+        {mode === "adjusted" && (
+          <div style={{
+            background: "#1e1e2e", borderRadius: 7, padding: "7px 9px",
+            marginBottom: 10, border: "1px solid #2d2d44", fontSize: 9,
+            color: "#94a3b8", lineHeight: 1.5
+          }}>
+            <strong style={{ color: "#c4b5fd" }}>Klimabonus:</strong> Parteien mit Klimaschutz sichern die Grundlage aller Versprechen
+            <div style={{ display: "flex", gap: 3, marginTop: 5, flexWrap: "wrap" }}>
+              {parties.map(p => (
+                <div key={p} onClick={() => setShowClimateDetail(showClimateDetail === p ? false : p)} style={{
+                  background: showClimateDetail === p ? "#2d2d44" : "#0f0f1a",
+                  borderRadius: 4, padding: "2px 5px",
+                  display: "flex", alignItems: "center", gap: 3,
+                  border: `1px solid ${showClimateDetail === p ? "#818cf8" : "#2d2d44"}`,
+                  cursor: "pointer"
+                }}>
+                  <span style={{
+                    background: partyColors[p], color: partyText[p],
+                    padding: "1px 3px", borderRadius: 2, fontSize: 7, fontWeight: 700
+                  }}>{shortName(p)}</span>
+                  <div style={{ height: 3, borderRadius: 2, background: "#2d2d44", width: 32, overflow: "hidden" }}>
+                    <div style={{
+                      height: "100%", width: `${climateScores[p] * 10}%`,
+                      background: getClimateBarColor(climateScores[p]), borderRadius: 2
+                    }} />
+                  </div>
+                  <span style={{ fontSize: 7, color: "#64748b" }}>{climateScores[p]}</span>
+                </div>
+              ))}
+            </div>
+            {showClimateDetail && (
+              <div style={{
+                marginTop: 5, padding: "3px 6px", background: "#0f0f1a",
+                borderRadius: 4, borderLeft: `3px solid ${getClimateBarColor(climateScores[showClimateDetail])}`,
+                fontSize: 9, color: "#cbd5e1"
+              }}>
+                <strong style={{ color: getClimateBarColor(climateScores[showClimateDetail]) }}>
+                  {showClimateDetail} ({climateScores[showClimateDetail]}/10):
+                </strong> {climateExplain[showClimateDetail]}
+              </div>
+            )}
+          </div>
+        )}
+
+        <div style={{ overflowX: "auto", marginBottom: 10 }}>
+          <table style={{ borderCollapse: "separate", borderSpacing: 2, width: "100%", minWidth: 860 }}>
+            <thead>
+              <tr>
+                <th style={{ padding: "4px 3px", fontSize: 7, color: "#64748b", textAlign: "left", fontWeight: 500, width: 62 }}>
+                  Versprechen↓<br/>Umgesetzt→
+                </th>
+                {parties.map(p => (
+                  <th key={p} style={{
+                    padding: "4px 1px", fontSize: 8, fontWeight: 600,
+                    textAlign: "center", background: partyColors[p],
+                    color: partyText[p], borderRadius: 4
+                  }}>{shortName(p)}</th>
+                ))}
+                <th style={{ padding: "4px 2px", fontSize: 7, color: "#c4b5fd", textAlign: "center", fontWeight: 600, width: 80 }}>
+                  Wähle eigentlich
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {parties.map(promiser => {
+                const best = getBest(promiser)
+                const self = getSelf(promiser)
+                const rowMax = getRowMax(promiser)
+                const isAfD = promiser === "AfD"
+
+                return (
+                  <tr key={promiser}>
+                    <td style={{
+                      padding: "4px 3px", fontSize: 8, fontWeight: 600,
+                      background: partyColors[promiser], color: partyText[promiser],
+                      borderRadius: 4, whiteSpace: "nowrap"
+                    }}>
+                      <div>{shortName(promiser)}</div>
+                      {mode === "adjusted" && (
+                        <div style={{ fontSize: 6, opacity: 0.7, fontWeight: 400, marginTop: 1 }}>
+                          Abh. {Math.round(climateDependency[promiser] * 100)}%
+                        </div>
+                      )}
+                    </td>
+                    {parties.map(implementer => {
+                      const score = getScore(promiser, implementer)
+                      const raw = rawScores[promiser][implementer].s
+                      const colors = getColor(score, rowMax)
+                      const isSelected = selected?.p === promiser && selected?.i === implementer
+                      const isSelf = promiser === implementer
+                      const isBest = best.party === implementer && score > 0
+
+                      return (
+                        <td key={implementer}
+                          onClick={() => setSelected(isSelected ? null : { p: promiser, i: implementer })}
+                          style={{
+                            padding: "3px 1px", textAlign: "center",
+                            background: colors.bg,
+                            border: `2px solid ${isSelected ? "#818cf8" : isBest ? "#22d3ee88" : "transparent"}`,
+                            borderRadius: 5, cursor: "pointer",
+                            position: "relative", minWidth: 46
+                          }}
+                        >
+                          {isBest && score > 0 && (
+                            <div style={{ position: "absolute", top: 0, left: 2, fontSize: 7, color: "#22d3ee" }}>★</div>
+                          )}
+                          {isSelf && (
+                            <div style={{ position: "absolute", top: 0, right: 1, fontSize: 5, color: "#64748b" }}>SELBST</div>
+                          )}
+                          <div style={{ fontSize: 14, fontWeight: 700, color: colors.text, lineHeight: 1, marginTop: isSelf ? 3 : 0 }}>
+                            {score === 0 ? "–" : score % 1 === 0 ? score : score.toFixed(1)}
+                          </div>
+                          {mode === "adjusted" && raw > 0 && (
+                            <div style={{ fontSize: 6, color: "#64748b", marginTop: 1 }}>
+                              <span style={{ textDecoration: Math.abs(score - raw) > 0.05 ? "line-through" : "none" }}>
+                                {raw}
+                              </span>
+                              {Math.abs(score - raw) > 0.05 && (
+                                <span style={{ color: score > raw ? "#34d399" : "#f87171", marginLeft: 1 }}>
+                                  {score > raw ? "+" : ""}{(score - raw).toFixed(1)}
+                                </span>
+                              )}
+                            </div>
+                          )}
+                        </td>
+                      )
+                    })}
+                    <td style={{ padding: "3px 3px", textAlign: "center", verticalAlign: "middle" }}>
+                      {best.score > 0 ? (
+                        <div>
+                          <span style={{
+                            background: partyColors[best.party], color: partyText[best.party],
+                            padding: "1px 5px", borderRadius: 3, fontSize: 8, fontWeight: 700
+                          }}>{shortName(best.party)}</span>
+                          {best.party !== promiser && (
+                            <div style={{ fontSize: 6, color: "#f87171", marginTop: 1 }}>nicht {shortName(promiser)}!</div>
+                          )}
+                          {best.party === promiser && (
+                            <div style={{ fontSize: 6, color: "#34d399", marginTop: 1 }}>✓ passt</div>
+                          )}
+                        </div>
+                      ) : <span style={{ fontSize: 8, color: "#4b5563" }}>–</span>}
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        {selected && (() => {
+          const raw = rawScores[selected.p][selected.i].s
+          const adj = calcAdjusted(selected.p, selected.i)
+          const implClimate = climateScores[selected.i]
+          const dep = climateDependency[selected.p]
+          const sustainMult = 0.3 + 0.7 * (implClimate / 10)
+          const climBonus = Math.round(dep * (implClimate / 10) * 3 * 10) / 10
+
+          return (
+            <div style={{
+              background: "#1e1e2e", borderRadius: 7, padding: 10,
+              marginBottom: 10, border: "1px solid #2d2d44"
+            }}>
+              <div style={{ fontSize: 10, fontWeight: 600, marginBottom: 5, color: "#c4b5fd" }}>
+                {selected.p}-Versprechen → umgesetzt von {selected.i}
+              </div>
+              <div style={{ fontSize: 10, color: "#cbd5e1", lineHeight: 1.6, marginBottom: 7 }}>
+                {rawScores[selected.p][selected.i].d}
+              </div>
+              {mode === "adjusted" && (
+                <div style={{ background: "#0f0f1a", borderRadius: 5, padding: 7, fontSize: 9, lineHeight: 1.7 }}>
+                  <div style={{ color: "#94a3b8" }}>
+                    Roh: <strong style={{ color: "#fbbf24" }}>{raw}</strong>
+                    {" × "}<strong style={{ color: "#fb923c" }}>{sustainMult.toFixed(2)}</strong>
+                    {" = "}<strong style={{ color: "#e2e8f0" }}>{(raw * sustainMult).toFixed(1)}</strong>
+                    {" + Klimabonus "}<strong style={{ color: "#34d399" }}>+{climBonus}</strong>
+                    {" = "}<strong style={{ color: "#22d3ee" }}>{adj}</strong>
+                  </div>
+                  {adj > raw && <div style={{ color: "#34d399", marginTop: 3 }}>↑ Klimaschutz sichert dieses Versprechen ab</div>}
+                  {adj < raw && <div style={{ color: "#f87171", marginTop: 3 }}>↓ Fehlender Klimaschutz entwertet das Versprechen</div>}
+                  {climBonus > 0.5 && (
+                    <div style={{ marginTop: 3, padding: "2px 5px", background: "#1b2d24", borderRadius: 3, borderLeft: "2px solid #34d399", color: "#34d399", fontSize: 8 }}>
+                      {climateDependencyExplain[selected.p]}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )
+        })()}
+
+        <div style={{
+          background: "#1e1e2e", borderRadius: 7, padding: 10,
+          marginBottom: 10, border: "1px solid #2d2d44"
+        }}>
+          <div style={{ fontSize: 11, fontWeight: 600, marginBottom: 6, color: "#f1f5f9" }}>
+            {mode === "adjusted" ? "Wen solltest du WIRKLICH wählen?" : "Wer liefert welche Versprechen?"}
+          </div>
+          {parties.map(promiser => {
+            const best = getBest(promiser)
+            const self = getSelf(promiser)
+            const surprise = best.party !== promiser && best.score > 0
+
+            return (
+              <div key={promiser} style={{
+                display: "flex", alignItems: "center", gap: 5,
+                marginBottom: 5, padding: "5px 7px",
+                background: surprise ? "#1b1f2d" : "#0f0f1a",
+                borderRadius: 4, fontSize: 10, lineHeight: 1.4,
+                border: surprise ? "1px solid #3d3d7a" : "1px solid #1a1a2e"
+              }}>
+                <span style={{
+                  background: partyColors[promiser], color: partyText[promiser],
+                  padding: "2px 5px", borderRadius: 3, fontWeight: 600,
+                  fontSize: 8, whiteSpace: "nowrap", flexShrink: 0, minWidth: 42, textAlign: "center"
+                }}>{shortName(promiser)}</span>
+
+                {best.score > 0 ? (
+                  <span style={{ color: "#cbd5e1" }}>
+                    {surprise ? (
+                      <>
+                        Wer {shortName(promiser)}-Versprechen will →{" "}
+                        <strong style={{
+                          background: partyColors[best.party], color: partyText[best.party],
+                          padding: "1px 4px", borderRadius: 3, fontSize: 9
+                        }}>{shortName(best.party)}</strong>
+                        {" "}({best.score.toFixed(1)}) statt {shortName(promiser)} ({self.toFixed(1)})
+                        {mode === "adjusted" && <span style={{ color: "#c4b5fd" }}> · Δ {(best.score - self).toFixed(1)}</span>}
+                      </>
+                    ) : (
+                      <>{shortName(promiser)} liefert eigene Versprechen am besten ({best.score.toFixed(1)})</>
+                    )}
+                  </span>
+                ) : <span style={{ color: "#64748b" }}>Keine Partei liefert substanziell.</span>}
+              </div>
+            )
+          })}
+        </div>
+
+        {mode === "adjusted" && (
+          <div
+            onClick={() => setShowAfdDetail(!showAfdDetail)}
+            style={{
+              background: "linear-gradient(135deg, #1b1f2d, #2d1b1b)",
+              borderRadius: 7, padding: 10, marginBottom: 10,
+              border: "1px solid #3d3d7a", cursor: "pointer"
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ fontSize: 11, fontWeight: 600, color: "#009ee0" }}>
+                Die bitterste Ironie: AfD-Versprechen × Klimarealität
+              </div>
+              <span style={{ fontSize: 9, color: "#64748b" }}>{showAfdDetail ? "▲" : "▼ Details"}</span>
+            </div>
+            <p style={{ fontSize: 10, color: "#cbd5e1", lineHeight: 1.6, margin: "4px 0 0 0" }}>
+              Die AfD verspricht bezahlbare Energie, Heimatschutz, starke Landwirtschaft, sichere Renten.
+              {" "}<strong style={{ color: "#f87171" }}>Alles Dinge, die der Klimawandel am härtesten zerstört</strong> –
+              und die AfD will den Klimaschutz abschaffen. AfD-Wähler wählen gegen ihre eigenen Interessen.
+            </p>
+            {showAfdDetail && (
+              <div style={{ marginTop: 8 }}>
+                {afdPromiseExplain.items.map((item, idx) => (
+                  <div key={idx} style={{
+                    display: "flex", gap: 6, marginBottom: 5, padding: "5px 7px",
+                    background: "#0f0f1a", borderRadius: 4,
+                    borderLeft: "3px solid #f87171"
+                  }}>
+                    <div style={{ flexShrink: 0, minWidth: 90 }}>
+                      <div style={{ fontSize: 9, fontWeight: 600, color: "#009ee0" }}>{item.promise}</div>
+                    </div>
+                    <div style={{ fontSize: 9, color: "#94a3b8", lineHeight: 1.5 }}>
+                      {item.reality}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {mode === "adjusted" && (
+          <div style={{
+            background: "linear-gradient(135deg, #1b2d24, #1e1e2e)",
+            borderRadius: 7, padding: 10, marginBottom: 10,
+            border: "1px solid #2d5c44"
+          }}>
+            <div style={{ fontSize: 11, fontWeight: 600, color: "#22d3ee", marginBottom: 4 }}>
+              Die unbequeme Wahrheit
+            </div>
+            <div style={{ fontSize: 10, color: "#cbd5e1", lineHeight: 1.7 }}>
+              <p style={{ margin: "0 0 5px 0" }}>
+                <strong style={{ color: "#f1f5f9" }}>CDU-Wähler:</strong> Wirtschaft, Jobs, Infrastruktur –
+                historisch von SPD besser geliefert, klimaadjustiert durch Grüne/Linke abgesichert.
+              </p>
+              <p style={{ margin: "0 0 5px 0" }}>
+                <strong style={{ color: "#f1f5f9" }}>SPD-Wähler:</strong> Soziale Gerechtigkeit braucht Klimaschutz.
+                Grüne und Linke liefern SPD-Versprechen gleichwertig – und nachhaltiger.
+              </p>
+              <p style={{ margin: "0 0 5px 0" }}>
+                <strong style={{ color: "#f1f5f9" }}>AfD-Wähler:</strong> Die krasseste Diskrepanz. Bezahlbare Energie, Heimatschutz,
+                Landwirtschaft – die Grüne liefern das alles besser als die AfD, weil Klimaschutz genau diese Dinge schützt.
+                Die AfD zerstört durch Klimaleugnung aktiv die Heimat, die sie zu schützen vorgibt.
+              </p>
+              <p style={{ margin: 0 }}>
+                <strong style={{ color: "#f1f5f9" }}>FDP/BSW:</strong> Beide zerstören durch fehlenden Klimaschutz
+                die Voraussetzungen ihrer Versprechen. Wirtschaft und bezahlbares Leben gibt's haltbarer woanders.
+              </p>
+            </div>
+          </div>
+        )}
+
+        <div style={{
+          padding: "7px 8px", background: "#1a1a2e", borderRadius: 5,
+          fontSize: 7, color: "#4b5563", lineHeight: 1.4
+        }}>
+          <strong>Methodik:</strong> Rohscores: Regierungsbilanzen (Bund+Länder), Abstimmungsverhalten, Expertenbewertungen.
+          Klimamodus: (Roh × [0,3+0,7×Klima/10]) + (Abhängigkeit × Klima/10 × 3).
+          Klima: CDU 3, SPD 4, Grüne 8, Linke 7, FDP 1, AfD 0, BSW 1.
+          Klimaabhängigkeit: CDU 80%, SPD 80%, Grüne 90%, Linke 85%, FDP 70%, AfD 85%, BSW 75%.
+          AfD-Abhängigkeit 85%: Energie, Heimat, Landwirtschaft, Renten, Migration sind alle direkt klimagetrieben.
+          AfD/BSW nie regiert → 0 bei Selbst-Umsetzung. Analytisches Modell.
+        </div>
+      </div>
+    </div>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(FinalMatrix));
+</script>
+</body>
+</html>

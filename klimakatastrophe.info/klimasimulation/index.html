@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimaprognose bei aktueller Politik - Wissenschaftliche Analyse 2025-2100</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="chart.js"></script>
+    <script src="kippunkte-daten.js"></script>
+    <script src="simulation.js"></script>
+    <script src="klimachart.js"></script>
+    <script src="legende.js"></script>
+    <script src="helper.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Klimaprognose bei aktueller Politik</h1>
+            <div class="subtitle">Wissenschaftliche Analyse der Erderwärmung 2025-2100 basierend auf aktuellen Politikmaßnahmen</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <!-- Wahrscheinlichkeits-Schwellen-Control -->
+                <div class="probability-control">
+                    <strong>Kippunkt-Eintritt erst bei Wahrscheinlichkeit von:</strong>
+                    <div class="probability-buttons">
+                        <button class="prob-btn active" data-prob="20">20%</button>
+                        <button class="prob-btn" data-prob="25">25%</button>
+                        <button class="prob-btn" data-prob="30">30%</button>
+                        <button class="prob-btn" data-prob="35">35%</button>
+                        <button class="prob-btn" data-prob="40">40%</button>
+                        <button class="prob-btn" data-prob="45">45%</button>
+                        <button class="prob-btn" data-prob="50">50%</button>
+                        <button class="prob-btn" data-prob="55">55%</button>
+                        <button class="prob-btn" data-prob="60">60%</button>
+                        <button class="prob-btn" data-prob="65">65%</button>
+                        <button class="prob-btn" data-prob="70">70%</button>
+                        <button class="prob-btn" data-prob="75">75%</button>
+                        <button class="prob-btn" data-prob="80">80%</button>
+                    </div>
+                    <span class="control-description">Höhere Werte = konservativere Szenarien</span>
+                </div>
+                
+                <!-- Netto-Null-Jahr Control -->
+                <div class="probability-control">
+                    <strong>Menschliche CO2 Netto-Null ab:</strong>
+                    <div class="probability-buttons">
+                        <button class="netz-btn" data-year="2025">2025</button>
+                        <button class="netz-btn" data-year="2030">2030</button>
+                        <button class="netz-btn" data-year="2035">2035</button>
+                        <button class="netz-btn" data-year="2040">2040</button>
+                        <button class="netz-btn" data-year="2045">2045</button>
+                        <button class="netz-btn active" data-year="2050">2050</button>
+                        <button class="netz-btn" data-year="2055">2055</button>
+                        <button class="netz-btn" data-year="2060">2060</button>
+                        <button class="netz-btn" data-year="2070">2070</button>
+                        <button class="netz-btn" data-year="2080">2080</button>
+                        <button class="netz-btn" data-year="2100">2100</button>
+                        <button class="netz-btn" data-year="nie">nie</button>
+                    </div>
+                    <span class="control-description">Ab wann stoppen menschliche CO2-Emissionen?</span>
+                </div>
+                
+                <div class="chart_explanation"> 
+                  Pfeiltasten ← → zum Navigieren, ESC zum Schließen, Breite der Kippunkte: Dauer, Höhe der Kippunkte: ppm pro Jahr
+                </div>
+
+                <div class="chart-container">
+                    <div id="loading-message" style="text-align: center; padding: 50px; font-size: 1.1em; color: #666;">
+                        <div style="margin-bottom: 20px;">
+                            <div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+                        </div>
+                        <p style="margin: 0; font-weight: bold;">🌡️ Führe Klimasimulation durch...</p>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9em;">Berechnung der Kippunkt-Kaskaden basierend auf Temperaturentwicklung</p>
+                    </div>
+                    <canvas id="co2TempChart" style="display: none;"></canvas>
+
+                </div>
+                <div class="tipping-points-legend">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h3 style="margin: 0;">🌡️ Erweiterte Kippunkt-Legende (sortiert nach Temperaturschwelle) - Forschungsstand 2024/2025</h3>
+                        <button id="reset-highlight" style="padding: 8px 16px; background: #e74c3c; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">Highlight Reset</button>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">💡 <strong>Klicken Sie auf einen Kippunkt</strong> um ihn im Diagramm hervorzuheben</p>
+                    <div class="legend-grid" id="legend-grid">
+                        <!-- Wird automatisch durch JavaScript generiert -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Erklärung der Simulation -->
+            <div class="section">
+                <h2>Was diese Simulation zeigt</h2>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <p>Diese Klimasimulation berechnet die <strong>Erderwärmung bis 2300</strong> basierend auf wissenschaftlich dokumentierten <strong>Kippunkten des Klimasystems</strong>.</p>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 20px;">Was passiert:</h3>
+                    <ol style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>Steigende Temperaturen</strong> aktivieren Kippunkte (z.B. schmelzender Permafrost bei +1.8°C)</li>
+                        <li><strong>Kippunkte setzen zusätzliches CO2 frei</strong> und verstärken die Erwärmung</li>
+                        <li><strong>Weitere Kippunkte werden ausgelöst</strong> → unkontrollierbare Kaskaden-Effekte</li>
+                        <li>Sie können testen: <strong>Ab welchem Jahr müssen menschliche Emissionen auf Null</strong>, um verschiedene Kippunkte noch zu verhindern?</li>
+                    </ol>
+                    
+                    <h3 style="color: #2c3e50; margin-top: 20px;">Warum das wissenschaftlich fundiert ist:</h3>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>Temperaturschwellen</strong> stammen aus peer-reviewed Studien (Nature, Science, IPCC)</li>
+                        <li><strong>CO2-Reservoirs</strong> basieren auf gemessenen Kohlenstoffspeichern</li>
+                        <li><strong>CO2-Temperatur-Beziehung</strong> folgt der etablierten IPCC-Formel</li>
+                        <li><strong>Kaskaden-Effekte</strong> werden in der aktuellen Klimaforschung als kritisches Risiko eingestuft</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // MINIMALES JAVASCRIPT - Hauptlogik ist in separaten JS-Dateien
+        let baseTippingPoints = [];
+        // Verwende window.climateChart für globalen Zugriff
+        window.climateChart = null;
+        
+        // HAUPTINITIALISIERUNG
+        function initializeAll() {
+            
+            // 1. Simulation durchführen (mit Standard-Wahrscheinlichkeit 20%)
+            window.cachedSimulationResults = window.ClimateSimulation.simulateYearByYear(baseTippingPoints, 20);
+            const simulationResults = window.cachedSimulationResults;
+            
+            
+            // 2. Bereite Chart-Daten vor und erstelle Chart
+            const chartData = window.ClimateSimulation.prepareChartData(simulationResults);
+            window.climateChart = window.ClimateChart.createChart(chartData);
+            
+            // 3. Generiere Legende
+            window.ClimateLegend.generateLegend(window.climateChart);
+            window.ClimateLegend.setupResetButton(window.climateChart);
+            
+            // 3.5. Setup Wahrscheinlichkeits-Control
+            setupProbabilityControl();
+            setupNettoNullControl();
+            
+            // 4. Verstecke Ladesymbol und zeige Chart
+            setTimeout(function() {
+                
+                // Verstecke Loading-Message
+                const loadingMessage = document.getElementById('loading-message');
+                if (loadingMessage) {
+                    loadingMessage.style.display = 'none';
+                }
+                
+                // Zeige Canvas
+                const canvas = document.getElementById('co2TempChart');
+                if (canvas) {
+                    canvas.style.display = 'block';
+                }
+            }, 100);
+            
+        }
+        
+        // Wahrscheinlichkeits-Control Setup
+        function setupProbabilityControl() {
+            
+            const buttons = document.querySelectorAll('.prob-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', async function() {
+                    const newProbability = parseInt(this.dataset.prob);
+                    
+                    // Update Button-Status
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Reset Cache für Performance
+                    if (window.ClimateLegend?.resetCascadeCache) {
+                        window.ClimateLegend.resetCascadeCache();
+                    }
+                    
+                    // Active button shows current value - no separate display needed
+                    
+                    // Starte neue Simulation mit geänderter Wahrscheinlichkeit
+                    await runSimulationWithProbability(newProbability);
+                });
+            });
+        }
+        
+        // Netto-Null-Jahr Control Setup
+        function setupNettoNullControl() {
+            const buttons = document.querySelectorAll('.netz-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', async function() {
+                    const newNettoNullYear = this.dataset.year;
+                    
+                    // Update Button-Status
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Reset Cache für Performance
+                    if (window.ClimateLegend?.resetCascadeCache) {
+                        window.ClimateLegend.resetCascadeCache();
+                    }
+                    
+                    // Starte neue Simulation mit geändertem Netto-Null-Jahr
+                    await runSimulationWithNettoNull(newNettoNullYear);
+                });
+            });
+        }
+        
+        async function runSimulationWithNettoNull(nettoNullYear) {
+            try {
+                // Hole aktuelle Wahrscheinlichkeit
+                const activeButton = document.querySelector('.prob-btn.active');
+                const currentProbability = activeButton ? parseInt(activeButton.getAttribute('data-prob')) : 20;
+                
+                // Zeige Loading-Indikator
+                showLoadingMessage(`🌡️ Simulation mit Netto-Null ab ${nettoNullYear}...`);
+                
+                // Führe Simulation durch
+                const simulationResults = window.ClimateSimulation.runSimulationWithNettoNull(currentProbability, nettoNullYear);
+                
+                // Cache neue Simulationsergebnisse
+                window.cachedSimulationResults = simulationResults;
+                
+                // Erstelle Chart-Daten mit Netto-Null-Jahr berücksichtigung
+                const chartData = window.ClimateSimulation.prepareChartData(simulationResults, nettoNullYear);
+                
+                if (window.climateChart) {
+                    // Aktualisiere vorhandenes Chart
+                    const chart = window.climateChart;
+                    
+                    // Aktualisiere CO2-Daten mit Kippunkt-Effekten (Dataset 0)
+                    chart.data.datasets[0].data = chartData.co2DataWithTipping;
+                    
+                    // Aktualisiere CO2-Daten ohne Kippunkt-Effekte (Dataset 1) - jetzt mit Netto-Null!
+                    chart.data.datasets[1].data = chartData.co2DataWithoutTipping;
+                    
+                    // Aktualisiere Temperatur-Daten (Dataset 2)
+                    chart.data.datasets[2].data = chartData.tempData;
+                    
+                    // Aktualisiere Chart
+                    chart.update();
+                    
+                    // Aktualisiere Legende
+                    window.ClimateLegend.generateLegend(chart);
+                }
+                
+                // Verstecke Loading-Message
+                hideLoadingMessage();
+                
+            } catch (error) {
+                console.error('❌ Fehler bei Netto-Null-Simulation:', error);
+                showLoadingMessage(`❌ Fehler: ${error.message}`);
+            }
+        }
+        
+        async function runSimulationWithProbability(probabilityThreshold) {
+            try {
+                
+                // Prüfe ob alle erforderlichen Daten und Funktionen verfügbar sind
+                if (!window.ClimateSimulation) {
+                    throw new Error('ClimateSimulation Module nicht geladen');
+                }
+                if (!window.baseTippingPoints || window.baseTippingPoints.length === 0) {
+                    throw new Error('Kippunkt-Daten nicht verfügbar');
+                }
+                
+                // Zeige Loading-Indikator
+                showLoadingMessage(`🌡️ Simulation für ${probabilityThreshold}% Wahrscheinlichkeit...`);
+                
+                // Führe neue Simulation durch
+                const simulationResults = window.ClimateSimulation.runSimulation(probabilityThreshold);
+                
+                // Erstelle neues Chart
+                const chartData = window.ClimateSimulation.prepareChartData(simulationResults);
+                if (window.climateChart) {
+                    // Aktualisiere vorhandenes Chart
+                    const chart = window.climateChart;
+                    
+                    // Aktualisiere CO2-Daten mit Kippunkt-Effekten (Dataset 0)
+                    chart.data.datasets[0].data = chartData.co2DataWithTipping;
+                    
+                    // Aktualisiere Temperatur-Daten (Dataset 2)  
+                    chart.data.datasets[2].data = chartData.tempData;
+                    
+                    // Speichere neue Simulationsergebnisse für Plugin (Kippunkt-Rechtecke)
+                    window.cachedSimulationResults = simulationResults;
+                    
+                    // Chart neu zeichnen
+                    chart.update();
+                } else {
+                    // Erstelle neues Chart falls keins existiert
+                    window.climateChart = window.ClimateChart.createChart(chartData);
+                }
+                
+                // Regeneriere Legende - mit Fehlerbehandlung
+                try {
+                    if (window.ClimateLegend && window.ClimateLegend.generateLegend) {
+                        window.ClimateLegend.generateLegend(window.climateChart);
+                    }
+                } catch (legendError) {
+                    // Legende-Fehler ignorieren
+                }
+                
+                // Setup Reset Button - mit Fehlerbehandlung  
+                try {
+                    if (window.ClimateLegend && window.ClimateLegend.setupResetButton) {
+                        window.ClimateLegend.setupResetButton(window.climateChart);
+                    }
+                } catch (resetError) {
+                    // Reset Button Fehler ignorieren
+                }
+                
+                // Verstecke Loading und zeige Chart
+                hideLoadingMessage();
+                
+                
+            } catch (error) {
+                console.error('❌ Fehler bei Simulation:', error);
+                hideLoadingMessage();
+                alert('Fehler bei der Simulation. Bitte versuchen Sie es erneut.');
+            }
+        }
+        
+        function showLoadingMessage(text) {
+            const loadingMessage = document.getElementById('loading-message');
+            const canvas = document.getElementById('co2TempChart');
+            
+            if (loadingMessage && canvas) {
+                loadingMessage.querySelector('p').textContent = text;
+                loadingMessage.style.display = 'block';
+                canvas.style.display = 'none';
+            }
+        }
+        
+        function hideLoadingMessage() {
+            const loadingMessage = document.getElementById('loading-message');
+            const canvas = document.getElementById('co2TempChart');
+            
+            if (loadingMessage && canvas) {
+                loadingMessage.style.display = 'none';
+                canvas.style.display = 'block';
+            }
+        }
+        
+        function loadTippingPointData() {
+            try {
+                // Verwende die globale JavaScript-Variable aus kippunkte-daten.js
+                baseTippingPoints = kippunkteData.tipping_points;
+                window.baseTippingPoints = baseTippingPoints; // Global verfügbar machen
+                
+                // Starte komplette Initialisierung
+                initializeAll();
+            } catch (error) {
+                console.error('❌ Fehler beim Laden der Kippunkt-Daten:', error);
+                baseTippingPoints = [{ name: 'Fallback', temp20: 3.2, temp80: 4.2, total_co2_gt: 100, co2_rate_ppm_year: 1, color: 'rgba(255, 0, 0, 0.3)', explanation: 'Daten konnten nicht geladen werden' }];
+                window.baseTippingPoints = baseTippingPoints;
+                initializeAll();
+            }
+        }
+        
+        // Initialisierung wenn alle Scripts geladen sind
+        function initialize() {
+            // Initialisiere Helpers
+            if (window.ClimateHelpers) {
+                window.ClimateHelpers.initializeHelpers();
+            }
+            
+            // Lade die Daten
+            loadTippingPointData();
+        }
+        
+        // Starte wenn DOM und alle Scripts geladen sind
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initialize);
+        } else {
+            // DOM bereits geladen, starte sofort
+            initialize();
+        }
+    </script>
+
+      <div class="footer">Datenschutz: keine Cookies, keine Logs, keine Datenspeicherung, keine Werbung<br/>Impressum: Jan Kechel, Auen 16, 88356 Ostrach, Deutschland<br/>Copyright: Frei für jeden und für jeden Zweck. Keine Rechte vorbehalten.<br/>Kontakt: kontakt\at/klimakatastrophe.info<br/>URL: <a href="https://www.klimakatastrophe.info">https://www.klimakatastrophe.info</a><br/>Disclaimer: Alle auf dieser Webseite veröffentlichten Informationen geben nur meine persönliche Meinung wieder und sind möglicherweise etwas überspitzt dargestellt.  </div>
+</body>
+</html>
