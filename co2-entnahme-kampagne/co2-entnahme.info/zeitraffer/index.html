@@ -30,6 +30,21 @@
  #o6 a:hover { text-decoration:underline; }
  #bild { width:100vw; height:calc(100vh - 96px); margin-top:96px; display:block; }
  text { font-family:Arial,Helvetica,sans-serif; }
+ @media (max-height: 560px) {
+   #phase { font-size:20px; top:8px; }
+   #datum { font-size:17px; }
+   #outro { padding-top:36px; }
+   .ozeile { padding:5px 14px; margin:3px; border-radius:7px; }
+   #o1 { font-size:22px; }
+   #o2, #o4 { font-size:15px; }
+   #o3 { font-size:14px; }
+   #o5 { font-size:16px; }
+   #o6 { font-size:13px; }
+   #knoepfe button { font-size:13px; padding:5px 12px; margin:4px 3px; }
+   #intro h1 { font-size:34px; }
+   #intro p { font-size:16px; }
+   #countdown { font-size:30px; margin-top:12px; min-height:36px; }
+ }
 </style></head><body>
 <div id="intro"><h1>Wer bilanziert CO&#8322;?</h1><p>Eine Frage an die Menschen &middot; 2021&ndash;2026</p><div id="countdown"></div></div>
 <div id="outro">
@@ -249,7 +264,7 @@ function tick(now) {
     oben += 2 * h.maxR + 70;
     h.g.setAttribute('transform', `translate(${h.cx},${h.cy})`);
     h.text.setAttribute('opacity', 1);
-    h.text.setAttribute('y', h.maxR + 40);
+    h.text.setAttribute('y', -h.maxR - 24);
     h.text.textContent = h.n + ' ' + h.label;
   }
 
