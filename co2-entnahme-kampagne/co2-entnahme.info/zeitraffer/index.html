@@ -287,8 +287,9 @@ function tick(now) {
     else if (a.sp > b.sp) { x1 = aMitte - aHalb; x2 = bMitte + bHalb; }
     else { x1 = aMitte + aHalb; x2 = bMitte + bHalb; }
     y1 = a.y + a.h / 2; y2 = b.y + b.h / 2;
-    const dx = a.sp === b.sp ? 40 : (x2 - x1) * 0.45;
-    ed.el.setAttribute('d', `M${x1},${y1} C${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}`);
+    const dx = a.sp === b.sp ? 55 : (x2 - x1) * 0.45;
+    const c2 = a.sp === b.sp ? x2 + dx : x2 - dx;   // gleiche Spalte: Bogen kommt von rechts zurück
+    ed.el.setAttribute('d', `M${x1},${y1} C${x1 + dx},${y1} ${c2},${y2} ${x2},${y2}`);
   });
 
   // Phasentitel: asynchron, mindestens 2 s Standzeit; danach Gesamtzahl
