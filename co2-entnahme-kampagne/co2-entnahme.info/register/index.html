@@ -3,100 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CO₂-Schulden-Register — geplante Gaskraftwerke in Deutschland</title>
-<meta name="description" content="Anlagenscharfes Register der kalkulatorischen CO₂-Entnahme-Verbindlichkeiten neuer fossiler Kraftwerke in Deutschland. Keine dieser Verbindlichkeiten steht in einem Haushalt.">
+<title>CO₂-Entnahmekosten der geplanten Gaskraftwerke in Deutschland</title>
+<meta name="description" content="Referenztabelle: CO₂-Entnahmekosten der in Deutschland geplanten Gaskraftwerke, je Anlage aufgeschlüsselt, mit Quellen.">
 <style>
  * { margin:0; padding:0; box-sizing:border-box; }
  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.6; color:#333; background:#fff; }
  .container { max-width:1100px; margin:0 auto; padding:20px; }
- header { text-align:center; margin:20px 0 10px; }
- h1 { font-size:1.7em; margin-bottom:8px; }
- h2 { font-size:1.25em; margin:35px 0 10px; }
- .sub { color:#555; max-width:850px; margin:0 auto; }
- .uhr { text-align:center; margin:30px 0; padding:25px 15px; background:#1a1a2e; color:#fff; border-radius:8px; }
- .uhr .betrag { font-size:2.6em; font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:1px; }
- .uhr .label { color:#aab; font-size:0.95em; margin-top:4px; }
- .kennzahlen { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:20px 0 30px; }
- .kennzahl { flex:1 1 200px; max-width:260px; text-align:center; padding:14px 10px; border:1px solid #dee2e6; border-radius:8px; background:#f8f9fa; }
- .kennzahl .wert { font-size:1.5em; font-weight:700; }
- .kennzahl .label { font-size:0.85em; color:#666; }
+ header { margin:20px 0 14px; }
+ h1 { font-size:1.45em; margin-bottom:4px; }
+ h2 { font-size:1.15em; margin:35px 0 10px; }
+ .sub { color:#666; font-size:0.95em; }
+ .summe { margin:14px 0 22px; padding:10px 14px; background:#f6f7f8; border:1px solid #e3e3e3; border-radius:6px; font-size:0.95em; }
  table { border-collapse:collapse; width:100%; font-size:0.88em; }
  th, td { padding:7px 8px; border-bottom:1px solid #e3e3e3; text-align:left; vertical-align:top; }
- th { background:#f1f3f5; cursor:pointer; user-select:none; white-space:nowrap; position:sticky; top:0; }
+ th { background:#f1f3f5; cursor:pointer; user-select:none; position:sticky; top:0; }
  th:hover { background:#e2e6ea; }
  th .pfeil { color:#888; font-size:0.85em; }
  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
  tr:hover td { background:#fafbfc; }
  .anlage-name { font-weight:600; }
  .anlage-meta { color:#777; font-size:0.92em; }
- .status { display:inline-block; font-size:0.85em; padding:1px 7px; border-radius:10px; background:#eef; white-space:nowrap; }
+ .status { display:inline-block; font-size:0.85em; padding:1px 7px; border-radius:10px; background:#eef; }
  .status.bau { background:#fde8d8; }
  .status.genehmigung { background:#fff3bf; }
- .gepr-nein { color:#c0392b; font-weight:600; white-space:nowrap; }
- .gepr-offen { color:#888; white-space:nowrap; }
- .mitmach { font-size:0.9em; white-space:nowrap; }
- .gepr-angefragt { color:#b8860b; font-weight:600; white-space:nowrap; }
- .tabelle-wrap { overflow-x:auto; }
+ .gepr-nein { color:#c0392b; font-weight:600; }
+ .gepr-offen { color:#888; }
+ .gepr-angefragt { color:#b8860b; font-weight:600; }
+ .tabelle-wrap { width:100vw; margin-left:calc(50% - 50vw); padding:0 14px; }
  a { color:#0b5394; }
- .hinweis { background:#fff8e1; border:1px solid #f0e0a0; border-radius:8px; padding:14px 18px; margin:25px 0; font-size:0.95em; }
  .methodik p, .methodik li { font-size:0.95em; }
  .methodik ul { margin:8px 0 8px 22px; }
- footer { margin:45px 0 20px; padding-top:15px; border-top:1px solid #ddd; font-size:0.88em; color:#666; text-align:center; }
- @media (max-width:700px){ .uhr .betrag{font-size:1.7em;} h1{font-size:1.3em;} }
+ footer { margin:45px 0 20px; padding-top:15px; border-top:1px solid #ddd; font-size:0.88em; color:#666; }
 </style>
 </head>
 <body>
 <div class="container">
 
 <header>
- <h1>CO₂-Schulden-Register</h1>
- <p class="sub">Deutschland plant und genehmigt derzeit neue fossile Gaskraftwerke. Jede genehmigte Tonne CO₂
- muss nach dem Pariser Abkommen, <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32021R1119" target="_blank">VO (EU) 2021/1119</a>
- und <a href="https://www.gesetze-im-internet.de/ksg/__3b.html" target="_blank">§ 3b KSG</a> später wieder aus der
- Atmosphäre entnommen werden — das kostet reales Geld. Dieses Register beziffert die daraus entstehenden
- Verbindlichkeiten anlagenscharf. <strong>Keine einzige davon ist bisher in einem öffentlichen Haushalt ausgewiesen.</strong>
- <br><span style="font-size:0.92em;color:#666">Aktualität: Nach der
- <a href="https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Pressemitteilungen/2026/01/20260115-grundsatzeinigung-mit-europaeischen-kommission-ueber-eckpunkte-der-kraftwerksstrategie.html" target="_blank">Grundsatzeinigung
- mit der EU-Kommission (15.01.2026)</a> werden ab <strong>September 2026</strong> die ersten
- 12&nbsp;GW neuer Gaskraftwerkskapazität ausgeschrieben; weitere Runden folgen 2027 und 2029/30.
- Statusangaben der Tabelle: verifiziert Juni 2026 (Einzelquellen je Anlage verlinkt).</span></p>
+ <h1>CO₂-Entnahmekosten der geplanten Gaskraftwerke in Deutschland</h1>
+ <p class="sub">Referenztabelle · Statusangaben einzeln verifiziert, Stand Juni 2026 ·
+ Hintergrund und Rechtsrahmen: <a href="../index.html">co2-entnahme.info</a></p>
 </header>
 
-<div class="uhr">
- <div class="betrag" id="uhrBetrag">0 €</div>
- <div class="label">kalkulatorische CO₂-Entnahmekosten der 26 erfassten Anlagen seit deinem Seitenaufruf
- (bei Volllast-Betrieb aller Anlagen: <span id="uhrRate"></span> € pro Sekunde)</div>
+<div class="summe">
+ 26 Vorhaben · kalkulatorisch 30,6 Mio t CO₂/Jahr · Entnahmekosten <strong>305,7 Mrd. €</strong>
+ über 20 Betriebsjahre (500 €/t) · davon in öffentlichen Haushalten ausgewiesen: <strong>0 €</strong>
 </div>
 
-<div class="kennzahlen">
- <div class="kennzahl"><div class="wert">26</div><div class="label">erfasste Anlagen<br>(geplant / im Verfahren / im Bau)</div></div>
- <div class="kennzahl"><div class="wert">30,6 Mio t</div><div class="label">CO₂ pro Jahr (kalkulatorisch)</div></div>
- <div class="kennzahl"><div class="wert">15,3 Mrd €</div><div class="label">Entnahmekosten pro Betriebsjahr</div></div>
- <div class="kennzahl"><div class="wert">305,7 Mrd €</div><div class="label">über 20 Jahre Betrieb<br>— ausgewiesen in Haushalten: <strong>0&nbsp;€</strong></div></div>
-</div>
-
-<div class="hinweis">
- <strong>Drei Behörden haben bereits schriftlich bestätigt, dass diese Folgekosten in keinem Genehmigungsverfahren
- geprüft werden</strong> (Spalte „Folgekosten geprüft?"):
- das Regierungspräsidium Stuttgart für <a href="https://fragdenstaat.de/anfrage/verbindlichkeiten-aus-gud-altbach-deizisau-nicht-ausgewiesen-im-haushalt/" target="_blank">Altbach/Deizisau</a>
- („Kosten- und Haushaltsfragen [sind] kein Bestandteil des immissionsschutzrechtlichen Genehmigungsverfahrens"),
- die Bezirksregierung Köln für <a href="https://fragdenstaat.de/anfrage/kraftwerk-weisweiler/" target="_blank">Weisweiler</a>,
- die Bezirksregierung Düsseldorf für <a href="https://fragdenstaat.de/anfrage/kraftwerk-voerde/" target="_blank">Voerde</a>.
- Für die übrigen Anlagen <strong>laufen seit dem 10.06.2026 Anfragen nach dem
- Umweltinformationsgesetz</strong> (Antwortfrist ca. 14.07.2026) — jede öffentlich nachverfolgbar
- über den Link in der Tabelle.
-</div>
-
-<div class="hinweis" style="background:#e8f4e8;border-color:#b0d8b0;">
- <strong>Mitmachen — fragen Sie Ihre Behörde selbst:</strong> Jede Bürgerin und jeder Bürger kann
- nach dem Umweltinformationsgesetz Auskunft verlangen; die Behörde muss innerhalb eines Monats
- antworten. Der Link „selbst anfragen" in der Tabelle öffnet ein <strong>fertig vorausgefülltes
- Anfrage-Formular</strong> bei FragDenStaat.de (gemeinnützig, kostenlos) für die jeweils zuständige
- Behörde — prüfen, absenden, fertig. Jede Antwort wird automatisch öffentlich dokumentiert.
- Besonders wirksam: Anlagen in Ihrer Nähe.
-</div>
-
-<h2>Die Anlagen <span style="font-weight:normal;font-size:0.75em;color:#777">— Spaltenkopf klicken zum Sortieren</span></h2>
 <div class="tabelle-wrap">
 <table id="tab">
  <thead><tr>
@@ -113,68 +66,55 @@
 </table>
 </div>
 
-<h2 class="methodik" id="methodik">Methodik &amp; Quellen</h2>
+<h2 id="methodik">Methodik &amp; Quellen</h2>
 <div class="methodik">
-<p><strong>Die Zahlen sind kalkulatorische Schätzungen</strong> — und genau das ist der Punkt: Amtliche Zahlen
-zu den genehmigten CO₂-Jahresfrachten und deren Folgekosten werden in den Verfahren nicht veröffentlicht und
-nach Auskunft der Behörden nicht einmal erhoben. Bis amtliche Werte vorliegen (UIG-Anfragen laufen), gilt:</p>
+<p>Die Zahlen sind kalkulatorische Schätzungen; amtliche Angaben zu genehmigten CO₂-Jahresfrachten
+und Folgekosten werden in den Verfahren nicht veröffentlicht und nach schriftlicher Auskunft der
+Behörden nicht erhoben (Spalte „Folgekosten geprüft?" — laufende UIG-Anfragen dort verlinkt).</p>
 <ul>
- <li><strong>CO₂-Emissionen:</strong> elektrische Bruttoleistung × 1.917 t CO₂ je MW und Jahr.
- Das entspricht ca. 5.200 Volllaststunden bei 0,367 t CO₂/MWh<sub>el</sub>
- (Erdgas-GuD, Wirkungsgrad ≈ 55 %, Brennstoff-Emissionsfaktor 0,201 t CO₂/MWh<sub>th</sub> laut
+ <li><strong>CO₂-Emissionen:</strong> elektrische Bruttoleistung × 1.917 t CO₂ je MW und Jahr
+ (≈ 5.200 Volllaststunden bei 0,367 t CO₂/MWh<sub>el</sub>; Erdgas-GuD, Wirkungsgrad ≈ 55 %,
+ Brennstoff-Emissionsfaktor 0,201 t CO₂/MWh<sub>th</sub>,
  <a href="https://www.umweltbundesamt.de/themen/klima-energie/treibhausgas-emissionen" target="_blank">UBA</a>).
- Viele Anlagen sind als „H₂-ready" angekündigt; solange kein grüner Wasserstoff in relevanter Menge
- verfügbar ist, laufen sie mit Erdgas. Geringere Auslastung senkt die Zahlen proportional — die
- Größenordnung bleibt.</li>
- <li><strong>Entnahmekosten:</strong> 500 €/t CO₂ — oberer Wert der vom PIK im BVerfG-Verfahren genannten
- Spanne von <a href="https://publications.pik-potsdam.de/rest/items/item_33305_1/component/file_33306/content" target="_blank">388–500 €/t</a>
- für technische CO₂-Entnahme (DACCS). Aktuelle Marktpreise liegen mit 600–1.200 €/t darüber;
- die Schätzung ist also konservativ.</li>
- <li><strong>Betrachtungszeitraum:</strong> 20 Jahre Betrieb (übliche Mindestlaufzeit; Genehmigungen sind unbefristet).</li>
- <li><strong>Anlagenliste:</strong> Recherche über das <a href="https://www.uvp-verbund.de/" target="_blank">UVP-Portal</a>
- von Bund und Ländern sowie Betreiberangaben (Stand der Statusangaben: Januar 2026). Erfasst sind geplante,
- im Genehmigungsverfahren befindliche und im Bau befindliche Gas-/Dampfkraftwerke ab ca. 40 MW<sub>el</sub>.
- Kein Anspruch auf Vollständigkeit — Hinweise auf fehlende Anlagen willkommen.</li>
- <li><strong>Rechtlicher Hintergrund</strong> (Verbindlichkeit, Rückstellungspflicht, Haushaltswahrheit):
- ausführlich mit allen Quellen in der <a href="../co2-entnahme-zusammenfassung.pdf" target="_blank">Zusammenfassung (PDF)</a>
- und auf der <a href="../index.html">Hauptseite</a>.</li>
+ Geringere Auslastung senkt die Werte proportional; Spitzenlastanlagen sind in der Tabelle markiert.</li>
+ <li><strong>Entnahmekosten:</strong> 500 €/t CO₂ — oberer Wert der vom PIK im BVerfG-Verfahren
+ genannten Spanne <a href="https://publications.pik-potsdam.de/rest/items/item_33305_1/component/file_33306/content" target="_blank">388–500 €/t</a>
+ (DACCS); aktuelle Marktpreise 600–1.200 €/t. Bezugszeitraum: 20 Betriebsjahre
+ (Genehmigungen sind unbefristet). Rechnerisch entspricht die Summe ca. 484 € je Sekunde bei Volllast.</li>
+ <li><strong>Anlagenliste:</strong> Recherche über das <a href="https://www.uvp-verbund.de/" target="_blank">UVP-Portal</a>,
+ Betreiberangaben und amtliche Bekanntmachungen; jeder Eintrag im Juni 2026 einzeln verifiziert.
+ Kontext: Nach der <a href="https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Pressemitteilungen/2026/01/20260115-grundsatzeinigung-mit-europaeischen-kommission-ueber-eckpunkte-der-kraftwerksstrategie.html" target="_blank">Grundsatzeinigung mit der EU-Kommission</a>
+ werden ab September 2026 die ersten 12 GW neuer Gaskraftwerkskapazität ausgeschrieben.
+ Kein Anspruch auf Vollständigkeit — Hinweise willkommen.</li>
+ <li><strong>Rechtsgrundlage der Entnahmepflicht</strong> (VO (EU) 2021/1119, § 3b KSG) und
+ haushaltsrechtliche Einordnung: <a href="../index.html">co2-entnahme.info</a> ·
+ <a href="../co2-entnahme-zusammenfassung.pdf" target="_blank">Zusammenfassung (PDF)</a>.</li>
+ <li><strong>Nach dem Umweltinformationsgesetz</strong> kann jede Person zu jeder Anlage Auskunft
+ verlangen (Antwortpflicht binnen eines Monats); die laufenden Anfragen sind öffentlich auf
+ <a href="https://fragdenstaat.de/" target="_blank">FragDenStaat.de</a> dokumentiert.</li>
 </ul>
-<p style="margin-top:10px"><strong>Warum „Schulden"?</strong> Eine Verbindlichkeit entsteht wirtschaftlich in dem Moment,
-in dem die Emission genehmigt und ausgestoßen wird — nicht erst, wenn ein Gesetz die Zahlung anordnet. Der Staat
-bilanziert so bei Atommüll, Beamtenpensionen und Tagebau-Renaturierung. Nur hier nicht.</p>
 </div>
 
 <footer>
- <a href="../index.html">co2-entnahme.info</a> · Daten &amp; Belege:
- <a href="https://github.com/kechel/klima-strafanzeigen" target="_blank">GitHub</a> ·
- Kontakt: jan@kechel.de · Stand: Juni 2026
+ <p><a href="../index.html">co2-entnahme.info</a> · Daten &amp; Belege:
+ <a href="https://github.com/kechel/klima-strafanzeigen" target="_blank">GitHub</a> · Stand: Juni 2026</p>
+ <p>Letzte Aktualisierung: 2026</p>
+ <p>Datenschutz: keine Cookies, keine Logs, keine Datenspeicherung, keine Werbung</p>
+ <p>Impressum: Jan Kechel, Auen 16, 88356 Ostrach, Deutschland · jan@kechel.de</p>
+ <p>Copyright: Frei für jeden und für jeden Zweck. Keine Rechte vorbehalten.</p>
 </footer>
 
 </div>
 <script>
-const ANLAGEN = [{"name":"Kraftwerk Mehrum","betreiber":"EPH","land":"Niedersachsen","mw":1200,"status":"Vorbescheid liegt vor","inbetriebnahme":"","co2_t_a":2300400,"eur_a":1150200000,"eur_20":23004000000,"behoerde":"Gewerbeaufsichtsamt Braunschweig","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-mehrum-co2-jahresemissionen-und-folgekosten/","pb":16678},{"name":"Kraftwerk Jänschwalde","betreiber":"LEAG","land":"Brandenburg","mw":900,"status":"in Genehmigung","inbetriebnahme":"06-2029","co2_t_a":1725300,"eur_a":862650000,"eur_20":17253000000,"behoerde":"Landesamt für Umwelt Brandenburg","link":"https://www.leag.de/de/gigawattfactory/h2-kraftwerke/","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-jaenschwalde-co2-jahresemissionen-und-folgekosten/","pb":16104},{"name":"Kraftwerk Bexbach","betreiber":"Iqony · MW-Angabe unbestätigt (öffentlich nur 2,5-GW-Paketsumme)","land":"Saarland","mw":900,"status":"in Planung","inbetriebnahme":"","co2_t_a":1725300,"eur_a":862650000,"eur_20":17253000000,"behoerde":"Ministerium für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz","link":"https://www.iqony.energy/h2-ready-gaskraftwerke","fds":"","uig":"","pb":6180},{"name":"Kraftwerk Staudinger 8","betreiber":"Uniper","land":"Hessen","mw":890,"status":"Vorbescheid erteilt 05/2026","inbetriebnahme":"","co2_t_a":1706130,"eur_a":853065000,"eur_20":17061300000,"behoerde":"Regierungspräsidium Darmstadt","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=78c2616f-ad0f-4542-922b-7a86c8cbb974","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-staudinger-8-co2-jahresemissionen-und-folgekosten/","pb":15177},{"name":"Kraftwerk Bergkamen","betreiber":"Iqony","land":"Nordrhein-Westfalen","mw":880,"status":"in Genehmigung","inbetriebnahme":"31.12.2030","co2_t_a":1686960,"eur_a":843480000,"eur_20":16869600000,"behoerde":"Bezirksregierung Arnsberg","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=833afc7b-b23b-4338-9df3-cbf0592c3434","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-bergkamen-co2-jahresemissionen-und-folgekosten/","pb":2579},{"name":"Kraftwerk Lippendorf","betreiber":"LEAG","land":"Sachsen","mw":870,"status":"Teilgenehmigung liegt vor","inbetriebnahme":"30.04.2029","co2_t_a":1667790,"eur_a":833895000,"eur_20":16677900000,"behoerde":"Landesdirektion Sachsen","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=64322a9b-6fd6-48ad-874c-5127ccbe0ad2","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-lippendorf-co2-jahresemissionen-und-folgekosten/","pb":10849},{"name":"Kraftwerk Schwarze Pumpe","betreiber":"LEAG","land":"Brandenburg","mw":870,"status":"Teilgenehmigung liegt vor","inbetriebnahme":"30.04.2029","co2_t_a":1667790,"eur_a":833895000,"eur_20":16677900000,"behoerde":"Landesamt für Umwelt Brandenburg (GVS Süd)","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=2008dbff-5f94-4b59-8c11-65cc8a42bbf9","fds":"","uig":"","pb":16104},{"name":"Rheinhafen-Dampfkraftwerk Karlsruhe RDK9","betreiber":"EnBW","land":"Baden-Württemberg","mw":850,"status":"in Planung","inbetriebnahme":"","co2_t_a":1629450,"eur_a":814725000,"eur_20":16294500000,"behoerde":"Regierungspräsidium Karlsruhe","link":"https://www.enbw.com/unternehmen/themen/kohleausstieg/rheinhafen-dampfkraftwerk-karlsruhe/","fds":"","uig":"","pb":14677},{"name":"Kraftwerk Scholven II","betreiber":"Uniper · MW-Angabe unbestätigt (GEM: ~870 MW)","land":"Nordrhein-Westfalen","mw":835,"status":"angekündigt","inbetriebnahme":"","co2_t_a":1600695,"eur_a":800347500,"eur_20":16006950000,"behoerde":"Bezirksregierung Münster","link":"https://www.uniper.energy/de/deutschland/kraftwerke-deutschland/scholven","fds":"","uig":"","pb":2583},{"name":"Kraftwerk Weisweiler","betreiber":"RWE","land":"Nordrhein-Westfalen","mw":800,"status":"in Genehmigung","inbetriebnahme":"","co2_t_a":1533600,"eur_a":766800000,"eur_20":15336000000,"behoerde":"Bezirksregierung Köln","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=517d7250-56d8-4989-b364-4c1f64c8e319","fds":"https://fragdenstaat.de/anfrage/kraftwerk-weisweiler/","uig":"","pb":2582},{"name":"Gersteinwerk L (Werne)","betreiber":"RWE","land":"Nordrhein-Westfalen","mw":800,"status":"in Genehmigung","inbetriebnahme":"","co2_t_a":1533600,"eur_a":766800000,"eur_20":15336000000,"behoerde":"Bezirksregierung Arnsberg","link":"https://www.rwe.com/presse/rwe-generation/2024-05-29-rwe-plant-wasserstofffaehiges-gaskraftwerk-in-werne/","fds":"","uig":"","pb":2579},{"name":"Kraftwerk Voerde","betreiber":"RWE","land":"Nordrhein-Westfalen","mw":850,"status":"in Planung (Genehmigungsplanung abgeschlossen)","inbetriebnahme":"","co2_t_a":1629450,"eur_a":814725000,"eur_20":16294500000,"behoerde":"Bezirksregierung Düsseldorf","link":"https://www.rwe.com/presse/interviews/in-diesen-nrw-staedten-plant-rwe-neue-gaskraftwerke/","fds":"https://fragdenstaat.de/anfrage/kraftwerk-voerde/","uig":"","pb":2581},{"name":"Kraftwerk Schkopau","betreiber":"Saale Energie (ZESA-Projekt)","land":"Sachsen-Anhalt","mw":900,"status":"1. Teilgenehmigung erteilt 19.03.2026","inbetriebnahme":"","co2_t_a":1725300,"eur_a":862650000,"eur_20":17253000000,"behoerde":"Landesverwaltungsamt Sachsen-Anhalt","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=f530c838-ed0a-4df4-8f86-b24ab6b0c123","fds":"","uig":"","pb":7463},{"name":"Kraftwerk Heilbronn HLB 8","betreiber":"EnBW","land":"Baden-Württemberg","mw":675,"status":"In Bau","inbetriebnahme":"Q3/4 2027","co2_t_a":1293975,"eur_a":646987500,"eur_20":12939750000,"behoerde":"Regierungspräsidium Stuttgart","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=59b969fd-2031-40ce-8d88-cbc3846e7a08","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-heilbronn-hlb-8-co2-jahresemissionen-und-folgekosten/","pb":9025},{"name":"Heizkraftwerk Altbach/Deizisau 3 GuD","betreiber":"EnBW","land":"Baden-Württemberg","mw":665,"status":"In Bau","inbetriebnahme":"2. Quartal 2027","co2_t_a":1274805,"eur_a":637402500,"eur_20":12748050000,"behoerde":"Regierungspräsidium Stuttgart","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=8ea610cb-12f5-4bc6-8dc7-439498b5e991","fds":"https://fragdenstaat.de/anfrage/verbindlichkeiten-aus-gud-altbach-deizisau-nicht-ausgewiesen-im-haushalt/","uig":"","pb":9025},{"name":"Kraftwerk Weiher/Quierschied","betreiber":"Iqony · MW-Angabe unbestätigt (öffentlich nur 2,5-GW-Paketsumme)","land":"Saarland","mw":600,"status":"in Planung","inbetriebnahme":"","co2_t_a":1150200,"eur_a":575100000,"eur_20":11502000000,"behoerde":"Ministerium für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz","link":"https://www.iqony.energy/standortentwicklung/uebersicht-standortentwicklung","fds":"","uig":"","pb":6180},{"name":"Gaskraftwerk Leipheim II","betreiber":"LEAG · MW abgeleitet aus Portfolioangabe (~300, unbestätigt) · Backup-Profil","land":"Bayern","mw":300,"status":"in Planung","inbetriebnahme":"","co2_t_a":575100,"eur_a":287550000,"eur_20":5751000000,"behoerde":"Regierung von Schwaben","link":"https://www.leag.de/de/gigawattfactory/h2-kraftwerke/","fds":"","uig":"","pb":12064},{"name":"GuD-Kraftwerk Hamm-Uentrop","betreiber":"Trianel","land":"Nordrhein-Westfalen","mw":500,"status":"in Planung","inbetriebnahme":"","co2_t_a":958500,"eur_a":479250000,"eur_20":9585000000,"behoerde":"Bezirksregierung Arnsberg","link":"https://www.trianel-hamm.de/pressemeldungen/trianel-gaskraftwerk-hamm-soll-um-einen-dritten-wasserstofffaehigen-kraftwerksblock-ergaenzt-werden","fds":"","uig":"","pb":2579},{"name":"Zukunftskraftwerk Mainz","betreiber":"Kraftwerke Mainz-Wiesbaden AG","land":"Rheinland-Pfalz","mw":250,"status":"pausiert (wartet auf Kraftwerksstrategie)","inbetriebnahme":"","co2_t_a":479250,"eur_a":239625000,"eur_20":4792500000,"behoerde":"Struktur- und Genehmigungsdirektion Süd","link":"https://www.kmw-ag.de/zkw-in-planung/","fds":"","uig":"","pb":4860},{"name":"GuD Dradenau","betreiber":"Hamburger Energiewerke","land":"Hamburg","mw":180,"status":"In Bau","inbetriebnahme":"Ende 2026","co2_t_a":345060,"eur_a":172530000,"eur_20":3450600000,"behoerde":"Behörde für Umwelt, Klima, Energie und Agrarwirtschaft Hamburg","link":"https://www.hamburger-energiewerke.de/energiewende/energiewende-in-hamburg/kohleausstieg/energiepark-hafen","fds":"","uig":"","pb":7806},{"name":"Kraftwerk Fenne/Völklingen","betreiber":"Iqony · Gasmotoren-Spitzenlastanlage (geringere Auslastung als Standardannahme)","land":"Saarland","mw":150,"status":"in Planung","inbetriebnahme":"","co2_t_a":287550,"eur_a":143775000,"eur_20":2875500000,"behoerde":"Ministerium für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz","link":"https://www.iqony.energy/standortentwicklung/uebersicht-standortentwicklung","fds":"","uig":"","pb":6180},{"name":"Gasmotoren-Peakeranlage Gundremmingen","betreiber":"RWE · H₂-ready Peaker am ehem. AKW-Standort (geringere Auslastung als Standardannahme)","land":"Bayern","mw":120,"status":"in Genehmigung","inbetriebnahme":"09-2027","co2_t_a":230040,"eur_a":115020000,"eur_20":2300400000,"behoerde":"Regierung von Schwaben","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=3ce3f077-ed5b-4298-9dd5-6dfebe74c2f7","fds":"","uig":"","pb":12064},{"name":"KMW Motorenkraftwerk","betreiber":"Kraftwerke Mainz-Wiesbaden AG","land":"Rheinland-Pfalz","mw":54,"status":"in Genehmigung","inbetriebnahme":"","co2_t_a":103518,"eur_a":51759000,"eur_20":1035180000,"behoerde":"Struktur- und Genehmigungsdirektion Süd","link":"https://www.kmw-ag.de/zukunftsplaene/motorenkraftwerk/","fds":"","uig":"","pb":4860},{"name":"HKW III/C Modul A – K","betreiber":"Stadtwerke Duisburg · Module A–K (Gesamtausbau bis 67 MW)","land":"Nordrhein-Westfalen","mw":47,"status":"1. Teilgenehmigung beantragt (05/2026)","inbetriebnahme":"Ende 2028/Anfang 2029","co2_t_a":90099,"eur_a":45049500,"eur_20":900990000,"behoerde":"Bezirksregierung Düsseldorf","link":"https://www.stadtwerke-duisburg.de/","fds":"","uig":"","pb":2581},{"name":"Gasmotorenkraftwerk Zolling (5 Motoren)","betreiber":"Onyx Power · Gasmotoren-KWK/Spitzenlast (geringere Auslastung als Standardannahme)","land":"Bayern","mw":62.6,"status":"genehmigt 26.09.2023","inbetriebnahme":"05.04.2027","co2_t_a":120004,"eur_a":60002000,"eur_20":1200040000,"behoerde":"Regierung von Oberbayern","link":"https://www.regierung.oberbayern.bayern.de/mam/dokumente/bereich5/pfv/immissionsschutz/gv/gmk8/2023-09-26_genehmigungsbescheid_gmk8_zolling.pdf","fds":"","uig":"","pb":6835},{"name":"GuD-Kraftwerk Zolling (Neubau)","betreiber":"Onyx Power · LoI mit Bayern 05/2026","land":"Bayern","mw":800,"status":"angekündigt (LoI 07.05.2026)","inbetriebnahme":"","behoerde":"Regierung von Oberbayern","link":"https://www.stmwi.bayern.de/presse/pressemeldungen/196-2026/","fds":"","uig":"","pb":6835,"co2_t_a":1533600,"eur_a":766800000,"eur_20":15336000000}];
+const ANLAGEN = [{"name":"Kraftwerk Mehrum","betreiber":"EPH","land":"Niedersachsen","mw":1200,"status":"Vorbescheid liegt vor","inbetriebnahme":"","co2_t_a":2300400,"eur_a":1150200000,"eur_20":23004000000,"behoerde":"Gewerbeaufsichtsamt Braunschweig","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-mehrum-co2-jahresemissionen-und-folgekosten/"},{"name":"Kraftwerk Jänschwalde","betreiber":"LEAG","land":"Brandenburg","mw":900,"status":"in Genehmigung","inbetriebnahme":"06-2029","co2_t_a":1725300,"eur_a":862650000,"eur_20":17253000000,"behoerde":"Landesamt für Umwelt Brandenburg","link":"https://www.leag.de/de/gigawattfactory/h2-kraftwerke/","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-jaenschwalde-co2-jahresemissionen-und-folgekosten/"},{"name":"Kraftwerk Bexbach","betreiber":"Iqony · MW-Angabe unbestätigt (öffentlich nur 2,5-GW-Paketsumme)","land":"Saarland","mw":900,"status":"in Planung","inbetriebnahme":"","co2_t_a":1725300,"eur_a":862650000,"eur_20":17253000000,"behoerde":"Ministerium für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz","link":"https://www.iqony.energy/h2-ready-gaskraftwerke","fds":"","uig":""},{"name":"Kraftwerk Staudinger 8","betreiber":"Uniper","land":"Hessen","mw":890,"status":"Vorbescheid erteilt 05/2026","inbetriebnahme":"","co2_t_a":1706130,"eur_a":853065000,"eur_20":17061300000,"behoerde":"Regierungspräsidium Darmstadt","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=78c2616f-ad0f-4542-922b-7a86c8cbb974","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-staudinger-8-co2-jahresemissionen-und-folgekosten/"},{"name":"Kraftwerk Bergkamen","betreiber":"Iqony","land":"Nordrhein-Westfalen","mw":880,"status":"in Genehmigung","inbetriebnahme":"31.12.2030","co2_t_a":1686960,"eur_a":843480000,"eur_20":16869600000,"behoerde":"Bezirksregierung Arnsberg","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=833afc7b-b23b-4338-9df3-cbf0592c3434","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-bergkamen-co2-jahresemissionen-und-folgekosten/"},{"name":"Kraftwerk Lippendorf","betreiber":"LEAG","land":"Sachsen","mw":870,"status":"Teilgenehmigung liegt vor","inbetriebnahme":"30.04.2029","co2_t_a":1667790,"eur_a":833895000,"eur_20":16677900000,"behoerde":"Landesdirektion Sachsen","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=64322a9b-6fd6-48ad-874c-5127ccbe0ad2","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-lippendorf-co2-jahresemissionen-und-folgekosten/"},{"name":"Kraftwerk Schwarze Pumpe","betreiber":"LEAG","land":"Brandenburg","mw":870,"status":"Teilgenehmigung liegt vor","inbetriebnahme":"30.04.2029","co2_t_a":1667790,"eur_a":833895000,"eur_20":16677900000,"behoerde":"Landesamt für Umwelt Brandenburg (GVS Süd)","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=2008dbff-5f94-4b59-8c11-65cc8a42bbf9","fds":"","uig":""},{"name":"Rheinhafen-Dampfkraftwerk Karlsruhe RDK9","betreiber":"EnBW","land":"Baden-Württemberg","mw":850,"status":"in Planung","inbetriebnahme":"","co2_t_a":1629450,"eur_a":814725000,"eur_20":16294500000,"behoerde":"Regierungspräsidium Karlsruhe","link":"https://www.enbw.com/unternehmen/themen/kohleausstieg/rheinhafen-dampfkraftwerk-karlsruhe/","fds":"","uig":""},{"name":"Kraftwerk Scholven II","betreiber":"Uniper · MW-Angabe unbestätigt (GEM: ~870 MW)","land":"Nordrhein-Westfalen","mw":835,"status":"angekündigt","inbetriebnahme":"","co2_t_a":1600695,"eur_a":800347500,"eur_20":16006950000,"behoerde":"Bezirksregierung Münster","link":"https://www.uniper.energy/de/deutschland/kraftwerke-deutschland/scholven","fds":"","uig":""},{"name":"Kraftwerk Weisweiler","betreiber":"RWE","land":"Nordrhein-Westfalen","mw":800,"status":"in Genehmigung","inbetriebnahme":"","co2_t_a":1533600,"eur_a":766800000,"eur_20":15336000000,"behoerde":"Bezirksregierung Köln","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=517d7250-56d8-4989-b364-4c1f64c8e319","fds":"https://fragdenstaat.de/anfrage/kraftwerk-weisweiler/","uig":""},{"name":"Gersteinwerk L (Werne)","betreiber":"RWE","land":"Nordrhein-Westfalen","mw":800,"status":"in Genehmigung","inbetriebnahme":"","co2_t_a":1533600,"eur_a":766800000,"eur_20":15336000000,"behoerde":"Bezirksregierung Arnsberg","link":"https://www.rwe.com/presse/rwe-generation/2024-05-29-rwe-plant-wasserstofffaehiges-gaskraftwerk-in-werne/","fds":"","uig":""},{"name":"Kraftwerk Voerde","betreiber":"RWE","land":"Nordrhein-Westfalen","mw":850,"status":"in Planung (Genehmigungsplanung abgeschlossen)","inbetriebnahme":"","co2_t_a":1629450,"eur_a":814725000,"eur_20":16294500000,"behoerde":"Bezirksregierung Düsseldorf","link":"https://www.rwe.com/presse/interviews/in-diesen-nrw-staedten-plant-rwe-neue-gaskraftwerke/","fds":"https://fragdenstaat.de/anfrage/kraftwerk-voerde/","uig":""},{"name":"Kraftwerk Schkopau","betreiber":"Saale Energie (ZESA-Projekt)","land":"Sachsen-Anhalt","mw":900,"status":"1. Teilgenehmigung erteilt 19.03.2026","inbetriebnahme":"","co2_t_a":1725300,"eur_a":862650000,"eur_20":17253000000,"behoerde":"Landesverwaltungsamt Sachsen-Anhalt","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=f530c838-ed0a-4df4-8f86-b24ab6b0c123","fds":"","uig":""},{"name":"Kraftwerk Heilbronn HLB 8","betreiber":"EnBW","land":"Baden-Württemberg","mw":675,"status":"In Bau","inbetriebnahme":"Q3/4 2027","co2_t_a":1293975,"eur_a":646987500,"eur_20":12939750000,"behoerde":"Regierungspräsidium Stuttgart","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=59b969fd-2031-40ce-8d88-cbc3846e7a08","fds":"","uig":"https://fragdenstaat.de/anfrage/umweltinformationen-zum-vorhaben-kraftwerk-heilbronn-hlb-8-co2-jahresemissionen-und-folgekosten/"},{"name":"Heizkraftwerk Altbach/Deizisau 3 GuD","betreiber":"EnBW","land":"Baden-Württemberg","mw":665,"status":"In Bau","inbetriebnahme":"2. Quartal 2027","co2_t_a":1274805,"eur_a":637402500,"eur_20":12748050000,"behoerde":"Regierungspräsidium Stuttgart","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=8ea610cb-12f5-4bc6-8dc7-439498b5e991","fds":"https://fragdenstaat.de/anfrage/verbindlichkeiten-aus-gud-altbach-deizisau-nicht-ausgewiesen-im-haushalt/","uig":""},{"name":"Kraftwerk Weiher/Quierschied","betreiber":"Iqony · MW-Angabe unbestätigt (öffentlich nur 2,5-GW-Paketsumme)","land":"Saarland","mw":600,"status":"in Planung","inbetriebnahme":"","co2_t_a":1150200,"eur_a":575100000,"eur_20":11502000000,"behoerde":"Ministerium für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz","link":"https://www.iqony.energy/standortentwicklung/uebersicht-standortentwicklung","fds":"","uig":""},{"name":"Gaskraftwerk Leipheim II","betreiber":"LEAG · MW abgeleitet aus Portfolioangabe (~300, unbestätigt) · Backup-Profil","land":"Bayern","mw":300,"status":"in Planung","inbetriebnahme":"","co2_t_a":575100,"eur_a":287550000,"eur_20":5751000000,"behoerde":"Regierung von Schwaben","link":"https://www.leag.de/de/gigawattfactory/h2-kraftwerke/","fds":"","uig":""},{"name":"GuD-Kraftwerk Hamm-Uentrop","betreiber":"Trianel","land":"Nordrhein-Westfalen","mw":500,"status":"in Planung","inbetriebnahme":"","co2_t_a":958500,"eur_a":479250000,"eur_20":9585000000,"behoerde":"Bezirksregierung Arnsberg","link":"https://www.trianel-hamm.de/pressemeldungen/trianel-gaskraftwerk-hamm-soll-um-einen-dritten-wasserstofffaehigen-kraftwerksblock-ergaenzt-werden","fds":"","uig":""},{"name":"Zukunftskraftwerk Mainz","betreiber":"Kraftwerke Mainz-Wiesbaden AG","land":"Rheinland-Pfalz","mw":250,"status":"pausiert (wartet auf Kraftwerksstrategie)","inbetriebnahme":"","co2_t_a":479250,"eur_a":239625000,"eur_20":4792500000,"behoerde":"Struktur- und Genehmigungsdirektion Süd","link":"https://www.kmw-ag.de/zkw-in-planung/","fds":"","uig":""},{"name":"GuD Dradenau","betreiber":"Hamburger Energiewerke","land":"Hamburg","mw":180,"status":"In Bau","inbetriebnahme":"Ende 2026","co2_t_a":345060,"eur_a":172530000,"eur_20":3450600000,"behoerde":"Behörde für Umwelt, Klima, Energie und Agrarwirtschaft Hamburg","link":"https://www.hamburger-energiewerke.de/energiewende/energiewende-in-hamburg/kohleausstieg/energiepark-hafen","fds":"","uig":""},{"name":"Kraftwerk Fenne/Völklingen","betreiber":"Iqony · Gasmotoren-Spitzenlastanlage (geringere Auslastung als Standardannahme)","land":"Saarland","mw":150,"status":"in Planung","inbetriebnahme":"","co2_t_a":287550,"eur_a":143775000,"eur_20":2875500000,"behoerde":"Ministerium für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz","link":"https://www.iqony.energy/standortentwicklung/uebersicht-standortentwicklung","fds":"","uig":""},{"name":"Gasmotoren-Peakeranlage Gundremmingen","betreiber":"RWE · H₂-ready Peaker am ehem. AKW-Standort (geringere Auslastung als Standardannahme)","land":"Bayern","mw":120,"status":"in Genehmigung","inbetriebnahme":"09-2027","co2_t_a":230040,"eur_a":115020000,"eur_20":2300400000,"behoerde":"Regierung von Schwaben","link":"https://www.uvp-verbund.de/trefferanzeige?docuuid=3ce3f077-ed5b-4298-9dd5-6dfebe74c2f7","fds":"","uig":""},{"name":"KMW Motorenkraftwerk","betreiber":"Kraftwerke Mainz-Wiesbaden AG","land":"Rheinland-Pfalz","mw":54,"status":"in Genehmigung","inbetriebnahme":"","co2_t_a":103518,"eur_a":51759000,"eur_20":1035180000,"behoerde":"Struktur- und Genehmigungsdirektion Süd","link":"https://www.kmw-ag.de/zukunftsplaene/motorenkraftwerk/","fds":"","uig":""},{"name":"HKW III/C Modul A – K","betreiber":"Stadtwerke Duisburg · Module A–K (Gesamtausbau bis 67 MW)","land":"Nordrhein-Westfalen","mw":47,"status":"1. Teilgenehmigung beantragt (05/2026)","inbetriebnahme":"Ende 2028/Anfang 2029","co2_t_a":90099,"eur_a":45049500,"eur_20":900990000,"behoerde":"Bezirksregierung Düsseldorf","link":"https://www.stadtwerke-duisburg.de/","fds":"","uig":""},{"name":"Gasmotorenkraftwerk Zolling (5 Motoren)","betreiber":"Onyx Power · Gasmotoren-KWK/Spitzenlast (geringere Auslastung als Standardannahme)","land":"Bayern","mw":62.6,"status":"genehmigt 26.09.2023","inbetriebnahme":"05.04.2027","co2_t_a":120004,"eur_a":60002000,"eur_20":1200040000,"behoerde":"Regierung von Oberbayern","link":"https://www.regierung.oberbayern.bayern.de/mam/dokumente/bereich5/pfv/immissionsschutz/gv/gmk8/2023-09-26_genehmigungsbescheid_gmk8_zolling.pdf","fds":"","uig":""},{"name":"GuD-Kraftwerk Zolling (Neubau)","betreiber":"Onyx Power · LoI mit Bayern 05/2026","land":"Bayern","mw":800,"status":"angekündigt (LoI 07.05.2026)","inbetriebnahme":"","behoerde":"Regierung von Oberbayern","link":"https://www.stmwi.bayern.de/presse/pressemeldungen/196-2026/","fds":"","uig":"","co2_t_a":1533600,"eur_a":766800000,"eur_20":15336000000}];
 
 function fmtInt(n){ return n.toLocaleString('de-DE'); }
 function fmtMrd(n){ return (n/1e9).toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' Mrd €'; }
-
-
-function mitmachUrl(r){
-  const subject = 'Umweltinformationen zum Vorhaben '+r.name+' \u2014 CO\u2082-Jahresemissionen und Folgekosten';
-  const body = 'auf Grundlage des Umweltinformationsgesetzes bitte ich zu dem Vorhaben '+r.name+' ('+r.betreiber.split(' \u00b7 ')[0]+', ca. '+r.mw+' MW elektrisch) um folgende Umweltinformationen:\n\n'+
-   '1. Welche CO\u2082-Jahresemissionen (in Tonnen pro Jahr) sind in den Antragsunterlagen, im UVP-Bericht oder in den bisher ergangenen Bescheiden f\u00fcr die Anlage angegeben bzw. prognostiziert?\n\n'+
-   '2. Liegen Ihnen aus dem Verfahren Unterlagen oder Bewertungen zu den Folgekosten dieser Emissionen vor \u2014 insbesondere zu den Kosten einer sp\u00e4teren Entnahme des emittierten CO\u2082 aus der Atmosph\u00e4re (Carbon Dioxide Removal, vgl. \u00a7 3b KSG)?\n\n'+
-   '3. Falls ja: Bitte \u00fcbersenden Sie mir diese Unterlagen. Falls nein: Bitte best\u00e4tigen Sie, dass eine Ermittlung oder Bewertung dieser Folgekosten im Verfahren nicht stattgefunden hat.\n\n'+
-   'Ich bitte um Antwort innerhalb der gesetzlichen Frist von einem Monat.';
-  return 'https://fragdenstaat.de/anfrage-stellen/an/'+r.pb+'/?'+
-    'subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)+'&law_type=UIG&hide_similar=1';
-}
-
 function statusKlasse(s){
   if(/bau/i.test(s)) return 'status bau';
-  if(/genehmigung|teilgenehmigung|vorbescheid/i.test(s)) return 'status genehmigung';
+  if(/genehmig|vorbescheid/i.test(s)) return 'status genehmigung';
   return 'status';
 }
-
 let sortKey='eur_20', sortDir=-1;
 function render(){
   const tb=document.querySelector('#tab tbody'); tb.innerHTML='';
@@ -188,7 +128,7 @@ function render(){
       ? '<a class="gepr-nein" href="'+r.fds+'" target="_blank">Nein (amtlich)</a>'
       : r.uig
       ? '<a class="gepr-angefragt" href="'+r.uig+'" target="_blank">angefragt (UIG)</a>'
-      : '<span class="gepr-offen">unbeantwortet</span><br><a class="mitmach" href="'+mitmachUrl(r)+'" target="_blank" rel="noopener">&rarr; selbst anfragen</a>';
+      : '<span class="gepr-offen">unbeantwortet</span>';
     tr.innerHTML =
      '<td><span class="anlage-name">'+(r.link?'<a href="'+r.link+'" target="_blank">'+r.name+'</a>':r.name)+'</span>'+
        '<br><span class="anlage-meta">'+r.betreiber+(r.inbetriebnahme?' · geplant: '+r.inbetriebnahme:'')+'</span></td>'+
@@ -214,16 +154,6 @@ document.querySelectorAll('#tab th[data-k]').forEach(th=>{
   });
 });
 render();
-
-// Schulden-Uhr: aggregierte kalkulatorische Entnahmekosten pro Sekunde
-const EUR_PRO_JAHR = ANLAGEN.reduce((s,r)=>s+r.eur_a,0);
-const EUR_PRO_SEK = EUR_PRO_JAHR/(365.25*24*3600);
-document.getElementById('uhrRate').textContent = Math.round(EUR_PRO_SEK).toLocaleString('de-DE');
-const t0=Date.now();
-setInterval(()=>{
-  const eur=(Date.now()-t0)/1000*EUR_PRO_SEK;
-  document.getElementById('uhrBetrag').textContent = eur.toLocaleString('de-DE',{maximumFractionDigits:0})+' €';
-},100);
 </script>
 </body>
 </html>
