@@ -36,14 +36,36 @@ Nirgends werden diese Kosten ausgewiesen – weder im Bundeshaushalt noch in Lan
 Die Struktur- und Genehmigungsdirektion Nord (Koblenz/Rheinland-Pfalz) bestätigt [46], dass Vorhaben, mit nur geringen klimawirksamen Emissionen, nicht betroffen sind.
 Zu klären ist, wer die Ausweispflicht trägt – Genehmigungsbehörden? UVP-Stellen? Bund? Land? Finanzministerium?
 
-IV. Strafrechtliche Betrachtung
+IV. Anfragen an Betreiber, BaFin und Abschlussprüfer (Juni 2026)
+- Betreiber-Anfragen RWE/Uniper/EnBW/LEAG (4 Fragen: Rückstellungen, Rechtsgrundlage, ESRS E1, Vorsorge)
+- BaFin-Hinweise Bilanzkontrolle zu RWE/Uniper/EnBW: https://co2-entnahme.info/anfragen/
+- Themenhinweise an die Abschlussprüfer; HV-Fragen 2027 vorbereitet
+
+Einwände und ihre Entkräftung: https://co2-entnahme.info/einwaende-und-entkraeftungen.pdf
+- „Die Betreiber haben Genehmigungen." (StA Kleve, Mosbach, Leipzig, Rostock, Bayreuth)
+- „Kosten- und Haushaltsfragen sind kein Bestandteil des Genehmigungsverfahrens." (RP Stuttgart, BR Köln, BR Düsseldorf — je schriftlich)
+- „Keine gesetzlich anerkannte Außenverbindlichkeit gegenüber Dritten." (MUNV NRW, 03.06.2026)
+- „Eine Vermögensbetreuungspflicht kommt den Genehmigungsbehörden nicht zu." (StA Freiburg)
+- „Der Emissionshandel (TEHG/EU-ETS) deckt das ab." (sinngemäß Düsseldorf; Standard-Konter)
+- „Der nationale CO₂-Preis (BEHG) zahlt das schon."
+- „Vorhaben mit geringen klimawirksamen Emissionen sind nicht betroffen." (SGD Nord, Koblenz, 12/2025)
+- „Die Rechtsverordnung nach § 3b KSG kommt noch / zuständig ist später jemand." (Bundesregierung, BT-Drs. 21/2193; MUNV)
+- „Die Anlagen sind H₂-ready — sie laufen später mit Wasserstoff." (Betreiber-Kommunikation)
+- „Die Kosten sind spekulativ."
+- „Künftige Lernkurven machen DACCS billig."
+- „Rechnungshöfe prüfen unabhängig und informieren nicht." (BRH 03.03.2026)
+- „Künftige Regierungen könnten die Pflicht ändern."
+- „Keine rechtliche Verpflichtung i.S.v. IAS 37." (erwartete Konzernantwort)
+- „Das betrifft allenfalls Neubauten." (naheliegender Einwand)
+
+VI. Strafrechtliche Betrachtung
 
 Vermögensschaden - Vermögensschaden kann bereits in der Begründung einer Verbindlichkeit liegen (BGHSt 21, 384, 385 [47] - Provisionsvertreter-Fall; BGHSt 16, 220 [48]; BGHSt 23, 300 [49]).
 Das systematische Verschweigen begründet (hoffentlich) den Anfangsverdacht der Untreue oder des Betrugs – unabhängig davon, wer letztlich verantwortlich ist (§ 266 StGB [50], § 263 StGB [51]).
 
 Beispiele
-Beispiel 1 - GuD Altbach/Deizisau verursacht 1.275.000 t/Jahr CO₂-Emissionen » 637.500.000 €/Jahr Carbon-Removal-Kosten » 12,75 Mrd. € Vermögensschaden für Stuttgarter Kinder allein aus diesem einen Kraftwerk
-Beispiel 2 - GuD Weisweiler verursacht 1.533.600 t/Jahr CO₂-Emissionen » 766,8 Mio. €/Jahr Carbon-Removal-Kosten » 15,34 Mrd. € Vermögensschaden für Kölner Kinder allein aus diesem einen Kraftwerk (Zulassung [52], FragDenStaat [53])
+Beispiel 1 - GuD Altbach/Deizisau verursacht 1.275.000 t/Jahr CO₂-Emissionen » 637.500.000 €/Jahr Carbon-Removal-Kosten » 12,75 Mrd. € Vermögensschaden für Stuttgarter Steuerzahler allein aus diesem einen Kraftwerk
+Beispiel 2 - GuD Weisweiler verursacht 1.533.600 t/Jahr CO₂-Emissionen » 766,8 Mio. €/Jahr Carbon-Removal-Kosten » 15,34 Mrd. € Vermögensschaden für Kölner Steuerzahler allein aus diesem einen Kraftwerk (Zulassung [52], FragDenStaat [53])
 Die Frage ist:
 Warum wollen Genehmigungsbehörden die vollständigen Kosten nicht ausweisen?
 Warum haben Genehmigungsbehörden kein Interesse daran, die vollständigen Verbindlichkeiten für ihre eigene Region für die von ihnen genehmigten Anlagen offenzulegen?
