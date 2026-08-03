@@ -1,0 +1,30 @@
+# GESENDET 01.07.2026 an BaFin über FragDenStaat (Rechtsgrundlage IFG)
+# FdS-ID 374861 | https://fragdenstaat.de/anfrage/bilanzkontrolle-ssss-106-ff-wphg-verwaltungspraxis-zu-rueckstellungen-eventualverbindlichkeiten-fuer-co2-entnahmekosten/
+# Betreff: Bilanzkontrolle (§§ 106 ff. WpHG): Verwaltungspraxis zu Rückstellungen/Eventualverbindlichkeiten für CO₂-Entnahmekosten
+# Dies ist die tatsächlich gesendete Kurzfassung (<5000 Zeichen, FdS-Limit).
+# Ausführliche Fassung mit voller Begründung: ifg-01-bafin-langfassung.txt
+
+Auf Grundlage des § 1 Abs. 1 IFG beantrage ich Zugang zu amtlichen Informationen aus dem Bereich der Bilanzkontrolle (§§ 106 ff. WpHG).
+
+Hintergrund: Jede Tonne fossil emittierten CO2 erzeugt eine künftige Pflicht zur späteren Entnahme aus der Atmosphäre (Carbon Dioxide Removal, CDR), um die bereits überschrittene Grenze von 1,5 °C wieder zu unterschreiten (2024 rund 1,6 °C, Mittel 2023-2025 etwa 1,5 °C; Copernicus/WMO). Diese Entnahme kostet real mehrere hundert Euro je Tonne und ist durch kein Instrument gedeckt: Der EU-Emissionshandel (TEHG) bepreist nur den Ausstoß, nicht die Entnahme; der EU-Zertifizierungsrahmen CRCF (VO (EU) 2024/3012) ist freiwillig. Für die Betreiber entsteht damit eine künftige, absehbare Belastung aus vergangenen Emissionen, die weder finanziert noch bilanziell erfasst ist. Verfassungsrechtlich ist der Klimaschutz Schutzpflicht zugunsten künftiger Generationen (BVerfG, 24.03.2021 - 1 BvR 2656/18).
+
+Mehrere Behörden haben mir amtlich bestätigt, dass diese Folgekosten an keiner staatlichen Stelle ermittelt werden und weder Teil der UVP (Nr. 16.4.1 UVP-Verwaltungsvorschrift) noch des Genehmigungsverfahrens sind:
+- BR Arnsberg, 30.06.2026 (Az. 900-0364506-0005): "gehören nicht zum Prüfrahmen ... liegen daher nicht vor".
+- LfU Brandenburg, 12.06.2026 (Az. UIG 003/26-T24): in den Bescheiden keine CO2-Mengen ausgewiesen.
+- LVwA Sachsen-Anhalt, 18.06.2026: Ermittlung/Bewertung "im Verfahren ... noch nicht stattgefunden", "in der Regel nicht ... beziffert".
+- RP Darmstadt, 29.06./01.07.2026: "nicht Gegenstand"; ob irgendwo geprüft, "entzieht sich meiner Kenntnis".
+- BMF, 30.06.2026: keine Rückstellung in der Vermögensrechnung des Bundes, es fehle "an ... Gläubigern".
+
+Da die Legalisierungswirkung einer Genehmigung nur so weit reicht wie ihr Prüfrahmen (§ 6 BImSchG; BVerwG, 14.06.2011 - 4 B 3.11) und die Folgekosten dort nicht geprüft werden (§ 5 Abs. 2 BImSchG verbietet der Behörde entsprechende Anforderungen), entbindet die Genehmigung die Betreiber nicht von einer etwaigen bilanziellen Pflicht.
+
+Ich bitte um Auskunft:
+
+1. Hat die BaFin im Rahmen der Bilanzkontrolle (§§ 106 ff. WpHG) jemals geprüft oder zum Prüfungsschwerpunkt gemacht, ob kapitalmarktorientierte Unternehmen für die Folgekosten ihrer CO2-Emissionen, insbesondere für eine spätere CO2-Entnahme (CDR), Rückstellungen (§ 249 HGB) oder Eventualverbindlichkeiten (§ 251, § 268 Abs. 7 HGB; IAS 37) bilden bzw. angeben müssen?
+
+2. Existiert bei der BaFin eine Verwaltungspraxis, Leitlinie oder Fachauffassung dazu, ob eine solche künftige CO2-Entnahmeverpflichtung eine faktische oder rechtliche Verpflichtung im Sinne des § 249 HGB bzw. IAS 37 ist? Falls ja, bitte ich um Zugang.
+
+3. Sind der BaFin - ohne Nennung des Unternehmens - Fälle bekannt, in denen ein geprüftes Unternehmen solche Rückstellungen oder Eventualverbindlichkeiten gebildet bzw. angegeben hat?
+
+Gegenstand ist allein die abstrakte Verwaltungspraxis/Fachauffassung, nicht die Aufsichtsakte eines bestimmten Unternehmens.
+
+Vorsorglich: § 4 Abs. 4 FinDAG (nur öffentliches Interesse) betrifft allein das Aufsichtshandeln und ist kein IFG-Versagungsgrund. Die Verschwiegenheit (§ 21 FinDAG, § 8 WpHG) schützt nur einzelfallbezogene Informationen und trägt keine pauschale Ablehnung (vgl. BVerwG 7 C 23.18). Ein Verweis auf Abschlussprüfer oder die Abschlussprüferaufsichtsstelle (APAS) trägt nicht, da die Bilanzkontrolle seit dem FISG (ab 2022) allein bei der BaFin liegt. Sollten keine entsprechenden Unterlagen vorliegen, bitte ich um die ausdrückliche Mitteilung, dass eine solche Prüfung, Praxis oder Fachauffassung nicht existiert (§ 7 IFG) - auch diese Feststellung ist Teil meines Begehrens.
