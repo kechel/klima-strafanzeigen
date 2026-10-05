@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Mitmachen</title>
+<style>
+  :root{
+    --bg:#0e1116; --fg:#f2f5f8; --muted:#b9c3d1;
+    --accent:#36a66a;      /* Stufe 1 – Hoffnung/grün */
+    --accent2:#c0392b;     /* Stufe 2 – Vorwurf/rot */
+    --card:#161b22;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:flex; align-items:center; justify-content:center;
+    min-height:100dvh; padding:24px 24px 72px; text-align:center;
+    transition:background .6s ease;
+  }
+  body[data-stage="2"]{background:#140f10}
+  body[data-stage="3"]{background:#07090c}
+  .wrap{max-width:780px; width:100%}
+  .eyebrow{letter-spacing:.14em; text-transform:uppercase; font-size:.72rem; color:var(--muted); margin-bottom:28px}
+  .slogan{
+    font-weight:800; line-height:1.15; font-size:clamp(1.8rem,5.5vw,3.3rem);
+    min-height:3.2em; display:flex; align-items:center; justify-content:center;
+    opacity:1; transition:opacity .4s ease;
+  }
+  .slogan.fade{opacity:0}
+  body[data-stage="2"] .slogan{color:#ff7a6b}
+  .cta-row{margin-top:36px; display:flex; flex-direction:column; align-items:center; gap:16px}
+  .cta{
+    display:inline-block; text-decoration:none; font-weight:700; font-size:1.15rem;
+    padding:16px 30px; border-radius:999px; background:var(--accent); color:#06120b;
+    transition:background .25s ease, transform .1s ease;
+  }
+  .cta:hover{transform:translateY(-1px)}
+  body[data-stage="2"] .cta{background:var(--accent2); color:#fff}
+  body[data-stage="3"] .cta{background:#fff; color:#07090c}
+  .ghost{
+    background:#2a313c; border:1px solid #3a4250; color:#dfe5ec;
+    font-size:1rem; font-weight:600; cursor:pointer;
+    padding:13px 24px; border-radius:999px;
+    transition:background .2s ease, transform .1s ease;
+  }
+  .ghost:hover{ background:#343d49; transform:translateY(-1px); }
+  /* Stufe 3 */
+  #stage3-extra{color:var(--muted); font-size:1.02rem; margin:0; max-width:52ch; line-height:1.5}
+  #lookedaway{display:none; color:#9aa4b3; font-size:1.1rem; letter-spacing:.02em}
+  .again{display:inline-block; margin-top:7rem; color:#8690a0; font-size:.95rem; text-decoration:none}
+  .again:hover{color:#dfe5ec}
+  .again-ico{display:inline-block; font-size:1.15rem; vertical-align:-2px}
+  @media (prefers-reduced-motion: reduce){ .slogan{transition:none} }
+  .legal{
+    position:fixed; left:0; right:0; bottom:0; z-index:5;
+    text-align:center; font-size:.72rem; line-height:1.6; color:#8690a0;
+    padding:10px 16px; background:linear-gradient(to top, rgba(14,17,22,.95), rgba(14,17,22,0));
+  }
+  .legal a{color:#aab4c2; text-decoration:underline; text-underline-offset:2px}
+  @media (min-width:601px){ .mb{display:none} }   /* Umbruch im Stufe-2-Button nur auf Mobil */
+</style>
+</head>
+<body data-stage="1">
+  <!-- Petitions-Link: hier zentral änderbar.
+       Alternativen: WeAct „Wasserstoff ab Tag 1" bzw. die Bundestags-ePetition 191921. -->
+  <div class="wrap" id="app">
+    <div class="eyebrow" id="eyebrow">Eine Frage an dich</div>
+    <div class="slogan" id="slogan">&nbsp;</div>
+
+    <div class="cta-row" id="ctarow">
+      <a class="cta" id="cta" href="#" target="_blank" rel="noopener">→ Dann unterschreibe diese Petition</a>
+      <p id="stage3-extra" hidden>… oder verstehe es, indem du es ihnen gleichtust.</p>
+      <button class="ghost" id="ghost" type="button">Überzeugt mich nicht</button>
+    </div>
+
+    <div id="lookedaway">
+      <div class="la-main">Du schaust weg.</div>
+      <a href="./" class="again"><span class="again-ico">↻</span> nochmal</a>
+    </div>
+  </div>
+
+  <footer class="legal">
+    Impressum: Jan Kechel, Auen 16, 88356 Ostrach, Deutschland · keine Cookies, keine Logs, keine Werbung · <a href="../">co2-entnahme.info</a>
+  </footer>
+
+<script>
+  const PETITION = "https://weact.campact.de/petitions/wahre-kosten-von-gaskraftwerken-veroffentlichen";
+
+  const S1 = [
+    "Willst du mehr Klimaschutz?",
+    "Krieg verhindern?",
+    "Weniger Flüchtlinge?",
+    "Liebst du deine Kinder?",
+    "Soll jede Firma für die Entsorgung ihres eigenen Mülls zahlen?",
+    "Willst du ehrliche Preise statt versteckter Kosten?",
+    "Sollen unsere Wälder bleiben?",
+    "Willst du, dass die Verursacher zahlen – nicht du?",
+    "Ist dir Fairness wichtig?",
+    "Willst du eine bewohnbare Zukunft?",
+    "Soll der Markt die wahren Kosten endlich kennen?",
+    "Glaubst du an Verantwortung?",
+    "Soll die Politik die echten Kosten sehen?",
+    "Soll Klimaschutz sich endlich rechnen?",
+    "Für jeden Steinbruch gilt Aufräumpflicht — für CO₂ nicht?",
+    "Willst du weniger Dürren, Fluten und Waldbrände?",
+    "Willst du Verantwortung statt Wegschauen?",
+    "Ist dir eine bewohnbare Heimat etwas wert?",
+    "Soll jede Tonne CO₂ ihren wahren Preis tragen?",
+    "Willst du in zwei Minuten etwas bewegen, das bleibt?"
+  ];
+  const S2 = [
+    "Du willst Krieg?",
+    "Du willst, dass wir viel mehr Flüchtlinge aufnehmen?",
+    "Du siehst gerne unsere Wälder abbrennen?",
+    "Du stehst voll auf Pandemien?",
+    "Du findest Konzerngewinne auf Kosten der Allgemeinheit gut?",
+    "Deine Kinder sollen die Rechnung zahlen?",
+    "Du schaust lieber weg?",
+    "Konzerne dürfen die Atmosphäre gratis vollmüllen?",
+    "Dir ist Fairness gleichgültig?",
+    "Zwei Minuten sind dir zu viel?",
+    "Du überlässt die Zukunft lieber dem Chaos?",
+    "Gewinne für die, Rechnung für dich — passt dir das?",
+    "Für den Steinbruch gilt Aufräumpflicht — für CO₂ nicht?",
+    "Grundgesetz? Interessiert dich nicht?",
+    "Du willst lieber Verbote als ehrliche Preise?",
+    "Noch ein fossiles Kraftwerk — warum nicht?",
+    "„Das wusste ich nicht“ — das ist dein Plan?",
+    "Dürren, Fluten, Waldbrände — damit kannst du leben?",
+    "Wegschauen ist bequemer, oder?",
+    "Recht auf dem Papier reicht dir?",
+    "Deine Heimat ist dir egal?"
+  ];
+  const S3_LINE = "Du hast dich schon einmal gefragt, wie so viele Menschen bei Verbrechen an der Menschheit einfach wegschauen konnten?";
+
+  const body = document.body;
+  const slogan = document.getElementById('slogan');
+  const eyebrow = document.getElementById('eyebrow');
+  const cta = document.getElementById('cta');
+  const ghost = document.getElementById('ghost');
+  const extra = document.getElementById('stage3-extra');
+  const lookedaway = document.getElementById('lookedaway');
+
+  cta.href = PETITION;
+
+  let stage = 1, list = S1, idx = 0, timer = null, fadeT = null;
+
+  function render(text){               // mit Überblendung (für die Rotation)
+    if(fadeT){ clearTimeout(fadeT); fadeT=null; }
+    slogan.classList.add('fade');
+    fadeT = setTimeout(()=>{ slogan.textContent = text; slogan.classList.remove('fade'); fadeT=null; }, 400);
+  }
+  function renderNow(text){            // sofort, ohne Überblendung (für Stufenwechsel)
+    if(fadeT){ clearTimeout(fadeT); fadeT=null; }
+    slogan.classList.remove('fade');
+    slogan.textContent = text;
+  }
+  function startRotation(){
+    stopRotation();
+    renderNow(list[idx]);
+    timer = setInterval(()=>{ idx = (idx+1) % list.length; render(list[idx]); }, 2600);
+  }
+  function stopRotation(){
+    if(timer){ clearInterval(timer); timer=null; }
+    if(fadeT){ clearTimeout(fadeT); fadeT=null; }
+  }
+
+  function toStage1(){
+    stage=1; list=S1; idx=0; body.dataset.stage="1";
+    eyebrow.textContent = "Eine Frage an dich";
+    cta.textContent = "→ Dann unterschreibe diese Petition";
+    ghost.textContent = "Überzeugt mich nicht";
+    ghost.onclick = toStage2;
+    extra.hidden = true;
+    startRotation();
+  }
+  function toStage2(){
+    stage=2; list=S2; idx=0; body.dataset.stage="2";
+    eyebrow.textContent = "Dann andersherum";
+    cta.innerHTML = "→ Dann ist diese Petition <br class=\"mb\">nichts für dich";
+    ghost.textContent = "Überzeugt mich immer noch nicht";
+    ghost.onclick = toStage3;
+    extra.hidden = true;
+    startRotation();
+  }
+  function toStage3(){
+    stage=3; body.dataset.stage="3";
+    stopRotation();
+    eyebrow.textContent = "Eine letzte Frage";
+    renderNow(S3_LINE);
+    cta.textContent = "Dann unterschreib —";
+    extra.hidden = false;
+    ghost.textContent = "Wegschauen";
+    ghost.onclick = lookAway;
+  }
+  function lookAway(){
+    stopRotation();
+    document.getElementById('app').style.transition = "opacity 1.2s ease";
+    document.getElementById('app').style.opacity = "0";
+    setTimeout(()=>{
+      document.getElementById('app').innerHTML = "";
+      lookedaway.style.display = "block";
+      document.body.appendChild(lookedaway);
+    }, 1200);
+  }
+
+  // Höhe des längsten Spruchs reservieren, damit Links/Buttons beim Wechsel nicht springen
+  function reserveSloganHeight(){
+    const probe = document.createElement('div');
+    probe.className = 'slogan';
+    probe.style.cssText = 'position:absolute;left:-9999px;top:0;visibility:hidden;pointer-events:none;display:block;min-height:0';
+    probe.style.width = slogan.getBoundingClientRect().width + 'px';
+    document.body.appendChild(probe);
+    let max = 0;
+    for (const t of [...S1, ...S2, S3_LINE]) { probe.textContent = t; max = Math.max(max, probe.offsetHeight); }
+    probe.remove();
+    slogan.style.minHeight = Math.ceil(max) + 'px';
+  }
+  let rT; window.addEventListener('resize', ()=>{ clearTimeout(rT); rT = setTimeout(reserveSloganHeight, 150); });
+  window.addEventListener('load', reserveSloganHeight);
+
+  ghost.onclick = toStage2;
+  reserveSloganHeight();
+  toStage1();
+</script>
+</body>
+</html>
