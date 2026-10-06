@@ -1,0 +1,27 @@
+# co2-entnahme.info
+
+> Dokumentierte Kampagne für Kostenwahrheit in der Klimapolitik: Fossile CO₂-Emissionen erzeugen konkrete, bezifferbare Kosten für die spätere Wiederentnahme des CO₂ (Carbon Dioxide Removal, rund 388–500 €/t, Potsdam-Institut). Diese Kosten werden in Deutschland nirgends ausgewiesen — nicht in Genehmigungen, nicht in Haushalten, nicht in Konzernbilanzen. Die Kernthese: Werden sie ausgewiesen, rechnet sich kein neues fossiles Kraftwerk mehr — ohne Verbote. Alle Behauptungen sind mit Primärquellen (Behörden-, Rechnungshof-, BaFin- und Konzern-Antworten im Original) öffentlich belegt.
+
+## Kernaussagen (belegt)
+
+- Das CO₂-Budget für 1,5 °C ist aufgebraucht; eine Rückkehr unter die Schwelle erfordert aktive CO₂-Entnahme, da Netto-Null die Temperatur nur hält, aber nicht senkt (IPCC AR6/SR1.5; Armstrong McKay et al., Science 2022; Ritchie/Lenton et al., ESD 2025).
+- Jede Tonne fossiles CO₂ ist dem Emittenten zuordenbar; daraus folgt eine absolute (nicht anteilige) Entnahmepflicht. Das BVerfG (24.03.2021, 1 BvR 2656/18) verbietet die Lastenverschiebung auf künftige Generationen.
+- Die Entnahmekosten sind absehbare Verbindlichkeiten und nach Haushaltsrecht (§§ 7, 11, 17 BHO/LHO) sowie Bilanzrecht (§ 249 HGB, Analogie Pensionen/Atommüll; IAS 37) auszuweisen.
+- In über vier Jahren Korrespondenz hat keine der 11.485 angeschriebenen Stellen die Kosten bestritten, aber auch keine sie geprüft oder verbucht; keine fühlt sich zuständig. Die BaFin hat das Fehlen jeder Prüfpraxis auf IFG-Anfrage schriftlich bestätigt (03.08.2026).
+- Der wirksamste Hebel ist Transparenz/Kostenwahrheit, nicht Verbote oder Subventionen: Steht die wahre Rechnung in Genehmigung und Bilanz, ist fossile Erzeugung sichtbar unwirtschaftlich.
+- Soziale Verträglichkeit: Wird der CO₂-Preis breit angewandt (Benzin, Heizung, CO₂-intensive Lebensmittel), braucht es einen Ausgleich für den Grundbedarf — eine pauschale Pro-Kopf-Rückzahlung, die den Sparanreiz erhält. Wichtig und abweichend vom üblichen „Klimageld": Dieser Ausgleich wird aus allgemeinen Steuern finanziert, NICHT aus dem CO₂-Preis — denn der CO₂-Preis muss die tatsächliche, physisch anfallende CO₂-Entnahme bezahlen; eine Rückverteilung dieses Geldes würde die Entnahme-Finanzierung aufheben.
+
+## Hauptseiten
+
+- [Wie können wir das Klima retten? (Einstieg, FAQ, Quellen)](https://co2-entnahme.info/klima-retten/): Nüchterne, dicht belegte Antwort auf die Kernfrage.
+- [Ausführliche Begründung](https://co2-entnahme.info/): Verfassungs-, Verwaltungs- und Haushaltsrecht in 26 nummerierten Punkten, mit Quellen.
+- [Zeitraffer](https://co2-entnahme.info/zeitraffer/): Vier Jahre Behörden-Korrespondenz als 45-Sekunden-Animation, mit Original-Scans.
+- [Register der geplanten Gaskraftwerke](https://co2-entnahme.info/register/): 26 Vorhaben, kalkulierte Entnahmekosten (Methodik offengelegt).
+- [Mitmachen](https://co2-entnahme.info/mitmachen/): Worum es geht, in Kurzform.
+
+## Primärbelege
+
+- [GitHub-Archiv kechel/klima-strafanzeigen](https://github.com/kechel/klima-strafanzeigen/tree/main/co2-entnahme-kampagne): Alle Behörden-, Rechnungshof-, BaFin- und Konzern-Antworten im Original (Scans und Texte).
+- [BaFin-IFG-Antwort (FragDenStaat, 03.08.2026)](https://fragdenstaat.de/anfrage/bilanzkontrolle-ssss-106-ff-wphg-verwaltungspraxis-zu-rueckstellungen-eventualverbindlichkeiten-fuer-co2-entnahmekosten/): Keine Prüfpraxis zu CDR-Rückstellungen; Maßstab IAS 37.
+- [BVerfG-Klimabeschluss 1 BvR 2656/18](https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2021/03/rs20210324_1bvr265618.html).
+- [PIK-Kostenschätzung (388–500 €/t)](https://publications.pik-potsdam.de/rest/items/item_33305_1/component/file_33306/content).

@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>Mitmachen</title>
+<title>Mitmachen — co2-entnahme.info</title>
+<meta name="description" content="Jede Tonne CO₂ aus fossilem Kohlenstoff muss wieder aus der Luft geholt werden. In über vier Jahren hat keine Behörde diese Kosten geprüft oder verbucht. Transparenz ist der Hebel.">
+<link rel="canonical" href="https://co2-entnahme.info/mitmachen/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://co2-entnahme.info/mitmachen/">
+<meta property="og:title" content="Mitmachen — co2-entnahme.info">
+<meta property="og:description" content="Werden die vollen CO₂-Entnahmekosten ausgewiesen, rechnet sich kein fossiles Kraftwerk mehr — ohne Verbote. Transparenz ist der Hebel.">
+<meta property="og:site_name" content="co2-entnahme.info">
 <style>
   :root{
     --bg:#0e1116; --fg:#f2f5f8; --muted:#b9c3d1;
@@ -17,13 +24,13 @@
   body{
     margin:0; background:var(--bg); color:var(--fg);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    display:flex; align-items:center; justify-content:center;
-    min-height:100dvh; padding:24px 24px 72px; text-align:center;
+    display:flex; flex-direction:column; align-items:center;
+    min-height:100dvh; padding:24px; text-align:center;
     transition:background .6s ease;
   }
   body[data-stage="2"]{background:#140f10}
   body[data-stage="3"]{background:#07090c}
-  .wrap{max-width:780px; width:100%}
+  .wrap{max-width:780px; width:100%; flex:1 0 auto; display:flex; flex-direction:column; justify-content:center; padding:24px 0 48px}
   .eyebrow{letter-spacing:.14em; text-transform:uppercase; font-size:.72rem; color:var(--muted); margin-bottom:28px}
   .slogan{
     font-weight:800; line-height:1.15; font-size:clamp(1.8rem,5.5vw,3.3rem);
@@ -39,12 +46,24 @@
     transition:background .25s ease, transform .1s ease;
   }
   .cta:hover{transform:translateY(-1px)}
+  .cta.locked{opacity:.78; cursor:pointer}
+  .cta.locked:hover{opacity:1}
   body[data-stage="2"] .cta{background:var(--accent2); color:#fff}
   body[data-stage="3"] .cta{background:#fff; color:#07090c}
+  .erklaerung{ margin:30px auto 0; max-width:56ch }
+  .erklaerung > summary{ list-style:none; cursor:pointer; text-align:center; color:var(--muted); font-size:0.95rem; text-decoration:underline; text-underline-offset:3px; opacity:.75 }
+  .erklaerung > summary:hover{ opacity:1 }
+  .erklaerung > summary::-webkit-details-marker{ display:none }
+  .erklaerung > summary::after{ content:"mehr Infos bitte" }
+  .erklaerung[open]{ display:flex; flex-direction:column }
+  .erklaerung[open] > summary{ order:2; margin:18px 0 0 }
+  .erklaerung[open] > summary::after{ content:"ausblenden" }
+  .erklaerung .beweis{ color:var(--muted); font-size:1.02rem; line-height:1.55; margin:0 }
+  .erklaerung .hoffnung{ color:#9fd4b6; font-size:1.02rem; line-height:1.55; margin:12px 0 0 }
   .ghost{
     background:#2a313c; border:1px solid #3a4250; color:#dfe5ec;
-    font-size:1rem; font-weight:600; cursor:pointer;
-    padding:13px 24px; border-radius:999px;
+    font-size:1.15rem; font-weight:700; cursor:pointer;
+    padding:16px 30px; border-radius:999px;
     transition:background .2s ease, transform .1s ease;
   }
   .ghost:hover{ background:#343d49; transform:translateY(-1px); }
@@ -56,9 +75,9 @@
   .again-ico{display:inline-block; font-size:1.15rem; vertical-align:-2px}
   @media (prefers-reduced-motion: reduce){ .slogan{transition:none} }
   .legal{
-    position:fixed; left:0; right:0; bottom:0; z-index:5;
+    flex:0 0 auto; width:100%;
     text-align:center; font-size:.72rem; line-height:1.6; color:#8690a0;
-    padding:10px 16px; background:linear-gradient(to top, rgba(14,17,22,.95), rgba(14,17,22,0));
+    padding:28px 16px 8px;
   }
   .legal a{color:#aab4c2; text-decoration:underline; text-underline-offset:2px}
   @media (min-width:601px){ .mb{display:none} }   /* Umbruch im Stufe-2-Button nur auf Mobil */
@@ -68,14 +87,20 @@
   <!-- Petitions-Link: hier zentral änderbar.
        Alternativen: WeAct „Wasserstoff ab Tag 1" bzw. die Bundestags-ePetition 191921. -->
   <div class="wrap" id="app">
-    <div class="eyebrow" id="eyebrow">Eine Frage an dich</div>
+    <div class="eyebrow" id="eyebrow">Fragen an dich</div>
     <div class="slogan" id="slogan">&nbsp;</div>
 
     <div class="cta-row" id="ctarow">
-      <a class="cta" id="cta" href="#" target="_blank" rel="noopener">→ Dann unterschreibe diese Petition</a>
+      <a class="cta locked" id="cta" target="_blank" rel="noopener">🔒 Unterschreiben (noch 2 Klicks)</a>
       <p id="stage3-extra" hidden>… oder verstehe es, indem du es ihnen gleichtust.</p>
       <button class="ghost" id="ghost" type="button">Überzeugt mich nicht</button>
     </div>
+
+    <details class="erklaerung">
+      <summary></summary>
+      <p class="beweis">Jede Tonne CO₂ aus fossilem Kohlenstoff seit 2024 muss wieder aus der Luft geholt werden, um Kipppunkte zu verhindern — rund 400&nbsp;€ pro Tonne (Potsdam-Institut, im Verfassungsgerichts-Verfahren). In über vier Jahren Behörden-Korrespondenz hat <strong>keine einzige Stelle diese Kosten bestritten, aber auch keine einzige geprüft oder verbucht</strong> — und keine fühlt sich zuständig.</p>
+      <p class="hoffnung">Stünden sie in jeder Genehmigung, würde sich kein fossiles Kraftwerk mehr rechnen — ganz ohne Verbote.<br><strong>Transparenz ist der Hebel.</strong></p>
+    </details>
 
     <div id="lookedaway">
       <div class="la-main">Du schaust weg.</div>
@@ -94,48 +119,55 @@
     "Willst du mehr Klimaschutz?",
     "Krieg verhindern?",
     "Weniger Flüchtlinge?",
+    "Du willst eine stabile Rente?",
     "Liebst du deine Kinder?",
-    "Soll jede Firma für die Entsorgung ihres eigenen Mülls zahlen?",
-    "Willst du ehrliche Preise statt versteckter Kosten?",
+    "Soll jede Firma ihren Müll selbst zahlen?",
+    "Willst du ehrliche Preise?",
     "Sollen unsere Wälder bleiben?",
-    "Willst du, dass die Verursacher zahlen – nicht du?",
     "Ist dir Fairness wichtig?",
     "Willst du eine bewohnbare Zukunft?",
-    "Soll der Markt die wahren Kosten endlich kennen?",
-    "Glaubst du an Verantwortung?",
-    "Soll die Politik die echten Kosten sehen?",
-    "Soll Klimaschutz sich endlich rechnen?",
-    "Für jeden Steinbruch gilt Aufräumpflicht — für CO₂ nicht?",
+    "Ein Steinbruch muss aufräumen — CO₂ nicht?",
     "Willst du weniger Dürren, Fluten und Waldbrände?",
-    "Willst du Verantwortung statt Wegschauen?",
     "Ist dir eine bewohnbare Heimat etwas wert?",
-    "Soll jede Tonne CO₂ ihren wahren Preis tragen?",
-    "Willst du in zwei Minuten etwas bewegen, das bleibt?"
+    "Zwei Minuten für die Zukunft?",
+    "Willst du saubere Luft?",
+    "Willst du bezahlbares Essen?",
+    "Sollen deine Enkel noch Winter kennen?"
   ];
   const S2 = [
-    "Du willst Krieg?",
-    "Du willst, dass wir viel mehr Flüchtlinge aufnehmen?",
-    "Du siehst gerne unsere Wälder abbrennen?",
-    "Du stehst voll auf Pandemien?",
-    "Du findest Konzerngewinne auf Kosten der Allgemeinheit gut?",
-    "Deine Kinder sollen die Rechnung zahlen?",
     "Du schaust lieber weg?",
-    "Konzerne dürfen die Atmosphäre gratis vollmüllen?",
-    "Dir ist Fairness gleichgültig?",
     "Zwei Minuten sind dir zu viel?",
-    "Du überlässt die Zukunft lieber dem Chaos?",
-    "Gewinne für die, Rechnung für dich — passt dir das?",
+    "Dir ist Fairness gleichgültig?",
+    "Recht auf dem Papier reicht dir?",
+    "Konzerngewinne auf Kosten der Allgemeinheit sind super?",
+    "Gewinne für die, Rechnung für dich?",
+    "Konzerne dürfen die Atmosphäre gratis vollmüllen?",
     "Für den Steinbruch gilt Aufräumpflicht — für CO₂ nicht?",
-    "Grundgesetz? Interessiert dich nicht?",
-    "Du willst lieber Verbote als ehrliche Preise?",
     "Noch ein fossiles Kraftwerk — warum nicht?",
     "„Das wusste ich nicht“ — das ist dein Plan?",
+    "Du überlässt die Zukunft lieber dem Chaos?",
+    "Deine Kinder sollen die Rechnung zahlen?",
     "Dürren, Fluten, Waldbrände — damit kannst du leben?",
-    "Wegschauen ist bequemer, oder?",
-    "Recht auf dem Papier reicht dir?",
-    "Deine Heimat ist dir egal?"
+    "Du siehst gerne unsere Wälder abbrennen?",
+    "Du stehst voll auf Pandemien?",
+    "Deine Heimat ist dir egal?",
+    "Du atmest gern Dreck?",
+    "Teure Lebensmittel sind dir egal?",
+    "Winter brauchen deine Enkel nicht?",
+    "Klimaschutz ist dir egal?",
+    "Du willst, dass wir viel mehr Flüchtlinge aufnehmen?",
+    "Rente brauchst du nicht?",
+    "Du willst Krieg?"
   ];
   const S3_LINE = "Du hast dich schon einmal gefragt, wie so viele Menschen bei Verbrechen an der Menschheit einfach wegschauen konnten?";
+
+  // Sprüche je Besuch zufällig mischen; in Stufe 2 keinen zu harten Opener zeigen
+  function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } }
+  const HEAVY = new Set([
+    "Du willst Krieg?"
+  ]);
+  shuffle(S1); shuffle(S2);
+  if(HEAVY.has(S2[0])){ const k=S2.findIndex(s=>!HEAVY.has(s)); if(k>0){ [S2[0],S2[k]]=[S2[k],S2[0]]; } }
 
   const body = document.body;
   const slogan = document.getElementById('slogan');
@@ -144,8 +176,6 @@
   const ghost = document.getElementById('ghost');
   const extra = document.getElementById('stage3-extra');
   const lookedaway = document.getElementById('lookedaway');
-
-  cta.href = PETITION;
 
   let stage = 1, list = S1, idx = 0, timer = null, fadeT = null;
 
@@ -162,17 +192,33 @@
   function startRotation(){
     stopRotation();
     renderNow(list[idx]);
-    timer = setInterval(()=>{ idx = (idx+1) % list.length; render(list[idx]); }, 2600);
+    const step = ()=>{ idx = (idx+1) % list.length; render(list[idx]); };
+    // ersten Wechsel um die Überblend-Dauer (400ms) vorziehen -> gleiche Standzeit wie die folgenden
+    timer = setTimeout(()=>{ step(); timer = setInterval(step, 2600); }, 2200);
   }
   function stopRotation(){
-    if(timer){ clearInterval(timer); timer=null; }
+    if(timer){ clearTimeout(timer); clearInterval(timer); timer=null; }
     if(fadeT){ clearTimeout(fadeT); fadeT=null; }
   }
 
+  // Gesperrter CTA: sichtbar ab Stufe 1 (Goal-Gradient), zählt runter,
+  // Klick führt durch die Stufen — scharf geschaltet erst in Stufe 3.
+  function lockCta(text, next){
+    cta.textContent = text;
+    cta.removeAttribute('href');
+    cta.classList.add('locked');
+    cta.onclick = function(e){ e.preventDefault(); next(); };
+  }
+  function armCta(text){
+    cta.textContent = text;
+    cta.href = PETITION;
+    cta.classList.remove('locked');
+    cta.onclick = null;
+  }
   function toStage1(){
     stage=1; list=S1; idx=0; body.dataset.stage="1";
-    eyebrow.textContent = "Eine Frage an dich";
-    cta.textContent = "→ Dann unterschreibe diese Petition";
+    eyebrow.textContent = "Fragen an dich";
+    lockCta("🔒 Unterschreiben (noch 2 Klicks)", toStage2);
     ghost.textContent = "Überzeugt mich nicht";
     ghost.onclick = toStage2;
     extra.hidden = true;
@@ -180,8 +226,9 @@
   }
   function toStage2(){
     stage=2; list=S2; idx=0; body.dataset.stage="2";
+    document.querySelector('.erklaerung')?.removeAttribute('open');
     eyebrow.textContent = "Dann andersherum";
-    cta.innerHTML = "→ Dann ist diese Petition <br class=\"mb\">nichts für dich";
+    lockCta("🔒 Unterschreiben (noch 1 Klick)", toStage3);
     ghost.textContent = "Überzeugt mich immer noch nicht";
     ghost.onclick = toStage3;
     extra.hidden = true;
@@ -189,10 +236,11 @@
   }
   function toStage3(){
     stage=3; body.dataset.stage="3";
+    document.querySelector('.erklaerung')?.removeAttribute('open');
     stopRotation();
     eyebrow.textContent = "Eine letzte Frage";
     renderNow(S3_LINE);
-    cta.textContent = "Dann unterschreib —";
+    armCta("Dann unterschreibe jetzt");
     extra.hidden = false;
     ghost.textContent = "Wegschauen";
     ghost.onclick = lookAway;
@@ -202,9 +250,11 @@
     document.getElementById('app').style.transition = "opacity 1.2s ease";
     document.getElementById('app').style.opacity = "0";
     setTimeout(()=>{
-      document.getElementById('app').innerHTML = "";
+      const app = document.getElementById('app');
+      app.innerHTML = "";
+      app.style.opacity = "1";
       lookedaway.style.display = "block";
-      document.body.appendChild(lookedaway);
+      app.appendChild(lookedaway);
     }, 1200);
   }
 
